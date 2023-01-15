@@ -46,7 +46,7 @@ Con el fin de obtener una visión general representativa de la depreciación que
 
 ## <div align="center">Contacto</div>
 
-For business inquiries or professional support requests please contact us at [mail](costan.alejandro.99@gmail.com).
+For business inquiries or professional support requests please contact us at <a href="mailto:costan.alejandro.99@gmail.com?Subject=Interesado%20en%20el%20TFG">mail.</a>
 
 
 <br>
