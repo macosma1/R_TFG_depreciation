@@ -1,0 +1,6 @@
+"0","#tendencia que realmente sigue"
+"0","ggplot( data = data_no_outlier_Mad,"
+"0","        mapping = aes( x= years,"
+"0","                       y = price))+"
+"0","  geom_point()+"
+"0","  geom_smooth()"

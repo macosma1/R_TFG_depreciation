@@ -1,0 +1,135 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "02/10/2022"
+title: "apendice04 -- Tablas"
+documentclass: book
+forprint: true  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+# metodobib -> true: natbib (descomentar: citation_package: natbib) 
+#           -> false: pandoc (comentar: citation_package: natbib)
+metodobib: true
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+# Apéndice C: Modelos de regresión OLS
+
+## Modelos del precio respecto a la edad 
+
+\begin{table}[h!]\centering
+\caption{\label{D_M1} Modelo lineal del precio respecto a la edad de las cabezas tractoras}
+\end{table}
+```{r eval=TRUE, echo=FALSE}
+### Modelo 1
+    reg_years_price_lineal = lm(price ~ years, data = data_no_outlier_Mad) #nos da el a y el b
+    summary(reg_years_price_lineal)
+```
+
+\begin{table}[h!]\centering
+\caption{\label{D_M2} Modelo exponencial del precio respecto a la edad de las cabezas tractoras}
+\end{table}
+```{r eval=TRUE, echo=FALSE}
+### Modelo 2
+    reg_years_price_exp = lm(log(price) ~ years, data = data_no_outlier_Mad) #nos da el a y el 
+    summary(reg_years_price_exp)
+```
+
+\begin{table}[h!]\centering
+\caption{\label{D_M3} Modelo potencial del precio respecto a la edad de las cabezas tractoras}
+\end{table}
+```{r eval=TRUE, echo=FALSE}
+### Modelo 3
+    reg_years_price_power = lm(log(price) ~ log(years), data = data_no_outlier_Mad) #nos da el a y el b
+    summary(reg_years_price_power)
+```
+
+\clearpage
+## Modelos del precio respecto a la edad, km y la marca
+\begin{table}[h!]\centering
+\caption{\label{D_M1_1} Modelo lineal del precio respecto a la edad, kilometraje y marca de las cabezas tractoras}
+\end{table}
+```{r eval=TRUE, echo=FALSE}
+sal <- cbind(data_no_outlier_Mad[,c(1,6,7,9)], onehot)
+  model1 <- lm(price ~ years*km*(Iveco+MAN+Mercedes+Otro+Renault+Scania+Volvo), sal[,c(-1)]) 
+  #onehot-encoding: si tienes n niveles (marcas) te aparecen n-1, cuando no aparece DAF es 
+  #porque es la marca de referencia,#si todoas las binarias son cero, el modelo predice para DAF
+  summary(model1)
+```
+
+\begin{table}[h!]\centering
+\caption{\label{D_M2_2} Modelo exponencial del precio respecto a la edad, kilometraje y marca de las cabezas tractoras}
+\end{table}
+```{r eval=TRUE, echo=FALSE}
+  model1 <- lm(log(price) ~ years*km*(Iveco+MAN+Mercedes+Otro+Renault+Scania+Volvo), sal[,c(-1)]) 
+  summary(model1)
+```
+  
+\begin{table}[h!]\centering
+\caption{\label{D_M3_3} Modelo potencial del precio respecto a la edad, kilometraje y marca de las cabezas tractoras}
+\end{table}
+```{r eval=TRUE, echo=FALSE}
+  model1 <- lm(log(price) ~ log(years)*log(km)*(Iveco+MAN+Mercedes+Otro+Renault+Scania+Volvo), sal[,c(-1)]) 
+  summary(model1)
+```
+
+
+

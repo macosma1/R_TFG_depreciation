@@ -1,0 +1,5 @@
+"0","colnames(m) <- paste(""Col."", 1:11)
+"
+"2","Error in dimnames(x) <- dn : 
+  la longitud de 'dimnames' [2] no es igual a la extensión del arreglo
+"

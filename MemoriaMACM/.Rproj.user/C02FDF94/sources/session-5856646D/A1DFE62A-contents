@@ -1,0 +1,107 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "02/10/2022"
+title: "apendice04 -- ODS"
+date: "02/10/2017"
+documentclass: book
+forprint: true  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+# metodobib -> true: natbib (descomentar: citation_package: natbib) 
+#           -> false: pandoc (comentar: citation_package: natbib)
+metodobib: true
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+# Apéndice D: Objetivos de desarrolo sostenible
+
+\begin{center}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=5.3 in]{graficos/ODSANNEX.png} \\
+\end{center}
+\end{figure}
+\end{center}
+
+El Pacto Mundial de las Naciones Unidas desarrollada en el año 2000, es una iniciativa que pretende crear un mundo sostenible y sensibilizar a empresas para que estas “alineen sus estrategias y operaciones con Diez Principios Universales, sobre derechos humanos, normas laborales, medioambiente y lucha contra la corrupción”.[@agut2015objetivos]. 
+
+Los objetivos de este plan entraron en vigor en el año 2015, con la aprobación de la Agenda 2030, la cual estaría compuesta por 17 objetivos globales (Objetivos de Desarrollo Sostenible (*ODS*)) que permiten evaluar el impacto que presentan sus actividades en el ecosistema para con este asegurar el bienestar del planeta y mejorar la calidad de vida de las personas al tratar.
+
+\begin{center}
+\begin{figure}[H]
+\caption{Objetivos de Desarrollo Sostenible.}
+\begin{center}
+\includegraphics[width=5.3 in]{graficos/ODS17.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \citep{ODS2022}
+  \normalsize
+\end{center}
+\label{fig:ODS17}
+\end{figure}
+\end{center}
+
+Para el cumplimiento de dichos objetivos propuestos por la ONU, es necesario la involucración tanto del gobierno, el sector privado como la sociedad civil y la sociedad en general. Es por ello que se ha decidido aprovechar la realización del presente Trabajo de Fin de Grado para reflexionar la importancia de este en la consecución de los ODS. 
+
+El tema seleccionado, tiene varios objetivos de desarrollo sostenible ligados a su creación, principalmente, por la influencia que presenta en el futuro de las empresas los factores sociales y medioambientales. Dentro de estos objetivos ligados, inicialmente se puede destacar el objetivo número 1: Fin de la pobreza y el objetivo número 8: Trabajo decente y crecimiento económico.
+
+En cuanto al objetivo nº 8, al estar transfiriendo maquinarias, se generarán unas ventas que enriquecerán a los propietarios y el dinero generado con el negocio, se podrá reinvertir, produciendo mayor riqueza fiscal y recuperación económico en el sector. Así mismo, se considera que está relacionado con el objetivo nº 1 al fomentar el crecimiento y formalización de PYMES permitiéndoles llevar a cabo sus actividades económicas gracias a la compra de estos productos a un precio considerablemente menor, logrando así un incremento de la actividad económica, una mayor oferta de empleo y con ello la reducción del desempleo. 

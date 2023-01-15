@@ -1,0 +1,87 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "22/10/2022"
+title: "Capítulo01 - Introducción"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib"] #, "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Conclusiones
+
+<!--## Primera sección -->
+
+En primer lugar, para realizar el análisis de los valores y depreciación de cabezas tractoras en el mercado secundario de maquinaria, se ha perseguido una serie de objetivos parciales, necesarios para para la extracción y recolección de los datos así como la gestión de los mismos. Para esto, fue fundamental el desarrollo de la técnica WebScarping, la cual permitió acceder a una mayor cantidad de datos. 
+
+La mayor disponibilidad de observaciones permitió demostrar que el comportamiento de la depreciación de la maquinaria de construcción concretamente en el mercado de tractores usados, muestran su patrón de depreciación según el mercado.
+
+Posteriormente, se llevo a cabo la modelización del valor de las cabezas tractoras, en donde se encontró que la variable que mejor explicaba el comportamiento del precio era la edad de la primera matriculación. Una vez encontrada dicha variable, y establecido el modelo inicial, aún sabiendo que el modelo nunca puede llegar a ser una descripción completamente precisa de la realidad, se buscó obtener la relación de multiples variables (kilometraje y marcas) con respecto al precio de la maquinaria; para aumentar la fiabilidad y robustez de modelo.
+
+En el caso del análisis de la variable km, al comparar los tres modelos de regresión OLS, se observó que la variable kilometraje parece no generar diferencias considerables al modelo anteriormente planteado y presentar el principio parsimonia y que, el incluir dicha variable, podría conllevar a aumentar la probabilidad de problemas de colinealidad, menor fiabilidad en el modelo, así como la reducción de la precisión de las estimaciones y el incremento del error.
+
+En cuanto al análisis de la variable Marca, al comparar los modelos de regresión lineal, exponencial y potencial, se observó que la variable Marca, parece presentar un patrón de evolución general por marca esperable, teniendo todas las marcas una tendencia negativa, siendo el modelo potencial la que mejor explica el comportamiento del precio de venta del activo, rechazando la hipótesis en la que se plantea la depreciación lineal como el modelo que mejor se ajusta a la realidad de la maquinaria de obra pública en España. Además, se vio que el coeficiente R2 ha incrementado su valor, siendo el modelo potencial el que mejor explica la variabilidad del efecto que presenta el precio de venta.
+
+Para finalizar, se ha visto como el desarrollo de este TFG ha permitido aumentar la comprensión de lenguaje R y así como en capacidades en el tratamiento de datos. Resultaría interesante disponer de una base de datos más amplia y actualizada, así como llevar a cabo la validacion cruzada de los modelos de regresión aplicada, ya que permitirían obtener una mayor robustez estadística a los diversos coeficientes de depreciación calculados para los activos.

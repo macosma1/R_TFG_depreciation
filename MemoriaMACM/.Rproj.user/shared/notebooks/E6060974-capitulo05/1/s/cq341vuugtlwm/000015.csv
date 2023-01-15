@@ -1,0 +1,5 @@
+"0","  resume = rbind(resume, resume1)
+"
+"2","Error in match.names(clabs, names(xi)) : 
+  names do not match previous names
+"

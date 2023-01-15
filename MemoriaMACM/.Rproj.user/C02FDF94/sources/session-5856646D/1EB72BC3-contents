@@ -1,0 +1,550 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "02/10/2022"
+title: "apendice02 -- Codigos implementados"
+date: "02/10/2017"
+documentclass: book
+forprint: true  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+# metodobib -> true: natbib (descomentar: citation_package: natbib) 
+#           -> false: pandoc (comentar: citation_package: natbib)
+metodobib: true
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+# Apéndice B: Codigos implementados
+
+## Creaciòn del diagrama
+\tiny
+```{r echo=TRUE, eval=FALSE}
+DiagrammeR::grViz("digraph {
+  graph [layout = dot, rankdir = TB]
+  
+  node [shape = rectangle
+        fontname = Helvetica
+        penwidth = 2.0]        
+    rec1 [label = 'Step 1. Data gathering']
+    rec2 [label = 'Step 2. Outlier treatment (MAD)']
+    rec3 [label = 'Step 3. Clean database']
+    rec4 [label = 'Step 4. OLS models']
+    rec5 [label = 'Step 5. Best fit model']
+  
+  
+  node [shape = rectangle
+        penwidth = 0.5] 
+    rec4_1 [label = 'Linear model']
+    rec4_2 [label = 'Exponential model']
+    rec4_3 [label = 'Power model']
+    
+    
+  # edge definitions with the node IDs
+  # edge [arrowhead = diamond]
+  #rec1 -> rec2; rec2 -> rec3; rec3 -> rec4; rec4 -> rec4_1; rec4 -> rec4_2; rec4 -> rec4_3; rec4_1 -> rec5; rec4_2 -> rec5; rec4_3 -> rec5;
+  rec1 -> rec2 -> rec3 -> rec4; rec4 -> rec4_1 -> rec5; rec4 -> rec4_2 -> rec5; rec4 -> rec4_3 -> rec5  
+  #si pongoi en el edge [label = ''], me aparece un nombre en la linea,  no en el cuadrado
+  
+  graph [nodesep = 0.1]
+  }",
+  height = 500)
+```
+\normalsize
+
+
+##  Código del Fichero: capitulo05.Rmd
+\tiny
+```{r echo=TRUE, eval=FALSE}
+
+options(readr.show_col_types = FALSE) #to quiet the full column specification
+## Importing data from a CVS file
+data_WebScraping <- suppressMessages(read_csv("WebScraping.csv",
+                        locale = locale(encoding = "ISO-8859-1", 
+                        asciify = TRUE), na = "NA"))
+data_WebScraping <- select(data_WebScraping, -1, -stringAsFactors) # to display on the screen
+
+datos <- data_WebScraping # to modify
+data_WebScraping <- data_WebScraping %>% rename ("power (CV)" = colnames(data_WebScraping)[5], "price (€)" = colnames(data_WebScraping)[6])
+#view(data_WebScraping)
+#------------------------------------------- CAPITULO_05 ------------------------------------------------
+#resume the number of NA
+  resume = data.frame(t(colSums(is.na(datos)))) #to obtain for each column the number of empty data (NA)
+  resume = cbind(resume, dim(datos)[1]) #we can see the total number of data (row)
+
+  datos <- datos[!is.na(datos$price), ] #omit rows with NA in specific column of data frame
+  datos <- datos[!is.na(datos$year), ]
+  datos <- datos[!is.na(datos$km), ]
+
+  resume1 = data.frame(t(colSums(is.na(datos))))
+  resume1 = cbind(resume1, dim(datos)[1])
+  resume = rbind(resume, resume1)
+
+  rownames(resume) <- c("Con NAs","Quitando NAs") 
+  colnames(resume)[9] <- "Total Datos"
+  view(resume) #cuadro resumen de quitar NA
+
+
+#create variable (years and years.category)
+  date <- Sys.Date() ## [1] "2022-07-11"
+  date <- as.numeric(format(date,'%Y'))
+  datos <- datos %>% mutate(years = date-year) #creamos la columna con los años que tiene el camion funcionando
+
+  datos$years.category <- cut(datos$years, breaks = c(-1, 3, 15, 30, Inf), labels = c("New", "Medium", "Old", "Very old")) 
+  # Convertir var numerica "years" en categorica usando puntos de corte
+
+datos <- datos %>%  filter(years>-1 & years<100)
+
+  sapply(datos,class)  #we can see the different number of classes
+  summary(datos)
+  resume04<- rbind(describe(datos$power), describe(datos$price), describe(datos$km), describe(datos$years))
+  #similar as summary but it show the result as a dataframe
+  rownames(resume04) <- c("Power", "Price", "Km", "Year" ) 
+  view(resume04)
+#-------------------------------------------------------#
+ list_marca <- datos[2]
+ datos <- datos %>% mutate(list_marca = ifelse(brand == "Est", "Otro", brand))      
+ datos <- datos [, c ("name", "list_marca", "country", "city", "power", "price", "km", "year", "years", "years.category")]
+ colnames(datos)[2] <- "brand"
+ 
+ rm(date, resume1, list_marca)   #elimino variable no utilizadas
+
+##----------------------------------------------------------------------------------------------------------------------
+```
+\normalsize
+
+
+  
+##  Código del Fichero: capitulo06.Rmd  
+\tiny
+```{r echo=TRUE, eval=FALSE}
+#------------------------------------------- CAPITULO_06 ------------------------------------------------
+
+#----------------------DETECTION OF OUTLIERS---------------------------------
+### https://universeofdatascience.com/how-to-remove-outliers-from-data-in-r/
+### https://www.adictosaltrabajo.com/2019/11/28/deteccion-y-reemplazo-de-outliers-con-r/
+#https://aakinshin.net/posts/harrell-davis-double-mad-outlier-detector/
+#https://www.reneshbedre.com/blog/find-outliers.html
+#https://universeofdatascience.com/how-to-remove-outliers-from-data-in-r/
+
+---------------------------------------------------#
+  #dim(datos) ## la dimension es de [1] filas=4615 y columnas=2
+  AGE <- unique(datos$years) # obtenemos los AGEs por los que partir el dataframe
+
+#get threshold values for outliers
+  list_quantiles <- tapply(datos$price, datos$years, quantile)
+  Q1s <- sapply(1:length(AGE), function(i) list_quantiles[[i]][2])
+  Q3s <- sapply(1:length(AGE), function(i) list_quantiles[[i]][4])
+  IQRs <- tapply(datos$price, datos$years, IQR)
+  minis <- sapply(1:length(AGE), function(i) list_quantiles[[i]][1])
+  maxis <- sapply(1:length(AGE), function(i) list_quantiles[[i]][5])
+  Mes <- sapply(1:length(AGE), function(i) list_quantiles[[i]][3]) #median
+  MAD <- tapply(datos$price, datos$years, mad)
+
+#Intercuartil
+  Lowers <- Q1s - 1.5*IQRs #valor atípico leve dista --> q < Q1 – 1,5 · IQR o bien q > Q3 + 1,5 · IQR
+  Uppers <- Q3s + 1.5*IQRs 
+
+#Hampel filter -->MAD
+  lower_bound <- Mes - 3 * MAD
+  Upper_bound <- Mes + 3 * MAD
+
+#for to collect the data that pass the filter
+  list_year <- split(datos, datos$years)
+  data_no_outlier <- NULL
+  data_no_outlier_Mad <- NULL
+  for (i in 1:length(AGE)){
+    out <- subset(list_year[[i]], list_year[[i]]$price > Lowers[i] & list_year[[i]]$price < Uppers[i]) #Intercuartile range
+    data_no_outlier <- rbind(data_no_outlier, out)
+    #data_no_outlier <- rbind(out)
+    outMad <- subset(list_year[[i]], list_year[[i]]$price > lower_bound[i] & list_year[[i]]$price < Upper_bound[i]) #Hampel filter -->MAD
+    data_no_outlier_Mad<- rbind(data_no_outlier_Mad, outMad)
+  }
+
+#dim(data_no_outlier) ## [1] 4297    2
+#dim(data_no_outlier_Mad) ## [1] 4188    2
+
+  #------------------------------------------------------------------------------------------  
+#elimino
+  rm(AGE, i, IQRs, lower_bound, Lowers, MAD, maxis, Mes, minis, Q1s, Q3s, Upper_bound, Uppers, out, outMad)
+#---------------------------------------------------------------------------------------------------------------------------
+  
+#grafico
+  par(mfrow = c(1,1))
+  #boxplot(data_no_outlier$price~data_no_outlier$years)
+  boxplot(data_no_outlier_Mad$price~data_no_outlier_Mad$years,outline=FALSE)
+  boxplot(data_no_outlier_Mad$price~data_no_outlier_Mad$years.category,outline=FALSE)
+##--------------------------------------------------------------------------------------------------------------------------
+  list_marca <- data_no_outlier_Mad[2]
+  data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(list_marca = ifelse(brand == "Est", "Otro", brand))      
+  data_no_outlier_Mad <- 
+    data_no_outlier_Mad [, c ("name", "list_marca", "country", "city", "power", "price", "km", "year", "years", "years.category")]
+  colnames(data_no_outlier_Mad)[2] <- "brand"
+
+```
+\normalsize
+
+
+  
+##  Código del Fichero: capitulo07.Rmd  
+\tiny
+```{r echo=TRUE, eval=FALSE}
+#------------------------------------------- CAPITULO_07 ------------------------------------------------
+#----------------------------------filtro datos segun una condicion y almaceno valores en listas-------------------------------
+#agrupo por paises sin hacer filtro
+  df_brand <- data_no_outlier_Mad %>% group_by(brand) %>% 
+   summarise( n=n(), mean_year = mean(year), mean_years= mean(years), mean_price = ceiling(mean(km)), median_price=median(km),
+      variance_price = var(km), sd_price = sd(km)) %>% arrange(n)
+  df_country <- data_no_outlier_Mad %>% group_by(country) %>% 
+   summarise( n=n(), mean_year = ceiling(mean(year)), mean_years= ceiling(mean(years)), mean_price = ceiling(mean(km)), 
+      median_price=median(km), variance_price = var(km), sd_price = sd(km)) %>% arrange(n)
+
+#calculo las variables, elimina aquellas que no cumplan condiciones propuestas, como el no tener mas de dos valores por marca, por pais, 
+  # uno agrupa por paises y otro por marcas y dice cuanto hay por cada uno, ademas saca la media de km y la suma total
+  df_country <- data_no_outlier_Mad %>% group_by(country) %>% 
+   summarise( n=n(), mean_year = ceiling(mean(year)), mean_years= ceiling(mean(years)), mean_price = ceiling(mean(km)), 
+      median_price=median(km), variance_price = var(km), sd_price = sd(km)) %>% 
+   filter(n>2) %>% arrange(n)
+  df_brand <- data_no_outlier_Mad %>% group_by(brand) %>% 
+   summarise( n=n(), mean_year = mean(year), mean_years= mean(years), mean_price = ceiling(mean(km)), median_price=median(km), 
+      variance_price = var(km), sd_price = sd(km)) %>% filter(n>2) %>% arrange(n)
+
+#agrupa en un vector aquellos paises que tengan mas de dos cabezas tractoras y en otro aquellas marcas que tengan mas de dos cabezas tractoras
+  countries <- as.vector(data.frame(t(df_country[,1])))
+  brands <- as.vector(data.frame(t(df_brand[,1])))
+
+#en data_no_outlier_Mad solo mantendremos los valores que cumplan las dos condiciones anteriormente planteadas... y
+  #veo las diferencia de como cambian las dimensiones
+  #dim(data_no_outlier_Mad) # 4188 10
+  data_no_outlier_Mad <- filter(data_no_outlier_Mad, country %in% countries, brand %in% brands)
+  #dim(data_no_outlier_Mad) # 4173 10
+
+#summary as a dataframe of power, country, years and brand
+  resume07<- rbind(describe(data_no_outlier_Mad$power), describe(data_no_outlier_Mad$price), describe(data_no_outlier_Mad$km),
+describe(data_no_outlier_Mad$years)) 
+  rownames(resume07) <- c("Power", "Price", "Km", "Year" )
+  
+
+#separo en una lista segun power, country, years y brand
+  list_power <- split(data_no_outlier_Mad, data_no_outlier_Mad$power)
+  list_country <- split(data_no_outlier_Mad, data_no_outlier_Mad$country) 
+  list_years <- split(data_no_outlier_Mad, data_no_outlier_Mad$years) 
+  list_brand <- split(data_no_outlier_Mad, data_no_outlier_Mad$brand)
+
+
+#del cuadro que esta, para el analisis, sacamos un resumen de cada variable y la almaceno en la lista_resumen:
+  df_year <- data_no_outlier_Mad %>% group_by(years) %>% summarise( n=n(), mean_price = ceiling(mean(price)))
+  yearss = df_year[,1:2]
+  brands = df_brand[,1:2]
+  countries = df_country[,1:2]
+  years.categories <- data_no_outlier_Mad %>% group_by(years.category) %>% summarise( n=n()) %>% arrange(n)
+  lista_resumen <- list(yearss, brands, countries, years.categories) #accedo a este lista_resumen[[2]]
+  rm(yearss, countries, years.categories, brands)
+#----------------------------------------------------------------    
+#plots
+  ##Bar graph 
+  par(mfrow = c(2,1))
+  ggplot(df_country, aes(x = reorder(country, n), y = n, fill = country)) + geom_col() 
+   + geom_text(aes(label = n),hjust = +0.7, colour = "black") + coord_flip()
+   + theme(legend.position = "top", text = element_text (size = 12), legend.text = element_text (size = 7)) 
+   + labs(fill = element_blank(), x="País", y = "Número de observaciones") #numbers of cabezas tractoras for every country
+  ggplot(df_country, aes(x = reorder(country, mean_years), y = mean_years, colour = country)) + geom_point()  
+   + coord_flip()  + theme(legend.position='none', text = element_text (size = 12)) 
+   + labs(x="País", y = "Promedio de edad")   #edad promedio of cabezas tractoras for every country 
+  
+   data_no_outlier_Mad %>%  
+   ggplot() + 
+     aes(x = brand, fill= country) + 
+     geom_bar( color="black") + 
+     facet_grid(country ~ .) + 
+     geom_text(aes(label = ..count..), stat = "count", vjust = -0.1, colour = "black") + 
+     theme(legend.position = "top") + 
+      labs(fill = "Países", x="Marca", y = "Número de observaciones")
+  
+   ggplot(data_no_outlier_Mad, aes(x = years, y = price, colour = years.category)) +
+    geom_point() +
+    theme(legend.position = "top") +#scatter plots y gráfico de dispersion
+    labs(colour = element_blank(), x="Edad", y = "Precio")
+   
+   ggplot(data_no_outlier_Mad, aes(x = power, fill = years.category)) +
+    geom_histogram(colour = "black") +
+    geom_density() +
+    facet_grid(years.category ~ ., scales = "free") +    ###histograma
+    theme(legend.position = "top")+
+    labs(fill = "Tramo de edad", x="Potencia (CV)", y = "Número de observaciones")
+    #ggplot(data_no_outlier_Mad ,aes(x = power, fill= country)) +
+    #geom_histogram( color="black") +
+    #facet_grid(country ~ .)
+  
+   #borro cosas que no uso
+  rm(df_brand, df_country, df_year, resume, resume04, resume07)
+    
+  #https://www.statology.org/multiple-linear-regression-r/
+  sal <- data_no_outlier_Mad[,c(6,7,9)]
+  # library(GGally)
+   colnames(sal) <- c("Precio", "km", "Edad")
+   # pairs(sal[,-1], pch = 18, col = "steelblue") #pairs() function to create a scatterplot of every possible pair of variables:
+  ggpairs(sal) #create a similar plot that contains the actual linear correlation coefficients for each pair of variables
+  
+```
+\normalsize
+
+
+
+##  Código del Fichero: capitulo08.Rmd
+\tiny
+```{r echo=TRUE, eval=FALSE}
+#------------------------------------------- CAPITULO_08 ------------------------------------------------
+#--------------------------modelos de regresion lineal una variable, los comentados son el calculo manual sin funcion--------------------
+resume08<- rbind(describe(data_no_outlier_Mad$years), describe(data_no_outlier_Mad$price), describe(data_no_outlier_Mad$km))
+#similar as summary but it show the result as a dataframe
+rownames(resume08) <- c("Year", "Price", "Km")
+
+### Modelo 1  
+ #---------------------------------------------------------------------------------------------------------------------------------------
+ #lineal
+  #calculo manual, este da resultados con mas decimales
+    # b_lineal = cov(data_no_outlier_Mad$years, data_no_outlier_Mad$price) / (resume07 [4,4])^2
+    # a_lineal = resume07 [2,3] - (resume07 [4,3] * b_lineal)
+    # r_2_lineal = (cov(data_no_outlier_Mad$years, data_no_outlier_Mad$price) / ((resume07 [4,4]) * (resume07 [2,4])))^2
+    # r_2_lineal = (cor(data_no_outlier_Mad$years, data_no_outlier_Mad$price))^2 #da igual, pero es otra forma
+    # coef_depre_lineal = b_lineal / a_lineal
+    # data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(y_linel = a_lineal + b_lineal * data_no_outlier_Mad$years) #creamos la Y 
+  #calculo con funcionn lm
+    reg_years_price_lineal = lm(price ~ years, data = data_no_outlier_Mad) #nos da el a y el b
+    data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(y_lineal = fitted(reg_years_price_lineal)) #fitted nos da la Y del modelo
+    summary(reg_years_price_lineal)
+    
+    #residuals(reg_years_price_lineal) #saco los valores residuales
+    lineal_years_price_coeff_beta <- reg_years_price_lineal$coefficients
+    lineal_years_price_coeff_depre <- round(lineal_years_price_coeff_beta[2]/lineal_years_price_coeff_beta[1], digits = 4)
+    lineal_years_price_coeff_R <- summary(reg_years_price_lineal)$r.square
+    #lineal_years_price_coeff_R <- summary(reg_years_price_lineal)$adj.r.square #para el R ajustado
+ #-------------------------------------------------------------------------------------------------------------------------------------- 
+ # #exp
+  #manual
+    # b_exp = cov(data_no_outlier_Mad$years, log(data_no_outlier_Mad$price)) / (resume07 [4,4])^2
+    # a_exp = mean(log(data_no_outlier_Mad$price)) - (resume07 [4,3] * b_exp)
+    # a_exp = exp(a_exp)
+    # r_2_exp = (cov(data_no_outlier_Mad$years, log(data_no_outlier_Mad$price)) / (sd(log(data_no_outlier_Mad$price)) * (resume07 [4,4])))^2
+    # r_2_exp = (cor(data_no_outlier_Mad$years, log(data_no_outlier_Mad$price)))^2 #no se pq me da diferente a lo que da en el excel
+    # coef_depre_exp = exp(b_exp)
+    
+  #con formula
+    reg_years_price_exp = lm(log(price) ~ years, data = data_no_outlier_Mad) #nos da el a y el b
+    data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(y_exp = exp(fitted(reg_years_price_exp)))  #fitted nos da la Y del modelo
+    summary(reg_years_price_exp)
+    
+    #residuals(reg_years_price_exp) #saco los valores residuales
+    exp_years_price_coeff_beta <- reg_years_price_exp$coefficients
+    exp_years_price_coeff_depre <- round(exp(exp_years_price_coeff_beta[2]), digits =4)
+    exp_years_price_coeff_R <- summary(reg_years_price_exp)$r.square
+    #exp_years_price_coeff_R <- summary(reg_years_price_exp)$adj.r.square #para el R ajustado
+ #--------------------------------------------------------------------------------------------------------------------------------------
+ #power
+  #manual
+    # b_power = cov(log(data_no_outlier_Mad$years), log(data_no_outlier_Mad$price)) / (sd(log(data_no_outlier_Mad$years)))^2
+    # a_power = mean(log(data_no_outlier_Mad$price)) - (mean(log(data_no_outlier_Mad$years)) * b_power)
+    # a_power = exp(a_power)
+    # r_2_power = (cov(log(data_no_outlier_Mad$years), log(data_no_outlier_Mad$price)) 
+              #/ (sd(log(data_no_outlier_Mad$years) * sd(log(data_no_outlier_Mad$price)))))^2
+    # r_2_power = (cor(log(data_no_outlier_Mad$years), log(data_no_outlier_Mad$price)))^2 
+    # coef_depre_power = b_power
+    
+  #con formula
+    reg_years_price_power = lm(log(price) ~ log(years), data = data_no_outlier_Mad) #nos da el a y el b
+    data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(y_power = exp(fitted(reg_years_price_power))) #fitted nos da la Y
+    summary(reg_years_price_power)
+    
+    #residuals(reg_years_price_power) #saco los valores residuales
+    power_years_price_coeff_beta <- reg_years_price_power$coefficients
+    power_years_price_coeff_depre <- round(power_years_price_coeff_beta[2], digits = 4)
+    power_years_price_coeff_R <- summary(reg_years_price_power)$r.square
+    #power_years_price_coeff_R <- summary(reg_years_price_power)$adj.r.square #para el R ajustado
+# --------------------------------------------------------------------------------------------------------------------------------------------
+    
+#include models with stargarzer
+  #stargazer(reg_years_price_lineal, reg_years_price_exp, reg_years_price_power, type="text", df=FALSE) #coef de a faltaria hacer el exp(a)
+    #https://www.jakeruss.com/cheatsheets/stargazer/
+    #https://rdrr.io/cran/stargazer/man/stargazer_stat_code_list.html  #stargazer: list of statistic codes
+    
+    my_models <- list()
+    my_models[['reg_years_price_lineal']]   <- lm(price ~ years, data = data_no_outlier_Mad)
+    my_models[['reg_years_price_exp']]   <- lm(log(price) ~ years, data = data_no_outlier_Mad)
+    my_models[['reg_years_price_power']] <- lm(log(price) ~ log(years), data = data_no_outlier_Mad)
+    stargazer::stargazer(my_models, type = "text", column.labels = c("Model1", "Model2", "Model3"),  
+       covariate.labels=c("Lineal(years)","Log(years)","Constante"), single.row = TRUE, df=FALSE, 
+       omit.stat=c("LL","adj.rsq"), no.space=FALSE, add.lines = list(c("Coeff depre", 
+       lineal_years_price_coeff_depre, exp_years_price_coeff_depre, power_years_price_coeff_depre)), 
+    notes = c(" ---------------------------------------------",
+              "*** Significant at the 1 percent level.", "** Significant at the 5 percent level.", "* Significantat the 10 percent level."),
+    out="Modelos_regresion/Modelos_regresion.html")
+    knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/Modelos_regresion/Modelos_regresion.html") 
+    #keep.stat="n", solo deja observaciones 
+    #star.cutoffs = c(0.05, 0.01, 0.001)) # star.cutoffs = NULL by default
+    #df=FALSE hace que no salga el 4171 de valores que usa en el modelo del df
+    #title="Tabla 1. Diferentes modelos OLS",
+    #digits = 1 numeros de decimales de la tabla salvo los agregados
+    
+    
+#---------------------------------------------------------------------------------------------------------------------------
+#saco intervalo de confianza de todos los modelos
+  confi <- list()
+  confi[['Lineal1']] <- c((confint(reg_years_price_lineal))[1,1], (confint(reg_years_price_lineal))[1,2])
+  confi[['Lineal2']] <- c((confint(reg_years_price_lineal))[2,1], (confint(reg_years_price_lineal))[2,2])
+  confi[['Exp1']] <- c((confint(reg_years_price_exp))[1,1], (confint(reg_years_price_exp))[1,2])
+  confi[['Exp2']] <- c((confint(reg_years_price_exp))[2,1], (confint(reg_years_price_exp))[2,2])
+  confi[['Power1']] <- c((confint(reg_years_price_power))[1,1], (confint(reg_years_price_power))[1,2])
+  confi[['Power2']] <- c((confint(reg_years_price_power))[2,1], (confint(reg_years_price_power))[2,2])
+  
+  confi<- t(as.data.frame(confi))
+  colnames(confi) <- c("2.5%", "97.5%")
+  rownames(confi) <- c("Lineal- (Intercept)", "Lineal - years", 
+                       "Exp - (Intercept)", "Exp - years",
+                       "Power - (Intercept)", "Power - years")
+  stargazer::stargazer(confi, type = "text", align = TRUE,  df=FALSE,   out="Modelos_regresion/confi.html")
+  knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/Modelos_regresion/confi.html") 
+  # flip = TRUE, 
+  #tidy(reg_years_price_lineal) #covariate.labels=c("", "2.5", "97.5","2.5", "97.5","2.5", "97.5"), 
+  # tidy(summary(reg_years_price_lineal))
+  # augment(reg_years_price_lineal)
+  # glance(reg_years_price_lineal)
+  
+#---------------------------------------------------------------------------------------------------------------------------
+#tendencia que realmente sigue
+  ggplot( data = data_no_outlier_Mad,
+          mapping = aes( x= years,
+                         y = price))+
+    geom_point()+
+    geom_smooth()
+#---------------------------------------------------------------------------------------------------------------------------
+  ggplot(data_no_outlier_Mad, aes(years)) + # basic graphical object 
+      geom_point(aes(y = price)) +
+      geom_line(aes(y=y_lineal, colour="Lineal"),  linetype=2, size=1) + # first layer 
+      geom_line(aes(y=y_exp, colour="Exponencial"),  linetype=3, size=1) + # second layer
+      geom_line(aes(y=y_power, colour="Potencial"),  linetype=4, size=1)+ # second layer
+      scale_color_manual("", 
+                         breaks =  c("Lineal", "Exponencial", "Potencial"),
+                         values = c("red", "green", "blue"))+
+      #labs(title = "TITULO")+
+      labs( x="Edad", y = "Precio")+
+      theme(plot.title = element_text(hjust = 0.5), legend.position = "top") 
+#---------------------------------------------------------------------------------------------------------------------------
+  #other options
+# <!-- plot2<-  -->
+# <!--   {plot(data_no_outlier_Mad$years, data_no_outlier_Mad$price) #, main = "TITULO") -->
+# <!--     legend("topright", legend = c("lineal", "power", "semilog"), lty= c(2, 3, 4), lwd = 1, col = c("red", "blue", "green"))  -->
+# <!--     lines(data_no_outlier_Mad$years, data_no_outlier_Mad$y_lineal , col = "red", linetype=2) -->
+# <!--     lines(data_no_outlier_Mad$years, data_no_outlier_Mad$y_exp , col = "blue", linetype=3) -->
+# <!--     lines(data_no_outlier_Mad$years, data_no_outlier_Mad$y_power , col = "green", linetype=4)} -->
+  
+  
+# <!-- coeff<- list() -->
+# <!-- coeff[["Modelo1"]]<- reg_years_price_lineal$coefficients -->
+# <!-- coeff[["Modelo2"]]<- reg_years_price_exp$coefficients -->
+# <!-- coeff[["Modelo3"]]<- reg_years_price_power$coefficients -->
+# <!-- coeff[["Modelo4"]]<- t(as.data.frame(c(lineal_years_price_coeff_depre, summary(reg_years_price_lineal)$r.square ))) -->
+# <!-- coeff[["Modelo5"]]<- t(as.data.frame(c(exp_years_price_coeff_depre, summary(reg_years_price_exp)$r.square ))) -->
+# <!-- coeff[["Modelo6"]]<- t(as.data.frame(c(power_years_price_coeff_depre, summary(reg_years_price_power)$r.square ))) -->
+# 
+# <!-- dat <- rbind(coeff[["Modelo4"]], coeff[["Modelo5"]], coeff[["Modelo6"]] ) -->
+# <!-- colnames(dat) <- c("coeff_depre", "r_square") -->
+# <!-- rownames(dat) <- c("lineal", "exp", "power") -->
+# <!-- coeff <- t(as.data.frame(coeff[1:3])) -->
+# <!-- colnames(coeff) <- c("Bo", "B1") -->
+# <!-- coeff <- cbind(dat,coeff) -->
+# <!-- stargazer::stargazer(coeff, type = "text", align = TRUE, df=FALSE, style = "qje", out="coeff.html") -->
+  
+```
+\normalsize
+
+
+##  Código del Fichero: capitulo09.Rmd
+\tiny
+```{r echo=TRUE, eval=FALSE}
+#------------------------------------------------ CAPITULO_09 ------------------------------------------------
+#---------------------------------------- modelos de regresion lineal multivariable--------------------------------------
+
+
+
+# --------------------------------------------------------------------------------------------------------------------------------------------
+#no lo uso, para sacar multivariable de todo con stargarzer
+# ```{r include= FALSE}
+# #relation between price, years, brand and km, esto vendría a ser lo que hago despues con el onehot-encoding
+# my_models <- list()
+#sal <- cbind(data_no_outlier_Mad[,c(1,6,7,9)], onehot) #sin DAF, ya que si todas las binarias son cero, el modelo predice para DAF
+# my_models[['reg_years_price_lineal']]   <- lm(price ~ years * km * brand, data = data_no_outlier_Mad)
+# my_models[['reg_years_price_exp']]   <- lm(log(price) ~ years * km * brand, data = data_no_outlier_Mad)
+# my_models[['reg_years_price_power']] <- lm(log(price) ~ log(years) * log(km) * brand, data = data_no_outlier_Mad)
+# stargazer::stargazer(my_models, type = "text", single.row = TRUE, df=FALSE, omit.stat=c("LL","adj.rsq"), no.space=FALSE,
+# notes = c(" ---------------------------------------------",
+#"*** Significant at the 1 percent level.", "** Significant at the 5 percent level.", "* Significantat the 10 percent level."),
+# out="Modelos_regresion/Modelos_regresion_multi4.html")
+# knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/Modelos_regresion/Modelos_regresion_multi4.html") 
+# ```
+
+# --------------------------------------------------------------------------------------------------------------------------------------------
+```
+\normalsize
+
+
+
+
+
+

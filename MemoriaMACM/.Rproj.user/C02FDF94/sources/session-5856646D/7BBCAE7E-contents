@@ -1,0 +1,369 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "22/10/2022"
+title: "Capítulo09 - Modelización"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="90%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Modelos de regresión multivariable
+
+Como se ha ido explicando a lo largo del informe, el objetivo de este trabajo de fin de grado es analizar el comportamiento de los valores y depreciación en el mercado de la maquinaria de ocasión, para esto resulta fundamental averiguar y explicar la relación entre una o varias variables con el valor de las cabezas tractoras. Después de encontrar en el anterior capítulo la relación entre el precio y la edad de la primera matriculación, en este capítulo se buscará encontrar la posible relación de multiples variables (kilometraje, brand) con respecto al precio de la maquinaria; para esto se llevarán a cabo diferentes modelos de regresión multivariable utilizando las ecuaciones anteriormente planteadas en la página \pageref{tabla001}, tabla \ref{tabla001}. No se tendrán en cuenta la potencia, al no tener suficientes observaciones para llevar a cabo un modelo fiable.
+
+Antes de llevar a cabo la modelización de los diferentes modelos, es fundamental aclarar que el coeficiente de determinación R² múltiple se encarga de describir la relación entre las variables predictoras y la variable respuesta. Al igual que el R², este está acotado entre 0 y 1, donde 1 indica una relación lineal perfecta, mientras que un R² múltiple de 0 indica que no hay ninguna relación lineal. 
+
+Así mismo, también debemos tener presente la posibilidad de encontrar problemas de multicolinealidad, en dnde las variables endógenas independientes en el modelo de regresión esten correlacionadas
+
+## Modelización del precio respecto a la edad y los km
+
+Como en el capítulo anterior, se llevaron a cabo tres modelos de regresión lineal por mínimos cuadrados ordinarios siguiendo las ecuaciones planteadas en la tabla \ref{tabla_002} en la página \pageref{tabla_002}. Esto con el fin de análizar el efecto y relación de dos variables endógenas (los años que han pasado desde la primera matriculación y el kilometraje) con respecto a la variable exógena (precio de venta).
+
+
+```{r include= FALSE}
+#relation between price, years and km
+my_models <- list()
+my_models[['reg_years_price_lineal']]   <- lm(price ~ years * km, data = data_no_outlier_Mad)
+my_models[['reg_years_price_exp']]   <- lm(log(price) ~ years * km, data = data_no_outlier_Mad)
+my_models[['reg_years_price_power']] <- lm(log(price) ~ log(years) * log(km), data = data_no_outlier_Mad)
+stargazer::stargazer(my_models, type = "text",column.labels = c("Modelo1", "Modelo2", "Modelo3"), single.row = TRUE, df=FALSE, omit.stat=c("LL","adj.rsq"), no.space=FALSE,
+notes = c(" ---------------------------------------------","*** Significant at the 1 percent level.", "** Significant at the 5 percent level.", "* Significantat the 10 percent level."),
+out="Modelos_regresion/Modelos_regresion_multi1.html")
+
+#column.labels = c("Modelo1", "Modelo2", "Modelo3"),  covariate.labels=c("Lineal(years)","Log(years)","Constante"),
+knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/Modelos_regresion/Modelos_regresion_multi1.html") 
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Diferentes modelos de regresión lineal multivariable.}
+\begin{center}
+\includegraphics[width=4.5 in]{figurasR/unnamed-chunk-59-1.pdf}
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig_mod_reg_multi1}
+\end{figure}
+\end{center}
+
+En la anterior tabla se puede observar como para todos los tipos de maquinaria y modelos muestran un nivel  de significación de 1% "***", Sin embargo, al evaluar los coeficientes estadísticos obtenidos, la variable kilometraje parece presentar el principio parsimonia (el modelo nunca puede llegar a ser una descripción completamente precisa de la realidad; para describir la realidad, es preciso desarrollar un modelo tan complejo que éste sería de poca utilidad práctica) en donde parece no aportar mucha información y por lo tanto, no genera diferencias considerables al modelo anteriormente planteado, es por ello que no resultaría muy interesante integrar esta variable al modelo, teniendo en cuenta que al incluir incluir la interacción entre las variables podría conllevar a aumentar la probabilidad de problemas de colinealidad y menor fiabilidad en el modelo.
+
+
+<!-- La colinealidad (o multicolinealidad) es una situación no deseable en la que una de las variables independientes es una función lineal de otras variables independientes, es decir, las variables explicativas del modelo están altamente correlacionadas entre sí -->
+
+
+
+Además, vemos como se reduce la precisión de las estimaciones, al aumentar el error estándar de los coeficientes de regresión.
+
+## Modelización del precio respecto a la edad y las marcas
+
+Después de observar la presencia de principio parsimonia en el planteamiento anterior, se procedió a llevar cabo tres modelos de regresión lineal por mínimos cuadrados ordinarios siguiendo las ecuaciones planteadas en la tabla \ref{tabla_002} de la página \pageref{tabla_002}. Esto con el fin de análizar el efecto y relación de dos variables endógenas (los años que han pasado desde la primera matriculación y las marcas) con respecto a la variable exógena (precio de venta).
+
+```{r include=FALSE}
+
+levels <- c("DAF", "Iveco", "MAN", "Mercedes", "Otro", "Renault", "Scania", "Volvo")
+data_no_outlier_Mad$brand_factor <- match(data_no_outlier_Mad$brand, levels)
+
+attach(data_no_outlier_Mad)
+scatterplot3d(x=years, y=brand_factor, z=price, pch=16, cex.lab=1, zlim=c(0, 120000, 60000),
+  highlight.3d=TRUE, type="h", xlab='Edad', ylab='Marca', zlab='Precio')
+
+```
+\begin{center}
+\begin{figure}[H]
+\caption{Regresión multivariables del precio respecto a los años y la marca.}
+\begin{center}
+\includegraphics[trim={0 1.1cm 0.7cm 1.2cm},clip,scale=1]{figurasR/unnamed-chunk-60-1.pdf}
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig_3d}
+\end{figure}
+\end{center}
+
+En la figura \ref{fig_3d} se representó el precio de la cabezas tractoras respecto a su edad y marca, tomando esta última valores del 1 al 8 correspondientes a las marcas DAF, Iveco, MAN, Mercedes, Otro, Renault, Scania, Volvo. Se observa como presentán un patrón de evolución general, teniendo todas las marcas una tendencia negativa. 
+
+
+Posteriormente, para llevar a cabo el análisis de regresión por factores, previamente se implementó el One-Hot-encoding a la  marca, con el fin de convertir los datos categóricos en numéricos. El método de codificación One-Hot nos permite etiquetar a qué clase pertenecen los datos, en donde se le asigna 0 a toda la dimensión, excepto para la clase a la que pertenecen los datos, que se le asigna 1 . 
+
+```{r eval= TRUE, echo= FALSE}
+  # library(data.table)
+  # library(mltools)
+  #solo las 8 marcas (para mostrar el resultado del one-hot encoding. --> no para todas las muestras)
+    sal <- brands[1]
+    sal$brand <- as.factor(sal$brand)
+    onehot <- one_hot(as.data.table(sal))
+    colnames(onehot) <- c("DAF", "Iveco", "MAN", "Mercedes", "Otro", "Renault", "Scania", "Volvo")
+    
+    
+knitr::kable(
+head(onehot[, 1:8], 8), format = "latex", booktabs = TRUE,  align = "c", 
+caption = "\\label{onehot} One-Hot-encoding según la marca de cabeza tractora."
+) %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+```
+
+Según la codificación One-Hot, se estableció como variable referencia "DAF", por lo que al tener n niveles (marcas) en los siguientes modelos aparecerán (n-1) niveles, debido a que cuando todas las variables binarias tomen como valor 0, el modelo estaría prediciendo la variable de referencia "DAF". 
+    
+```{r include= FALSE}
+  #para las 8 marcas, considerando todos los datos
+    sal <- data_no_outlier_Mad[2]
+    sal$brand <- as.factor(sal$brand)
+    onehot <- one_hot(as.data.table(sal))
+    colnames(onehot) <- c("DAF", "Iveco", "MAN", "Mercedes", "Otro", "Renault", "Scania", "Volvo")
+  
+#no me deja descargar dummyVars
+  # dummy <- dummyVars(" ~ .", data=sal)
+  # onehot <- data.frame(predict(dummy, onehot = data)) 
+    
+sal <- cbind(data_no_outlier_Mad[,c(1,6,7,9)], onehot)
+  #onehot-encoding: si tienes n niveles (marcas) te aparecen n-1, cuando no aparece DAF 
+  #es porque es la marca de referencia,#si todoas las binarias son cero, el modelo predice para DAF
+  #broom::tidy(model1) #información estadística de los modelos.
+
+#relation between price, years, brand and km, esto vendría a ser lo que hago despues con el onehot-encoding
+  my_models <- list()
+  sal <- cbind(data_no_outlier_Mad[,c(1,6,7,9)], onehot) #sin DAF, ya que si todas las binarias son cero, el modelo predice para DAF
+  my_models[['reg_years_price_lineal']]   <- lm(price ~ years *(Iveco + MAN + Mercedes + Otro + Renault + Scania + Volvo), sal[,c(-1)])
+  my_models[['reg_years_price_exp']]   <- lm(log(price) ~ years * (Iveco + MAN + Mercedes + Otro + Renault + Scania + Volvo), sal[,c(-1)])
+  my_models[['reg_years_price_power']] <- lm(log(price) ~ log(years) * (Iveco + MAN + Mercedes + Otro + Renault + Scania + Volvo), sal[,c(-1)])
+  stargazer::stargazer(my_models, type = "text",column.labels = c("Modelo1", "Modelo2", "Modelo3"),single.row = TRUE, df=FALSE, omit.stat=c("LL","adj.rsq"), no.space=FALSE, out="Modelos_regresion/Modelos_regresion_multi5.html")
+  knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/Modelos_regresion/Modelos_regresion_multi5.html") 
+```
+
+<!-- el de abajo es por si uso el html directo, pero sale muy grande y mal, por lo que lo guarde manualmente como pdf -->
+<!-- \begin{center} -->
+<!-- \begin{figure}[H] -->
+<!-- \caption{Diferentes modelos de regresión lineal multivariable.} -->
+<!-- \begin{center} -->
+<!-- \includegraphics[width=2.7 in]{figurasR/unnamed-chunk-60-1.pdf} -->
+<!-- \end{center} -->
+<!-- \begin{center} -->
+<!--   \footnotesize -->
+<!--   \textit{Fuente:} \text{(Elaboración propia)} -->
+<!--   \normalsize -->
+<!-- \end{center} -->
+<!-- \label{fig_mod_reg_multi5} -->
+<!-- \end{figure} -->
+<!-- \end{center} -->
+
+
+\begin{center}
+\begin{figure}[H]
+\caption{Diferentes modelos de regresión lineal multivariable.}
+\begin{center}
+\includegraphics[trim={0 3.1cm 3.6cm 0.7cm},clip,scale=0.88]{Modelos_regresion/Modelos_regresion_multi5.pdf}
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig_mod_reg_multi5}
+\end{figure}
+\end{center}
+
+Trás analizar la base de datos después de haberse aplicado la técnica de MAD para suprimir los valores atípicos, los modelos de regresión planteados ofrecen los resultados que se presentan en la figura \ref{fig_mod_reg_multi5}. Como hemos observado en los modelos previos, si bien existen matices diferenciadoras en cuanto al comportamiento del precio, los tres presentan una tendencia negativa en el comportamiento del precio de venta de la cabeza tractora con el paso del tiempo.
+
+Se aprecia como en los tres modelos propuestos, el coeficiente R²  ha incrementado su valor. Donde el primer modelo continua presentando el menor coeficiente y, el tercer modelo (potencial) continua presentando el mayor coeficiente y por lo tanto, el que mejor se explica la variablidad del efecto que presenta el precio de venta. 
+
+Se ve como para el modelo lineal y exponencial, casi todos los $\beta$ presentan un nivel se significación de  " *** " y " ** " salvo la marca "Otro" con un nivel de significación de "*" en modelo lineal y un nivel de significación superior a 10% en el modelo exponencial; y la interación entre la edad con la marca "Iveco" y con "Renault" que presentan un nivel de significacion superior a 10% en el modelo exponencial.
+
+A diferencia de los dos primeros modelos, el potencial aunque es el que presenta mayor coeficiente de determinación, suele presentar niveles de significación inferiores, es decir, algunos de estos no presentan evidencias estadísticas de que afecten a la variable en cuestión.
+
+
+\clearpage
+```{r include = FALSE, warning=FALSE}
+#https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html
+library(corrplot)
+library(psych)
+correlation <- round(cor(sal[,c(-1)]),3)
+corrplot(correlation, method = 'number')
+# corrplot.mixed(correlation)
+# corrplot(correlation, method = 'circle', type = 'lower')
+corrplot(correlation, method = 'pie', type = 'lower')
+
+pairs.panels(sal[,c(-1)], pch=21)
+round(cor(sal[,c(-1)]),3)
+```
+
+
+<!-- # ```{r include= FALSE} -->
+<!-- # #relation between price, years, brand and km, esto vendría a ser lo que hago despues con el onehot-encoding -->
+<!-- # my_models <- list() -->
+<!-- #sal <- cbind(data_no_outlier_Mad[,c(1,6,7,9)], onehot) #sin DAF, ya que si todas las binarias son cero, el modelo predice para DAF -->
+<!-- # my_models[['reg_years_price_lineal']]   <- lm(price ~ years * km * brand, data = data_no_outlier_Mad) -->
+<!-- # my_models[['reg_years_price_exp']]   <- lm(log(price) ~ years * km * brand, data = data_no_outlier_Mad) -->
+<!-- # my_models[['reg_years_price_power']] <- lm(log(price) ~ log(years) * log(km) * brand, data = data_no_outlier_Mad) -->
+<!-- # stargazer::stargazer(my_models, type = "text", single.row = TRUE, df=FALSE, omit.stat=c("LL","adj.rsq"), no.space=FALSE, -->
+<!-- # notes = c(" ---------------------------------------------", -->
+<!-- #"*** Significant at the 1 percent level.", "** Significant at the 5 percent level.", "* Significantat the 10 percent level."), -->
+<!-- # out="Modelos_regresion/Modelos_regresion_multi4.html") -->
+<!-- # knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/Modelos_regresion/Modelos_regresion_multi4.html") -->
+<!-- # ``` -->
+
+<!-- pruebas de graficos 3d -->
+
+<!-- scatterplot3d(x=brand_factor, y=years, z=price, pch=16, cex.lab=1, -->
+<!--   highlight.3d=TRUE, type="h", xlab='brands', ylab='years', zlab='Price (€)') -->
+
+<!-- attach(data_no_outlier_Mad) -->
+<!-- scatterplot3d(x=brand_factor, y=price, z=years, pch=16, cex.lab=1, -->
+<!--   highlight.3d=TRUE, type="h", xlab='brands', ylab='Price (€)', zlab='years') -->
+<!-- ## years-km-price -->
+<!-- ```{r eval=TRUE,echo=FALSE} -->
+<!-- attach(data_no_outlier_Mad) -->
+<!-- scatterplot3d(x=years, y=km, z=price, pch=16, cex.lab=1, -->
+<!--               highlight.3d=TRUE, type="h", xlab='AGE', -->
+<!--               ylab='Distancia (km)', zlab='Price (€)') -->
+
+<!-- price-years-km -->
+<!-- attach(data_no_outlier_Mad) -->
+<!-- scatterplot3d(x=price, y=years, z=km, pch=16, cex.lab=1, -->
+<!--               highlight.3d=TRUE, type="h", xlab='AGE', -->
+<!--               ylab='Distancia (km)', zlab='Price (€)') -->
+
+<!-- years-power-price -->
+<!-- attach(data_no_outlier_Mad) -->
+<!-- scatterplot3d(x=years, y=power, z=price, pch=16, cex.lab=1, -->
+<!--               highlight.3d=TRUE, type="h", xlab='AGE', -->
+<!--               ylab='Distancia (km)', zlab='Price (€)') -->
+
+<!-- ## years-years.category-price -->
+<!-- attach(data_no_outlier_Mad) -->
+<!-- scatterplot3d(x=years, y=years.category, z=price, pch=16, cex.lab=1, -->
+<!--               highlight.3d=TRUE, type="h", xlab='AGE', -->
+<!--               ylab='Distancia (km)', zlab='Price (€)') -->
+
+<!-- years.category-price-power -->
+<!-- attach(data_no_outlier_Mad) -->
+<!-- scatterplot3d(x=years.category, y=price, z=power, pch=16, cex.lab=1, -->
+<!--               highlight.3d=TRUE, type="h", xlab='AGE category', -->
+<!--               ylab='Price (€)', zlab='power (CV)') -->
+<!-- ``` -->
+
+
+<!-- pruebas de regresión multivariable -->
+<!-- ```{r include=FALSE} -->
+<!-- # relation between price and km -->
+<!-- ## #lineal -->
+<!--   reg_years_price_lineal_3d = lm(price ~ km, data = data_no_outlier_Mad) -->
+<!-- ##exp -->
+<!--   reg_years_price_exp_3d = lm(log(price) ~ km, data = data_no_outlier_Mad) -->
+<!-- ##power -->
+<!--   reg_years_price_exp_3d = lm(log(price) ~ log(km), data = data_no_outlier_Mad) -->
+<!-- ``` -->
+
+<!-- ```{r include=FALSE} -->
+<!-- # relation between price and brand -->
+<!-- ## #lineal -->
+<!--   reg_years_price_lineal_3d = lm(price ~ brand, data = data_no_outlier_Mad) -->
+<!-- ##exp -->
+<!--   reg_years_price_exp_3d = lm(log(price) ~ brand, data = data_no_outlier_Mad) -->
+<!-- ``` -->
+
+<!-- ```{r include=FALSE} -->
+<!-- #relation between price, years and km -->
+<!-- ##lineal -->
+<!-- reg_years_price_lineal_3d = lm(price ~ years + km, data = data_no_outlier_Mad) -->
+<!-- ##exp -->
+<!--   reg_years_price_lineal_3d = lm(log(price) ~ years + km, data = data_no_outlier_Mad) -->
+<!-- ##power -->
+<!--   reg_years_price_lineal_3d = lm(log(price) ~ log(years) + km , data = data_no_outlier_Mad) -->
+<!-- ##power -->
+<!--   reg_years_price_lineal_3d = lm(log(price) ~ log(years) + log(km) , data = data_no_outlier_Mad) -->
+<!-- ``` -->
+
+<!-- ```{r include=FALSE} -->
+<!-- #relation between price, years and brand -->
+<!-- ##lineal -->
+<!--   reg_years_price_lineal_3d = lm(price ~ years + brand, data = data_no_outlier_Mad) -->
+<!-- ##exp -->
+<!--   reg_years_price_lineal_3d = lm(log(price) ~ years + brand, data = data_no_outlier_Mad) -->
+<!-- ##power -->
+<!--   reg_years_price_lineal_3d = lm(log(price) ~ log(years) + brand , data = data_no_outlier_Mad) -->
+<!-- ``` -->
+
+<!-- ```{r include=FALSE} -->
+<!-- ##lineal -->
+<!--   reg_years_price_lineal_3d = lm(price ~ years + km + brand, data = data_no_outlier_Mad) -->
+<!-- ##exp -->
+<!--   reg_years_price_lineal_3d = lm(log(price) ~ years + km + brand, data = data_no_outlier_Mad) -->
+<!-- ##power -->
+<!--   reg_years_price_lineal_3d = lm(log(price) ~ log(years) + km + brand , data = data_no_outlier_Mad) -->
+<!-- ##power2 -->
+<!--   reg_years_price_lineal_3d = lm(log(price) ~ log(years) + log(km) + brand , data = data_no_outlier_Mad) -->
+<!-- ``` -->
+
+

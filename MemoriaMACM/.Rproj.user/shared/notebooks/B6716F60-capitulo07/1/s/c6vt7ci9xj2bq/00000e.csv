@@ -1,0 +1,6 @@
+"0","  ggplot(data_no_outlier_Mad, aes(x = power, fill = years.category)) +"
+"0","    geom_histogram(colour = ""black"") +"
+"0","    geom_density() +"
+"0","    facet_grid(years.category ~ ., scales = ""free"") +    ###histograma"
+"0","    theme(legend.position = ""top"", text = element_text (size = 12))+"
+"0","    labs(fill = ""Tramo de edad"", x=""Potencia (CV)"", y = ""Número de observaciones"")"

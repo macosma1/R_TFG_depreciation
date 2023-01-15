@@ -1,0 +1,7 @@
+"0","#https://www.statology.org/multiple-linear-regression-r/"
+"0","  sal <- data_no_outlier_Mad[,c(6,7,9)]"
+"0","# library(GGally)"
+"0","  colnames(sal) <- c(""Precio"", ""km"", ""Edad"")"
+"0","  # pairs(sal[,-1], pch = 18, col = ""steelblue"") #pairs() function to create a scatterplot of every possible pair of variables:"
+"0","  pm <-ggpairs(sal) #create a similar plot that contains the actual linear correlation coefficients for each pair of variables"
+"0","  pm +theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) "

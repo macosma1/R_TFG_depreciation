@@ -1,0 +1,1 @@
+{"frames":[{"func":"`colnames<-`(`*tmp*`, value = c(\"coeff_depre\", \"r_square\"))","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in dimnames(x) <- dn : \n  la longitud de 'dimnames' [2] no es igual a la extensión del arreglo\n"}

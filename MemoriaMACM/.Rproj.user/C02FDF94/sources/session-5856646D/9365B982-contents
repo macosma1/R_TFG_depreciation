@@ -1,0 +1,309 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "02/10/2022"
+title: "apendice01 -- Cod WebScraping"
+date: "02/10/2017"
+documentclass: book
+forprint: true  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+# metodobib -> true: natbib (descomentar: citation_package: natbib) 
+#           -> false: pandoc (comentar: citation_package: natbib)
+metodobib: true
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+# Apéndice A:
+## Código de las librerías utilizadas en R
+
+\tiny
+```{r echo=TRUE, eval=FALSE}
+  rm(list=ls()) # clean
+ list.of.packages <- c("rvest", "magrittr", "tidyverse", "dplyr", "ggplot2", "tidyr", "purrr", "tibble", "stringr", "forcats", 
+   "data.table", "robotstxt", "readr", "xml2", "rmarkdown", "patchwork", "psych", "scatterplot3d", "broom", "DiagrammeR", 
+   "kableExtra", "knitr", "stargazer", "GGally", "data.table", "mltools")
+ new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
+ if (length(new.packages))
+   install.packages(new.packages)
+  library(rvest) 
+  library(magrittr)
+  library(tidyverse) 
+  library(dplyr)
+  library(ggplot2)
+  library(tidyr) 
+  library(purrr) 
+  library(tibble)
+  library(stringr)
+  library(forcats) 
+  library(data.table)
+  library(robotstxt) #evaluar la accesibilidad de la pag
+  library(readr) 
+  library(xml2)  # analizar documentos XML
+  library(rmarkdown)
+  library(patchwork) #para combinar graficos
+  library(psych)
+  library(scatterplot3d)
+  library(broom)
+  library(DiagrammeR)
+  library(kableExtra)
+  library(knitr)
+  library(stargazer)
+  library(GGally)
+  library(data.table)
+  library(mltools)
+rm(list.of.packages, new.packages)
+```
+\normalsize
+
+## Creación del diagrama
+\tiny
+```{r echo=TRUE, eval=FALSE}
+DiagrammeR::grViz("digraph {
+  graph [layout = dot, rankdir = TB]
+  
+  node [shape = rectangle
+        fontname = Helvetica
+        penwidth = 2.0]        
+    rec1 [label = 'Step 1. Data gathering']
+    rec2 [label = 'Step 2. Outlier treatment (MAD)']
+    rec3 [label = 'Step 3. Clean database']
+    rec4 [label = 'Step 4. OLS models']
+    rec5 [label = 'Step 5. Best fit model']
+  
+  node [shape = rectangle penwidth = 0.5] 
+    rec4_1 [label = 'Linear model']
+    rec4_2 [label = 'Exponential model']
+    rec4_3 [label = 'Power model']
+    
+  # edge definitions with the node IDs  # edge [arrowhead = diamond]
+  #rec1 -> rec2; rec2 -> rec3; rec3 -> rec4; rec4 -> rec4_1; rec4 -> rec4_2; rec4 -> rec4_3; rec4_1 -> rec5; rec4_2 -> rec5; rec4_3 -> rec5;
+  rec1 -> rec2 -> rec3 -> rec4; rec4 -> rec4_1 -> rec5; rec4 -> rec4_2 -> rec5; rec4 -> rec4_3 -> rec5  
+  #si pongo en el edge [label = ''], me aparece un nombre en la linea,  no en el cuadrado
+  
+  graph [nodesep = 0.1]
+  }", height = 500)
+```
+\normalsize
+
+
+## Código del WebScraping en R
+\tiny
+```{r echo=TRUE, eval=FALSE}
+{
+  get_marca = function(gen_link){
+    gen_page = read_html(gen_link)
+    brand = gen_page %>% html_nodes("#ts-table-features .text-right span , .under u , .pl-0 .mb-4:nth-child(1) tr:nth-child(2) .text-right , 
+    .pl-0 .mb-4:nth-child(1) tr:nth-child(1) .text-right") %>% html_text() 
+    date_pattern = "([a-zA-Z]+)"
+    brand <- str_match(brand , date_pattern)
+    brand = brand[4]
+    brand <-str_trim(brand,side="both")
+    return(brand)
+  }
+
+  get_pot = function(gen_link){
+    gen_page = read_html(gen_link)
+    power = gen_page %>% html_nodes(".mb-4:nth-child(1) .print-hidden:nth-child(4) .text-right , .mb-4:nth-child(1) .print-hidden:nth-child(3) 
+.text-right , .mb-4:nth-child(1) .print-hidden:nth-child(2) .text-right , .mb-4:nth-child(1) .print-hidden:nth-child(1) 
+.text-right") %>% html_text() %>% paste(" ", .)
+    date_pattern = "([0-9]+)[- .]CV"
+    power <- str_match(power , date_pattern)
+    power <- power %>% na.omit()
+    power = power[1]
+    power =as.numeric(gsub('\\D+','', power))
+    #%>% str_split("CV") %>% map_chr(1) #no lo borro, pero no lo pongo ahora por probar por si hay errores cuando no ponen la potencia
+    return(power)   #si en potencia no sale CV, es KM #puedo poner una de si no hay CV = NA
+  }
+    
+  get_price = function(gen_link){
+    gen_page = read_html(gen_link)
+    price = gen_page %>% html_nodes(".color-primary.align-middle") %>% html_text()
+    price= as.numeric(gsub('\\D+','', price))
+    price = price[1]
+    return(price)  #si el precio no sale numerico, saldra NA que corresponde a precio bajo pedido
+  }
+  
+  get_km = function(gen_link){
+    gen_page = read_html(gen_link)
+    km = gen_page %>% html_nodes(".mb-4:nth-child(1) .print-hidden:nth-child(4) .text-right , .mb-4:nth-child(1) .print-hidden:nth-child(3) 
+    .text-right , .mb-4:nth-child(1) .print-hidden:nth-child(2) .text-right , .mb-4:nth-child(1) .print-hidden:nth-child(1) .text-right") 
+    %>% html_text() %>% paste(" ", .)
+    date_pattern = "(([0-9]{1,3})[- .])+km"
+    km <- str_match(km , date_pattern) 
+    km <- km %>% na.omit() #eliminate each row that has at least one NA (outliers)
+    km = km[1]    
+    km =as.numeric(gsub('\\D+','', km))
+    return(km)  #si no tiene km = NA,
+  }
+  
+  get_year = function(gen_link){
+    gen_page = read_html(gen_link)
+    year = gen_page %>% html_nodes("#ts-table-features .text-right") %>% html_text() %>% paste("", ., collapse="")
+    #year <- str_spl#it_fixed(year, "/", 3)
+    #year = year[,2]
+    date_pattern = "/([0-9]{4})"
+    year<- str_match(year, date_pattern)
+    if (length(year)>22){
+      year <- year %>% na.omit() #eliminate each row that has at least one NA (outliers)
+      year = year[,2]
+    } else { 
+      year <- year 
+    }
+    return(year)
+  }
+}
+
+#----------------------------Code---------------------------#
+datos = data.frame()
+datos1 = data.frame()
+datos2 = data.frame()
+dato = data.frame()
+
+#ask if is allowed to download the information --> binary answer if the answer is false you are fuck
+link <- "https://www.europa-camiones.com/cabezas-tractoras-usadas/1-31/anuncios-cabezas-tractoras.html?"
+paths_allowed(paths = c(link))
+page = read_html(link)
+#page_result=55
+#for loop
+for(page_result in seq(from =309, to = 316, by = 1)){
+  link = paste0("https://www.europa-camiones.com/cabezas-tractoras-usadas/1-31/anuncios-cabezas-tractoras.html?p=", 
+                page_result) #page by default has space between strings that you are trying to concatenate
+  page = read_html(link)
+  city<-0
+  country <-0
+  brand<-0
+  km<-0
+  name<-0
+  price<-0
+  year<-0
+  power<-0
+  gen_link<-0
+  
+  #assign the class, 
+  name = page %>% html_nodes(".card-title") %>% html_text() %>% str_trim() 
+  country = page %>% html_nodes(".meta-location") %>% html_text() %>% str_split("-") %>% map_chr(1) %>%str_trim(side="both")
+  {
+    city = page %>% html_nodes(".meta-location") %>% html_text()  %>% str_split("-") %>% map_chr(2)
+    city <-str_trim(city,side="both")
+    date_pattern = "([\\a-zA-ZÀ-ÿ\u00f1\u00d1\\.-]{1,24})" #"([\\a-zA-Z\\.-]{1,24})" 
+    #24 es un numero ramdon, es para que incluya Rio de Loba- Viseu
+    city <- str_match(city, date_pattern)
+    city <- city[,2]
+    city <-str_trim(city,side="both")
+  }
+  
+  #------------------------------------------------------------------------------------------------------
+  #obtain the links of each vehicle to search more information
+  gen_link <- page %>% html_nodes(".card-body") %>% html_elements("[href]") %>% html_attr("href") 
+  date_pattern = "(/([([a-zA-Z0-9\\%.-]+)])+)+/([a-zA-Z]+).html"
+  gen_link <- str_match(gen_link , date_pattern)
+  gen_link <- gen_link %>% na.omit()
+  gen_link = gen_link[,1]
+  gen_link <- gen_link %>% paste("https://www.europa-camiones.com", ., sep="")#put the link you get after www-europa...
+  #gen_link
+  
+  #------------------------------------------------------------------------------------------------------ 
+  #with the links, it will go to each one, execute the brand function and the result will put it in a vector, 
+  #we put the USERNAMES = FALSE so that the link does not appear in the vector
+  brand = sapply(gen_link, FUN = get_marca, USE.NAMES = FALSE)# to avoid the url -->FALSE
+  price = sapply(gen_link, FUN = get_price, USE.NAMES = FALSE)# to avoid the url -->FALSE
+  km = sapply(gen_link, FUN = get_km, USE.NAMES = FALSE)# to avoid the url -->FALSE 
+  #year <- c(seq(1:21))
+  year = sapply(gen_link, FUN = get_year, USE.NAMES = FALSE)# to avoid the url -->FALSE
+  year = year[2,]
+  
+  #power - ------------------------------------------------------------------------------------------------------------------------------
+  {
+    power = sapply(gen_link, FUN = get_pot, USE.NAMES = FALSE)
+    #date_pattern = "Pot/([0-9]{3})[- .]CV"
+    #power <- str_match(power , date_pattern)
+    #power = power[,1]
+    #power =as.numeric(gsub('\\D+','', power))
+  }
+  #view(power)
+  #------------------------------------------------------------------------------------------------------------------------------
+#datos = rbind(datos, data.frame(name,  brand, country, city, power, price, km, year,  stringAsFactors=FALSE)) 
+  #rbind para no crearlo siempre, solo ir adjuntando
+  datos1 = rbind(datos1, data.frame(name,  brand, country, city, power, price, km, year, gen_link,  stringAsFactors=FALSE)) 
+  #rbind para no crearlo siempre, solo ir adjuntando
+  #d= rbind(datos1, data.frame(name, country, city, gen_link))
+print(paste("Page: ", page_result)) #tracking problems
+  #tStart<-Sys.time()
+Sys.sleep(time=runif(1, min=14, max=24))
+  #tFin<- Sys.time() - tStart
+}
+
+sapply(datos,class)
+  datos1 = datos1[,-9]
+  datos2 = rbind(datos,datos1)
+  datos = datos2
+
+write.csv(datos, file= 'WS.csv')    #exporting data to a CSV file
+
+#--------------------------------------NOTES-----------------------------------------------------#
+#html_text we retrive all the information
+#html_nodes go to the source code of the web page and look for the node that we want, and remove it from us
+#str_trim() put the text in the correct form, i.e. remove //n...
+#we use str_split to cut and use the first part with map_chr(1) instead of using gsub
+```
+\normalsize
+

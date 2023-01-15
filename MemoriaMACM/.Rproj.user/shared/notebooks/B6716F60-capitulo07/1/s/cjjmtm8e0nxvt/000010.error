@@ -1,0 +1,1 @@
+{"frames":[],"message":"Error in knitr::kable(head((t(yearss))[, 1:14], 2), format = \"latex\",  : \n  no se pudo encontrar la función \"%>%\"\n"}

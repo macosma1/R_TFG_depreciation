@@ -1,0 +1,7 @@
+[1,"Installing 'apaTables' ...\n"]
+[2,"Installing package into ‘/home/macosma1/R/x86_64-pc-linux-gnu-library/3.4’\n(as ‘lib’ is unspecified)\n"]
+[2,"Warning: dependencies ‘car’, ‘MBESS’ are not available\nprobando la URL 'https://cloud.r-project.org/src/contrib/apaTables_2.0.8.tar.gz'\n"]
+[2,"Content type 'application/x-gzip' length 50800 bytes (49 KB)\n============="]
+[2,"============================="]
+[2,"========\ndownloaded 49 KB\n\n"]
+[2,"ERROR: dependencies ‘car’, ‘MBESS’ are not available for package ‘apaTables’\n* removing ‘/home/macosma1/R/x86_64-pc-linux-gnu-library/3.4/apaTables’\n\nThe downloaded source packages are in\n\t‘/tmp/RtmpCCWxrl/downloaded_packages’\n\n\n✔ Package 'apaTables' successfully installed.\nWarning message:\nIn utils::install.packages(\"apaTables\", repos = \"https://cloud.r-project.org\") :\n  installation of package ‘apaTables’ had non-zero exit status\n"]

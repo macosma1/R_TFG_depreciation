@@ -1,0 +1,176 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+title: "Capítulo04 - Metodología"
+date: "22/07/2022"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Metodología
+
+El presente Trabajo de Fin de Grado tiene como objetivo analizar el comportamiento de los valores y depreciación en el mercado de la maquinaria de ocasión. Para ello se seguirá el siguiente modelo:
+
+\begin{center}
+\begin{figure}[H]
+\caption{Modelo metodológico.}
+\begin{center}
+\includegraphics[trim={0 1cm 0 0},clip,scale=0.9]{graficos/modelo_metodologia.png}
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{Elaboración propia}
+  \normalsize
+\end{center}
+\label{fig:ModMetodologia}
+\end{figure}
+\end{center}
+
+
+## Lenguaje y entorno integrado de desarrollo 
+
+Para llevar a cabo para la recolección de la información, la modelización de los datos o evaluar el comportamiento de los valores y depreciación en el mercado de la maquinaria de ocasión se utilizará el lenguaje de programación R y el entorno de programación Rstudio. Así mismo, se implementaron otras herramientas para facilitar la recolección de información. 
+
+Para llevar a cabo la recolección y modelización de los datos, así como la evaluación del comportamiento de los valores y depreciación en el mercado de la maquinaria de ocasión se utilizará el lenguaje de programación R y el entorno de programación Rstudio. En adición a esto, se implementarán otras herramientas para facilitar la recolección de información dentro de las cuales destacamos el SelectorGadget.
+
+R es un lenguaje relativamente joven y muy peculiar ya que, a diferencia de otros lenguajes de programación como Python y Java con los que el desarrollador puede llevar a cabo cualquier tipo de tarea, R está dedicado únicamente para la computación estadística y gráfica. A pesar de ello, se decidió utilizar este lenguaje gracias a su facilidad de extensión y multitud de funciones para descargar y tratar los datos, el cual posibilita el acceso directo al lenguaje de programación, facilitando así su dinamismo y actualización.
+
+Para la elaboración de los códigos, se utilizó un IDE (entorno integrado de desarrollo) conocido como Rstudio. El cual es un sistema de software para el diseño de aplicaciones que combina herramientas comunes para desarrolladores en una sola interfaz de usuario gráfica (GUI), es decir, permite a los desarrolladores ejecutar las tareas sin tener que pasar de una aplicación a otra. 
+
+Rstudio ya que, al ser un IDE, permite llevar a cabo de manera sencilla tareas comunes, difíciles y tediosas de realizar como (editar de código fuente, administrar los archivos que se están usando, gestionar el entorno de trabajo, automatización de compilaciones locales, depurador, análisis del código a tiempo real, entre otras…). 
+
+En adición a esto, otro de los motivos por los que decidió seleccionar este lenguaje se debe a que es un software gratuito que tiene facilidad para compartir códigos, crear herramientas para solucionar problemas comunes. Así mismo, se caracteriza por ser una alternativa amigable y con mucha información accesible en la red (librerías) que facilita el desarrollo del proyecto. Dentro de las principales librerías implementadas, se pueden destacar: 
+
+\begin{itemize}
+  \item DiagrammeR: Paquete para la creación de diagrama de flujos.
+  \item kableExtra: Paquete para construir tablas complejas comunes y manipular estilos de tabla.
+  \item Knitr: Permite crear un documento que mezcla de texto y fragmentos de código.
+  \item Libxml2: Es una biblioteca de código para analizar documentos XML.
+  \item Mltools: Una colección de funciones auxiliares de aprendizaje automático, que ayudan en particular en la fase de análisis exploratorio de datos.
+  \item Psych: Es un paquete que se utiliza para la creación de gráficos de correlación. 
+  \item Readr: Permite leer el fichero cvs.
+  \item Rmarkdown: lo ayuda a crear documentos de análisis dinámicos que combinan código, salida renderizada.
+  \item Robots.txt: Permite averiguar si las secciones de la página web son legalmente accesible. Si sale disallow es que son accesibles.
+  \item Rvest: Está diseñado para trabajar junto a magrittr para expresar operaciones complejas de manera elegante y fácil de entender. 
+  \item Scatterplot3d: Construir gráficos en res dimensiones.
+  \item Tydiverse: Es un conjunto de paquetes en R diseñados para ciencia de datos. Entre los paquetes que incluye, Se utilizarán:
+  \begin{itemize}
+    \item Broom: Toma la salida desordenada y las convierte en tablas ordenadas.
+    \item Dplyr: Ayuda a la manipulación de datos, permite mutar o crear nuevas variables, seleccionar, filtrar, sumarizar, acomodar o agrupar las variables.
+    \item Forcats: Es un paquete especial para lidiar con factores y datos categóricos.
+    \item Ggplot2: Es un paquete que se utiliza para la visualización de los datos mediante gráficos.
+    \item Patchwork: Diseñado para hacer la composición de gráficos.
+    \item Purrr: Este paquete facilita el trabajo con vectores y funciones.
+    \item Tibble: Es una transformación del data frame. Aprovecha lo bueno de los data frame y mejora algunas opciones que quedaron obsoletas.
+    \item Tidyr: Ayuda a transformar los datos para hacerlos más eficientes o tidy. Es decir, permite transformar las filas (para que cada una sea una observación), las columnas (para que cada una sea una variable) y las celdas (para que cada una sea un valor), lo que ayuda a la hora de modelar y graficar los datos.
+    \item Stargazer: Produce código LaTeX, código HTML y texto ASCII para tablas bien formateadas que contienen resultados de análisis de regresión.
+    \item Stringr: Ayuda a la preparación y limpieza de los datos.
+  \end{itemize}
+  \item Xml2: Permite analizar documentos XML. 
+\end{itemize}
+
+Asimismo, dentro de RStudio se utilizó una herramienta denominada R Markdown para llevar a cabo la elaboración del informe.
+
+
+
+
+## R Markdown
+
+R Markdown es una herramienta ofimática que está diseñado con el fin de facilitar la creación de contenido y a su vez muchos tipos de salida (HTML, PDF, MS_Word, ODT, RTF, entre otros tipos expuestos en la figura \ref{fig:PagWeb5}.) a partir del archivo .Rmd. el cual permite combinar código en lenguaje R y contenido en formato de texto. Así mismo, permite:
+
+\begin{itemize}
+  \item Automatizar tareas, manipular y analizar datos. 
+  \item Crear visualizaciones de datos de alta calidad.
+  \item Crear dashboards para visualizar y analizar datos.
+  \item Crear informes automáticos.
+  \item Disponer de herramientas de análisis estadístico para ahondar en el conocimiento de los datos.
+\end{itemize}
+
+También se caracteriza por proporcionar informes rápidos y reproducibles de R que, a partir de los fragmentos incrustados de código R que son ejecutables con la sintaxis de Knitr, se puede actualizar el documento en cualquier momento volviendo a tejer los fragmentos de código.
+
+
+\begin{center}
+\begin{figure}[H]
+\caption{Posible formatos estáticos y dinámicos de salida.}
+\begin{center}
+\includegraphics[width=3.5 in]{graficos/PagWeb5.png}
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \citep{R-bookdown}
+  \normalsize
+\end{center}
+\label{fig:PagWeb5}
+\end{figure}
+\end{center}
+
+## Por qué utilizar R markdown para escribir un trabajo de fin de grado?
+
+Muchos de los trabajos que se realizan tanto en el ámbito laboral como estudiantil generan resultados numéricos, gráficos y en formato de tablas los cuales, para integrarlos en los programas mencionados anteriormente, se requiere en la mayoría de las ocasiones de las acciones de copiado y pegado en el portapapeles para insertarlos en el documento. 
+
+Ar ser un trabajo muy artesanal, en muchas ocasiones ocurre que bien porque se han detectado errores o porque se quiere volver a recalcular con unos nuevos parámetros, se tiene que repetir todo el proceso. En cambio, R Markdown permite incluir elementos producidos por el lenguaje R, (código R, gráficos, tablas, etc) en el mismo documento evitando así que se tenga que recurrir al copiado y pegado al portapapeles para construir un documento de resultados.
+
+Es por ello que suele ser una herramienta básica para el trabajo habitual de un profesional de la Estadística o de una persona que en su trabajo requiera la inclusión de resultados estadísticos. Ahora bien, para poder llevar a cabo un informe hay que tener en cuenta que es necesario instalar las siguientes herramientas: lenguaje R, la aplicación RStudio, la utilidad Pandoc y el sistema LaTeX (tinytex), que será el encargado de producir el documento pdf.

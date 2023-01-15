@@ -1,0 +1,108 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "22/09/2022"
+title: "Capítulo03 - Marco teórico"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib"] #, "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Marco teórico
+
+## Mercados de ocasión y su importación
+
+La crisis económica ha afectado a muchos sectores, llegando a tener una gran influencia en el sector de la construcción, teniendo como consecuencia una caída en la demanda de este tipo de servicios, provocando una fuerte recesión en los ingresos de las empresas del sector. Es por ello que muchas de las empresas al no poder mantener sus operaciones y/o poder costear maquinarias para continuar sus actividades económicas, se vieron obligadas a recurrir a mercados secundarios.  
+
+Como nos indica [@orti1974mercados] estos mercados se hallan vinculados fuertemente tanto al nivel de renta de los consumidores, como a la existencia del mercado paralelo de bienes de primera mano. Ya que, a pesar de que los bienes de ocasión o de segunda mano pueden seguir prestando el mismo tipo de servicios que tenían asignados cuando eran nuevos, lo hacen bajo unas condiciones que sus compradores consideran menos eficiente.  
+
+Dentro de los mercados de ocasión, solemos encontrar maquinaria, la cual constituyen el patrimonio de una empresa como bien de equipo. La adquisición de la maquinaria constituye un aspecto de vital importancia en su rentabilidad económica actual y futura, por tanto, como nos indica [@nava2009analisis] deberá basarse en un estudio económico profundo considerando elementos condicionantes y criterios de elección.  
+
+Como factores condicionantes que influyen en la selección de la maquinaria y su posible adquisición, pueden considerarse, la situación económica y financiera, el escenario económico y las perspectivas de trabajo; Sin embargo, las condiciones y la tipología de los trabajos, la capacidad de producción necesaria, la flexibilidad al cambio en las condiciones, la fiabilidad y el servicio postventa son las condiciones de contorno del problema de la elección de la máquina más conveniente.  
+
+Además, es fundamental considerar que estas pierden valor al colaborar en el proceso productivo y por el mero transcurso del tiempo. A esta merma de los activos de la empresa se denomina depreciación. Cuando se habla de depreciación, se suele hacer referencia a la pérdida de valor de un bien mueble o inmueble; esta valoración es realizada por expertos mediante un procedimiento donde se examinan y analizan variables que reflejen la imagen fiel del bien, es decir, que no oculten información.   
+
+Según [@piqueras2015coste], la cotización del equipo depende de diversos factores, como del número de años de servicio, de las horas trabajadas hasta el momento, de las que le restan para llegar a su obsolescencia, de la naturaleza de las tareas realizadas y de las condiciones en que se ha usado. La antigüedad es, en numerosas ocasiones, el factor que más influye en la cotización, por ser el dato más fiable. El abandono de la fabricación de determinados modelos es una circunstancia que hace bajar la cotización de los equipos. Si la máquina pertenece a una gran firma internacional, se garantiza cierta confianza en su valor de reventa.  
+
+Uno de los principales aspectos que dificultan la gestión operativa de las pequeñas y medianas empresas, consiste en conocer y determinar la depreciación que sufren los productivos que requieren para poder llevar a cabo su actividad económica. Dentro de las causas que la produce, según lo publicado por [@piqueras2015coste], podemos encontrar:   
+
+\begin{enumerate}
+  \item Depreciación material: Dentro de esta, podemos encontrar dos tipos, la depreciación funcional y la depreciación física. En la primera, la maquinaria pierde valor a medida que presta los servicios que le son propios, y con respecto a la segunda, la devaluación de los bienes de equipo se debe al transcurso del tiempo, a veces incluso más que si estuvieran trabajando con normalidad. Una adecuada política de mantenimiento reducirá o retrasará la desvalorización de las máquinas, pero nunca la eliminará.
+  \item Depreciación por agotamiento, caducidad o siniestro: un siniestro deprecia de forma brusca el valor del equipo.  
+  \item Depreciación por obsolescencia: Es la merma que sufre una máquina cuando, incluso siendo nueva, queda anticuada por no ser competitiva frente a otras. Una de las principales causas es la competencia entre fabricantes. Esta puede deberse a:
+  \begin{itemize}
+    \item Obsolescencia tecnológica: La innovación y los avances técnicos motivan la aparición continua de nuevas máquinas que cumplen la misma función de las existentes, pero con mayor eficiencia, menores costes, ofreciendo mayor seguridad, etc. Si el ahorro de costes es suficiente, a la empresa le convendrá renovar o cambiar el equipo anticuado antes de terminar su vida técnica.
+    \item Obsolescencia por variaciones en la demanda: Una máquina excelente para un determinado nivel de producción, puede no ser rentable en otro nivel.
+    \item Obsolescencia por alteración en la retribución de algún factor productivo: Ante consecuencias de la inflación como lo son las subidas del precio de la mano de obra o del precio del combustible, puede ser rentable aumentar la automatización o cambiar el tipo de máquina.
+  \end{itemize}
+\end{enumerate}
+
+Si se conociera exactamente la depreciación de un equipo podríamos estimar en cada momento su cotización en el mercado o valor de reventa. Sin embargo, este valor fluctúa según las condiciones locales y circunstancias específicas de cada caso, de modo que el precio depende de lo que un comprador esté dispuesto a pagar.  
+
+Generalmente, se suelen utilizar tablas para la tasación de maquinarias, Es una herramienta muy fiable que transmite confianza y transparencia a todas las partes involucradas. Dentro de estas tablas, podemos encontrar las del “Grupo Autónomo Nacional de Vendedores de Automóviles, Camiones y Motocicletas”- Ganvam, la cual desde su creación ha figurado como la organización más representativa de concesionarios oficiales, compraventas independientes, agencias concertadas, talleres independientes de vehículos nuevos y usados.   
+
+Estas tablas de valoración se actualizan cada tres meses en colaboración con Eurotax (líder en el mercado de valoración de vehículos de ocasión). Tienen en cuenta la depreciación del vehículo, pero no otros aspectos, como el kilometraje, posibles accesorios o equipamientos extras, ni su estado general. Por tanto, podemos decir que es un valor estimado que pueden utilizar los concesionarios, talleres, peritos profesionales y otras empresas relacionadas con la compraventa de vehículos y la tasación.  
+
+Las tasaciones mediante a tablas y los métodos aceptados, en ocasiones, suelen alejarse de la verdadera depreciación que sufre el activo, sin embargo, como nos indica [@postiguillo2018case] que, a partir de la evolución del valor de mercado de los activos en su vida útil, características técnicas, se puede hallar un modelo de amortización más apropiado y a partir de este, su depreciación. Por lo tanto, el objetivo principal del estudio es determinar el comportamiento de los valores de las cabezas tractoras, poder encontrar un modelo de regresión adecuada de esta maquinaria a lo largo de una serie de años y con ello, analizar la depreciación de en el mercado de la maquinaria de ocasión.

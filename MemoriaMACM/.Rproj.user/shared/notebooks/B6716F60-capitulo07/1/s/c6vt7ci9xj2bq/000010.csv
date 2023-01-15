@@ -1,0 +1,7 @@
+"0","#    ggplot(data_no_outlier_Mad ,aes(x = power, fill= country)) +"
+"0","#     geom_histogram( color=""black"") +"
+"0","#     facet_grid(country ~ .)"
+"0",""
+"0",""
+"0","#borro cosas que no uso"
+"0","    rm(df_brand, df_country, df_year, resume, resume04, resume07)"

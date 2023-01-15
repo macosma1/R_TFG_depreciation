@@ -1,0 +1,13 @@
+---
+output: pdf_document
+---
+
+In this final degree work we seek to analyze the behavior of the values and depreciation in the used machinery market, specifically the tractor heads market. For this purpose, the R programming language will be used to achieve an interactive technique for the collection of information and construction of OLS regression models.
+
+The calculation of machinery depreciation for valuation purposes is usually made assuming straight-line depreciation in imitation of the straight-line depreciation commonly used in the accounting and tax fields. However, this depreciation pattern may not be appropriate in all cases.
+
+In those cases with a secondary market, it is possible to test whether other types of depreciation models better reflect the behavior of the value. Currently, there is a large amount of information available on the Internet, mainly of assets in secondary markets, which allows to obtain the information to study the behavior of the price of these assets as a function of several variables.
+
+In this work we use a technique for the collection of information known as WebScraping, which is capable of obtaining specific, accurate, reliable and adjusted to the needs of each case in an automated way. Subsequently, the raw database is processed to eliminate those values that deviate greatly from the observations and generate incorrect valuations.
+
+In order to obtain a representative overview of the depreciation that these assets undergo, various minimum quadratic regression models (linear, exponential and potential) are developed and the age of these assets is related to their value and, in turn, the effect that the make and model of the tractor unit or the country of origin of the machinery may have is related.

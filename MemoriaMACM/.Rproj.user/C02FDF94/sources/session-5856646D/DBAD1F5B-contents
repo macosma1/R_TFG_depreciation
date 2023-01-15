@@ -1,0 +1,391 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "28/07/2022"
+title: "Capítulo05 - Descripción de la base datos bruta  y creacion de nuevas variables (creo years y years.category)"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Obtención y descripción de la base de datos
+
+
+
+
+## Fuente de obtención de datos 
+
+Gracias a la gran cantidad de información accesible en internet, es posible llevar a cabo dicho estudio. Para ello, se han recolectado los datos necesarios de la [página web Europa-Camiones.com](https://www.europa-camiones.com/), la cual está editada por el grupo Via Mobilis, referente en más de cuarenta países como experto en anuncios de materiales industriales y de vehículos pesados usados o también llamados de segunda mano en Internet.
+
+\begin{center}
+\begin{figure}[H]
+\caption{Páginas web Grupo Vía Mobilis.}
+\begin{center}
+\includegraphics[width=5.3 in]{graficos/PagWeb1.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \citep{EUCamiones}
+  \normalsize
+\end{center}
+\label{fig:Grupo_Via_movilis}
+\end{figure}
+\end{center}
+
+<!-- ```{r echo=FALSE,out.width='80%',fig.align='center',fig.pos='htbp',fig.cap="\\label{fig:figh}Gr\\'afico de L\\'{\\i}aneas creado con ggplot2. Fuente: elaboraci\\'on propia"} -->
+
+El objetivo de este grupo es ofrecer una amplia variedad de servicios adaptados a las necesidades de los profesionales de diferentes sectores (transporte, manutención, construcción, agricultura) a través de una red de 4 páginas web 100% especializadas en la figura \ref{fig:Grupo_Via_movilis}. 
+
+Si bien este grupo ofrece una gran cantidad de anuncios, para el desarrollo del estudio solo se hará uso de los datos obtenidos mediante la página web de Europa camiones, ya que es la web que ofrece los anuncios correspondientes a las cabezas tractoras objeto de análisis. 
+
+Dicha página a fecha de este trabajo - junio 2022- tienen 209.029 anuncios publicados, por lo que no seríamos capaces de listarlos uno a uno. Sin embargo, la página oficial sugiere una división general por temas, indicando 4 grupos y cada grupo contiene de 1 a 15 subgrupos, con el fin de poder agrupar los datos contenidos en cada grupo. No obstante, en realidad la base de datos cuenta con una clasificación en cascada mucho más detallada la cual se puede apreciar en la figura \ref{fig:Vehiculos} donde se ve el conjunto de datos, visto desde la página web:
+
+\begin{center}
+\begin{figure}[H]
+\caption{Servicios especializados del grupo Vía Mobilis.}
+\begin{center}
+\includegraphics[width=5.9 in]{graficos/PagWeb2.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \citep{EUCamiones}
+  \normalsize
+\end{center}
+\label{fig:Vehiculos}
+\end{figure}
+\end{center}
+
+En la figura se puede apreciar la fuente especifica utilizada en el trabajo correspondiente a las Cabezas tractoras las cuales, en junio 2022 tiene disponibles 6415 anuncios. Cuando hablamos de las cabezas tractoras se hace referencia al vehículo que está equipado de un acoplamiento o quinta rueda que le permite combinarse con un semirremolque que se engancha a la cabina donde se colocan todas las mercancías para su transporte. Si bien, está por sí sola no tienen la consideración de camiones al no estar integrado con el resto de la estructura del camión y pueden funcionar sin necesidad de cargarlo, es considerada una pieza de gran importancia en el sector del transporte y más concretamente del transporte de mercancías por carretera. Además, esta posibilidad de acople y desacople lo convierte en vehículos más flexibles y adaptables. 
+
+Marcas como Volvo, Renault, Mercedes o Scania tienen a la venta diferentes tipos de modelos. Sin embargo, ante los altos costos de los vehículos nuevos, se tiene la opción de acudir al mercado de segunda mano o mercado de ocasión donde la oferta es considerable y depende de cada usuario tomar una decisión de acuerdo con sus necesidades, circunstancias personales y económicas que, serán las que determinen cuál será la alternativa más idónea. Por lo tanto, resulta fundamental la recolección de un conjunto de datos adecuado que nos ayude a la hora de la toma de decisiones.
+
+Dentro de cada una de estas maquinarias podemos encontrar características técnicas que las diferencian entre sí, entre ellas, las más relevantes son: 
+
+\begin{itemize}
+  \item Modelo de cabeza tractora: existen diferentes modelos en el mercado, 4×2, 4×4, 6×2, 6×4, 6×6, 8×4… su diferencia fundamental es el tamaño que más convenga para desarrollar de la mejor manera su actividad.
+  \item Precio: Suele ser decisiva a la hora de elegir una cabeza tractora. No obstante, es fundamental que no se convierta en el factor más determinante de todos, puesto que el factor más importante es que la compra pueda satisfacer las necesidades. Si se necesita una cabeza tractora muy potente para obtener las prestaciones necesarias para poder llevar a cabo el trabajo perfectamente, se tendrá que sacrificar, en parte, el precio de la maquinaria.
+  \item Kilómetros acumulados: Las cabezas tractoras son vehículos muy fiables que acumulan una gran cantidad de kilómetros sin que su mecánica tenga por qué resentirse. Esto no quiere decir que dé igual el kilometraje de la cabeza tractora.
+  \item Estado del vehículo: El gran inconveniente que presenta el mercado de ocasión es que, por lo general, no se conoce la procedencia del vendedor y resulta más complicado saber si es de fiar y si el vehículo se encuentra en buen estado. Una opción es confiar solo en empresas de venta con cierto bagaje, reputación y fiabilidad comprobada que garanticen que el vehículo vaya a tener un buen rendimiento en el futuro.
+  \item Capacidad de carga: Cada fabricante varía los limites adaptando la capacidad de carga de las cabezas tractoras en función de del modelo ofertado.
+  \item Suspensión: resorte/ neumática; neumática/ neumática; resorte/ resorte.
+  \item País de localización – zona Euro.
+  \item Alquiler, leasingn, compra - venta.
+  \item Peso limpio: una de las características más importante a la hora de seleccionar la cabeza es tractora es su peso limpio (sin carga ni conductor en su interior).
+  \item Las marcas conocidas que pueden tener las cabezas tractoras son: BMC, DAF, Iveco, MAN, Mercedes Benz, Renault, Scania, Volvo.
+\end{itemize}
+
+\begin{center}
+\begin{figure}[H]
+\caption{Marcas de vehiculos ofertados en la páginas web.}
+\begin{center}
+\includegraphics[trim={0 0 1cm 0},clip,scale=1]{graficos/PagWeb3.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}  
+\label{fig:Vehiculos_Tipos}
+\end{figure}
+\end{center}
+
+## Recolección de la información
+
+Como se ha comentado anteriormente, debido a la complejidad y gran cantidad de información disponible, actualmente el manejo y organización de los datos tiene mucho más valor puesto que, a la hora de realizar un análisis sirve como orientación y/o punto de partida para la toma de decisiones. Ahora bien, el proceso de obtención, recopilación y preparación de datos confiables y de calidad necesarios para el análisis puede ser una tarea muy difícil, por lo que es importante resaltar la globalización y el aporte del desarrollo tecnológico en materia de datos, que pone una gran cantidad de información al alcance de todo el público, representando una ganancia en tiempo y dinero en el proceso de obtención de los datos. 
+
+La problemática hoy en día no gira en torno al acceso a los datos, sino a su tratamiento e interpretación, cuyas disciplinas son la ciencia de datos y el Business Analytics respectivamente. Es por ello que, para el análisis o transcripción de los ingentes recursos disponibles resulta fundamental el uso de una aplicación tecnológica que permita llevar a cabo la recolección de datos específicos, precisos, fiables y ajustados a las necesidades de cada caso de forma automatizada. 
+
+Para ello, no existe una única solución, sino que existen numerosas aplicaciones y lenguajes de programación disponibles que permiten llevar a cabo este proceso. Para la consecución de los objetivos propuestos, se ha decidido utilizar para la obtención de la información de manera fiable y eficiente el WEB SCRAPING o raspado web, técnica utilizada mediante programas de software para extraer información de sitios web, la cual simula la navegación de un humano en la World Wide Web ya sea utilizando el protocolo HTTP manualmente, o incrustando un navegador en una aplicación.
+
+
+
+
+
+## Priorización de datos 
+
+Una vez que conocido la cantidad de datos disponibles, se procede a priorizar los más confiables para su almacenamiento y centralizarlos con una plataforma de análisis. Esta plataforma hace posible una preparación de datos más rápida que permite crear dashboards personalizados para miles de vehículos.
+
+La primera fase de esta investigación consiste en analizar la depreciación en el mercado de las cabeceras tractoras de segunda mano. Para ello, se lleva a cabo la recolección de información ofertadas en la fuente Europa camiones.com con el objetivo de obtener los datos necesarios para el análisis empírico y dar respuesta al objetivo general del trabajo el cual consiste en analizar la depreciación en el mercado de las cabeceras tractoras de segunda mano. 
+
+Sin embargo, tras la revisión de Europa-Camiones.com se destaca que utilizar el árbol de navegación es incómodo y puede ser confuso a la hora de buscar datos, debido a que el conjunto de datos ofrecidos no sigue un único patrón, es decir, que permite introducir información incompleta de cabezas tractoras, lo que genera complicaciones a la hora de recolectar los datos, ya que las tablas variaban de longitud. Es por ello que, para la obtención de las variables (Potencia, Kilometraje) se realizó en primer lugar la selección de varias celdas y posteriormente la limpieza de los datos, puesto que, en caso de no realizarse, se producían errores de selección y/o incluso no se seleccionaba la información aun encontrándose disponible. 
+
+Generalmente las páginas webs están escritas en un código de lenguaje específico, el cual es interpretado por los buscadores (Chrome, Edge…), y puede presentar distinto formato de código como el HTML (Hypertex Markup Language) y el CSS (Cascading Style Sheets). Al abrir una página web, no se ve ni el código ni el formato, si no una representación del mismo que, para poder observarlo, es necesario hacer click derecho en la página web + inspeccionar.
+
+\begin{center}
+\begin{figure}[H]
+\caption{Ejemplo de visualización de código y formato de página web.}
+\begin{center}
+\includegraphics[width=5.9 in]{graficos/WebScraping1.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:WS1}
+\end{figure}
+\end{center}
+
+Como se puede observar en la figura \ref{fig:WS1}, esta presenta mucha información complicada e inentendible por lo que, para realizar la recopilación de los datos, son necesarias algunas herramientas y paquetes que faciliten el trabajo, dentro de la cual podemos destacar:
+
+\begin{itemize}
+  \item	Rvest: Ayuda en la extracción de información de las páginas web. 
+  \item	robots.txt
+  \item SelectorGadget: Es una extensión de Chrome, que ayuda a analizar HTML y a rastrear la web para obtener la información que necesitamos. Al activar esta herramienta será importante seleccionar la información deseada en color verde y amarillo y la no deseada en color rojo, obteniendo un resultado como el que se visualiza el código y la información seleccionada como en la figura \ref{fig:WS2}, lo que facilita al usuario el acceso a la información de interés. 
+\end{itemize}
+
+\begin{center}
+\begin{figure}[H]
+\caption{Visualización herramienta Selector Gadget.}
+\begin{center}
+\includegraphics[width=5.7 in]{graficos/WebScraping2.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \citep{EUCamiones}
+  \normalsize
+\end{center}
+\label{fig:WS2}
+\end{figure}
+\end{center}
+
+La recolección de la información se llevó a cabo de dos etapas:
+
+1.	La primera etapa consiste en la extracción de la información a partir de la página principal que muestra de forma resumida la información del vehículo. En ella se extrajo el nombre del vehículo, su precio, país y ciudad en el que se encuentra.
+
+\begin{center}
+\begin{figure}[H]
+\caption{Visualización de la informacion que se encuentra en la página principal.}
+\begin{center}
+\includegraphics[width=5.8 in]{graficos/WebScraping3.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \citep{EUCamiones}
+  \normalsize
+\end{center}
+\label{fig:WS3}
+\end{figure}
+\end{center}
+
+2.	En segundo lugar, para poder ampliar las características que se ofrecían de cada cabeza tractora en la página principal, se llevó a cabo una segunda forma de extracción de la información, que permitió conseguir datos interesantes y útiles para los posteriores análisis como (Marca, Potencia, Kilometraje, Precio, entre otros).
+
+\begin{center}
+\begin{figure}[H]
+\caption{Visualización de la informacion caracteristicas de las cabezas tractoras.}
+\begin{center}
+\includegraphics[width=5.8 in]{graficos/WebScraping4.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \citep{EUCamiones}
+  \normalsize
+\end{center}
+\label{fig:WS4}
+\end{figure}
+\end{center}
+
+Para obtener los links de cada vehículo y poder recolectar la información que presentaba en su interior, fue necesario llevar a cabo la inspección del código. Este proceso fue complejo debido a que el código en el que se encontraba la información era un formato CSS.
+
+\begin{center}
+\begin{figure}[H]
+\caption{Visualización de código y formato CSS de la página web.}
+\begin{center}
+\includegraphics[width=5.9 in]{graficos/WebScraping5.png} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:WS5}
+\end{figure}
+\end{center}
+
+Para poder llevar a cabo el WebScraping (extraccion de los datos) en Rstudio, se implementaron una serie de funciones, dentro del cual se pueden destacar:
+
+\begin{itemize}
+  \item Read\_html («url») Con esta función se crea un objeto que contiene todo el código o etiquetas HTML.
+  \item html\_nodes(«objeto html»,«etiqueta css»): Es usada para seleccionar partes del objeto que contiene todo el código html. El segundo parámetro es la clase CSS que está relacionada con la sección que se desea extraer.
+  \item html\_name(): Obtiene los atributos html.
+  \item html\_text(): Extrae el texto html.
+  \item html\_attr(): Regresa los atributos especificos html.
+  \item html\_table(): Convierte una tabla html en una estructura de datos en R.
+  \item str\_match(): Evalua si el valor con el que se compara sigue una estructura (pattern) especifico. 
+  \item str\_trim(): Coloca el texto en la forma deseada (sin espaciado) i.e. remove //n...
+  \item str\_split(): Se usa para separar string.
+  \item rbind: Se emplea para no crear el dataframe por cada raspado de la página, sino que solo ir adjuntando los valores de la página por la que esté pasando, manteniendo el resto de los valores.
+  \item Sys.sleep (Time): Se utiliza para suspender la función de ejecutar el raspado de la información y con ello, no sobrecargar el servidor y evitar que te baneen.
+\end{itemize}
+
+
+<!--   -----------------------------------------------------Lectura de datos de WebScraping -----------------------------------------------------    --> 
+
+<!-- ```{r include=FALSE}  -->
+<!-- #no se mostraría el código, no se mostrarían los resultados, pero sí que se evaluaría el código R -->
+
+<!-- options(readr.show_col_types = FALSE) #to quiet the full column specification -->
+<!-- ## Importing data from a CVS file -->
+<!-- data_WebScraping <- suppressMessages(read_csv("WebScraping.csv", -->
+<!--                         locale = locale(encoding = "ISO-8859-1",  -->
+<!--                         asciify = TRUE), na = "NA")) -->
+<!-- data_WebScraping <- select(data_WebScraping, -1, -stringAsFactors) # to display on the screen -->
+<!-- # data_WebScraping <- read_csv("WS.csv",  -->
+<!-- #                         locale = locale(encoding = "ISO-8859-1",  -->
+<!-- #                         asciify = TRUE), na = "NA") -->
+<!-- #data_WebScraping <- select(data_WebScraping, -1, -stringAsFactors, -11, -12) -->
+<!-- #colnames(WebScraping)[1] <- "Number" -->
+<!-- datos <- data_WebScraping # to modify -->
+<!-- data_WebScraping <- data_WebScraping %>% rename ("power (CV)" = colnames(data_WebScraping)[5], "price (€)" = colnames(data_WebScraping)[6]) -->
+<!-- #view(data_WebScraping) -->
+<!-- ``` -->
+
+
+Al culminar con la técnica de WebScraping, los datos se organizón en tablas de datos con formato ISO-8859-1 y fueron almacenados en forma de fichero tipo .csv, logrando recolectar una muestra de `r nrow(data_WebScraping)` filas referidas a los productos en oferta (cabezas tractoras) y `r ncol(data_WebScraping)` columnas que indican las diferentes características que pueden llegar a presentar las cabezas tractoras (país, ciudad, marca, precio, kilometraje, potencia) que, a la fecha 15/06/2022 se encuentren disponibles en el mercado de ocasión ofrecidas en la página web. Estos datos serán pilar fundamental para poder llevar a cabo un buen análisis. 
+
+Una vez obtenida la muestra, se procedió con la eliminación de algunas celdas que no presentaban valor (NA), con el fin de evitar predicciones y/o análisis erroneos, 
+
+```{r include=FALSE}
+#resume the number of NA
+  resume = data.frame(t(colSums(is.na(datos)))) #to obtain for each column the number of empty data (NA)
+  resume = cbind(resume, dim(datos)[1]) #we can see the total number of data (row)
+
+  datos <- datos[!is.na(datos$price), ] #omit rows with NA in specific column of data frame
+  datos <- datos[!is.na(datos$year), ]
+  datos <- datos[!is.na(datos$km), ]
+
+  resume1 = data.frame(t(colSums(is.na(datos))))
+  resume1 = cbind(resume1, dim(datos)[1])
+  resume = rbind(resume, resume1)
+
+  rownames(resume) <- c("Con NAs","Quitando NAs") 
+  colnames(resume) <- c("Nombre", "Marca", "País", "Ciudad", "Potencia", "Precio", "km", "Edad", "Total Datos")
+  #view(resume) #cuadro resumen de quitar NA
+
+```
+
+
+```{r eval=TRUE,echo=FALSE}
+knitr::kable(
+head(resume[, 1:9], 2), format = "latex", booktabs = TRUE,  align = "c", 
+caption = "\\label{tabla01} Número de celdas de cada variable sin valor (NA)."
+) %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+```
+
+Pudiendo observarse que el número de datos que se utilizarán para llevar a cabo el análisis se ha visto reducido a `r nrow(data_WebScraping) - nrow(datos)`, resultando un total de `r nrow(datos)` valores. 
+
+```{r include=FALSE}
+#create variable (years and years.category)
+  date <- Sys.Date() ## [1] "2022-07-11"
+  date <- as.numeric(format(date,'%Y'))
+  datos <- datos %>% mutate(years = date-year) #creamos la columna con los años que tiene el camion funcionando
+
+  datos$years.category <- cut(datos$years, breaks = c(-1, 5, 14, 28, Inf), labels = c("Nuevo", "Medio", "Viejo", "Muy viejo")) # Convertir la variable numerica "years" en categorica usando puntos de corte
+
+datos <- datos %>%  filter(years>-1 & years<100)
+#we can see the different number of classes
+  
+ #sapply(datos,class)
+ #summary(datos)
+  resume04<- rbind(describe(datos$power), describe(datos$price), describe(datos$km), describe(datos$years)) #similar as summary but it show the result as a dataframe
+  rownames(resume04) <- c("Potencia", "Precio", "Km", "Edad" ) 
+  #view(resume04)
+
+#df_brand <- datos %>% group_by(brand) %>% tally() %>% filter(n > 2) # cuenta cuantos hay por grupo
+#df_brand= aggregate(datos$year,by=list(datos$brand),mean, na.rm=TRUE) # saca la media de cada grupo 
+#df_brand <- cbind(datos %>% group_by(brand) %>% tally(),aggregate(datos$year,by=list(datos$brand),mean, na.rm=TRUE)) %>% filter(n > 2)#indicates the types of brand --> without repeating. and create in a table that indicates how many brands there are and the mean of each one
+#df_brand = df_brand[,-3]
+#-------------------------------------------------------#
+#elimino variable no utilizadas
+
+  rm(date, resume1)
+#----------------------------NOTES---------------------------#
+## Statistic are categorized as
+### Measure of central tendency --> (mean, mode, media)
+### Measure of variability or spread --> (variance, standard desviation, skewness)
+```
+
+Algunas valores interesantes de las carácteristicas técnicas a estudiar se encuentran en la siguiente tabla:
+```{r eval=TRUE,echo=FALSE}
+knitr::kable(
+head(resume04[, c(2,3,4,7,12,13)], 4), format = "latex", booktabs = TRUE,  align = "c", digits=2,
+caption = "\\label{tabla_02} Valores estadísticos de la base de datos bruta."
+) %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+```
+
+En la tabla \ref{tabla_02}, podemos ver como se ha venido comentando, como el número de observaciones de la potencia es diferente al resto de valores por la cantidad de celdas con valores (NA). Además, se observa como todos presentan una kurtosis positiva, la cual indica que los datos muestran más valores atípico extremos que una distribución normal.
+
+Así mismo, se realizó la creación de nuevas variables:
+
+\begin{itemize}
+  \item years: En el que se calcula la edad de la cabeza tractora a partir de la fecha de la primera matriculación de la misma.
+  \item years.category: En el que se separa por tramos de edades la cabezas tractoras ofrecidas, siguiendo el siguiente formato: [0,5] = Nuevo, [6,14] = Medio, [16,28] = Viejo, [28,$\infty$] = Muy viejo.
+\end{itemize}

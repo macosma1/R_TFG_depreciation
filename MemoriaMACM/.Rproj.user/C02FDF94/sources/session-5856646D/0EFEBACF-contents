@@ -1,0 +1,479 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "10/08/2022"
+title: "Capítulo07 - Análisis exploratorio (gráficos violín, box plot, histograma y tablas estadísticas)"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="120%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Análisis exploratorio
+
+Resulta impensable hoy en día tomar una decisión adecuada en cualquier ámbito partiendo del desconocimiento, por lo que se considera fundamental el valor y potencial de los datos, así como toda información disponible a la hora de tomar una decisión, puesto que el realizar una selección errónea y/o representación visual inadecuada de los datos puede dificultar o incluso imposibilitar el proceso de extracción de la información, y conllevar a una toma de decisión inadecuada. 
+
+```{r eval=TRUE, echo=FALSE}
+#----------------------------------------------------------------filtro datos segun una condicion y almaceno valores en listas-------------------------------------------------------------------------------
+#agrupo por paises sin hacer filtro
+  df_brand <- data_no_outlier_Mad %>% group_by(brand) %>% 
+   summarise( n=n(), mean_year = mean(year), mean_years= mean(years), mean_price = ceiling(mean(km)), median_price=median(km), variance_price = var(km), sd_price = sd(km)) %>% arrange(n)
+  df_country <- data_no_outlier_Mad %>% group_by(country) %>% 
+   summarise( n=n(), mean_year = ceiling(mean(year)), mean_years= ceiling(mean(years)), mean_price = ceiling(mean(km)), median_price=median(km), variance_price = var(km), sd_price = sd(km)) %>% arrange(n)
+
+#calculo las variables, elimina aquellas que no cumplan condiciones propuestas, como el no tener mas de dos valores por marca, por pais, 
+  # uno agrupa por paises y otro por marcas y dice cuanto hay por cada uno, ademas saca la media de km y la suma total
+  df_country <- data_no_outlier_Mad %>% group_by(country) %>% 
+   summarise( n=n(), mean_year = ceiling(mean(year)), mean_years= ceiling(mean(years)), mean_price = ceiling(mean(km)), median_price=median(km), variance_price = var(km), sd_price = sd(km)) %>% 
+   filter(n>2) %>% arrange(n)
+  df_brand <- data_no_outlier_Mad %>% group_by(brand) %>% 
+   summarise( n=n(), mean_year = mean(year), mean_years= mean(years), mean_price = ceiling(mean(km)), median_price=median(km), variance_price = var(km), sd_price = sd(km)) %>% filter(n>2) %>% arrange(n)
+
+#agrupa en un vector aquellos paises que tengan mas de dos cabezas tractoras y agrupa en un vector aquellas marcas que tengan mas de dos cabezas tractoras
+  countries <- as.vector(data.frame(t(df_country[,1])))
+  brands <- as.vector(data.frame(t(df_brand[,1])))
+
+#en data_no_outlier_Mad solo mantendremos los valores que cumplan las dos condiciones anteriormente planteadas... y veo las diferencia de como cambian las dimensiones
+  #dim(data_no_outlier_Mad) # 4188 10
+  #data_no_outlier_Mad <- filter(data_no_outlier_Mad, country %in% countries [[1]], brand %in% brands [[1]])  #vector no es transpuesto
+  data_no_outlier_Mad <- filter(data_no_outlier_Mad, country %in% t(countries), brand %in% t(brands))  #vector transpuesto
+  #dim(data_no_outlier_Mad) # 4173 10
+
+#summary as a dataframe of power, country, years and brand
+  resume07<- rbind(describe(data_no_outlier_Mad$power), describe(data_no_outlier_Mad$price), describe(data_no_outlier_Mad$km), describe(data_no_outlier_Mad$years)) 
+  rownames(resume07) <- c("Potencia", "Precio", "Km", "Edad" ) 
+  
+
+#separo en una lista segun power, country, years y brand
+  list_power <- split(data_no_outlier_Mad, data_no_outlier_Mad$power)
+  list_country <- split(data_no_outlier_Mad, data_no_outlier_Mad$country) 
+  list_years <- split(data_no_outlier_Mad, data_no_outlier_Mad$years) 
+  list_brand <- split(data_no_outlier_Mad, data_no_outlier_Mad$brand)
+
+
+#del cuadro que esta, para el analisis, sacamos un resumen de cada variable y la almaceno en la lista_resumen:
+  df_year <- data_no_outlier_Mad %>% group_by(years) %>% summarise( n=n(), mean_price = ceiling(mean(price)))
+  yearss = df_year[,1:2]
+  brands = df_brand[,1:2]
+  countries = df_country[,1:2]
+  years.categories <- data_no_outlier_Mad %>% group_by(years.category) %>% summarise( n=n()) %>% arrange(n)
+  lista_resumen <- list(yearss, brands, countries, years.categories) #accedo a este lista_resumen[[2]]
+#----------------------------------------------------------------    
+```
+
+
+```{r eval=TRUE,echo=FALSE}
+knitr::kable(
+head(resume07[, c(2,3,4,7,12)], 4), format = "latex", booktabs = TRUE,  align = "c", digits=2, col.names = c("n", "Media", "sd", "mad", "curtosis"), caption = "\\label{tabla_002} Valores estadísticos de las variables a estudiar posterior a la implementación del método MAD."
+) %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+```
+
+Estos datos a analizar fueron procesados con el método MAD previamente con el fin de evitar valores erróneos que pudieran generar una malinterpretación de la información, pudiendo observar como se han reducido tanto las observaciones como los coeficientes de curtosis, MAD, y desviación estándar.
+
+Finalmente, se estudiaran `r nrow(data_no_outlier_Mad)` alternativas de cabeza tractoras, las cuales presentan características técnicas explicadas en las siguientes tablas y figuras.
+
+
+```{r eval=TRUE,echo=FALSE}
+colnames(brands) <- c("Marca", "Datos")
+knitr::kable(
+head(brands[, 1:2], 8), format = "latex", booktabs = TRUE,  align = "c", 
+caption = "\\label{tabla03} Número de observaciones marca."
+) %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE) 
+#%>%
+#footnote(general="texto", number = c("Nota 1; ", "Nota 2;"),
+#number_title = "Tipo 1:")
+colnames(brands) <- c("brand", "n")
+```
+
+En la tabla \ref{tabla03} podemos ver como dentro de las diferentes marcas de cabeza tractoras, la que presentan un mayor número de observaciones es DAF Trucks NV, a su vez, vemos como casi todas presentan un número muy similar de valores, a diferencia de la marca DAF y la marca Otros, que representan algunas marcas aisladas que pueden ser útiles para el anális. Estas maquinarias pueden llegar a provenir de diversas partes de europa, como se representa en la tabla \ref{tabla04}. 
+
+
+```{r eval=TRUE,echo=FALSE}
+colnames(countries) <- c("País", "Datos")
+knitr::kable(
+head(countries[, 1:2], 10), format = "latex", booktabs = TRUE,  align = "c", 
+caption = "\\label{tabla04} Número de cabezas tractoras según el país en que se encuentra."
+) %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+colnames(countries) <- c("country", "n")
+```
+
+Dentro de las observaciones expuestas en la tabla \ref{tabla04}, vemos como a diferencia de la tabla \ref{tabla03} hay una gran diferencia entre la distribución de las observaciones, vemos como el mayor número de vehículos proviene de Holanda con `r countries[10,2]` y dentro de los paises con menor número de cabezas tractoras ofertados encontramos a Grecia y a Luxemburgo.
+
+```{r eval=FALSE,echo=FALSE}
+knitr::kable(
+head(years.categories), format = "latex", booktabs = TRUE,  align = "c", 
+caption = "\\label{tabla05} Número de cabezas tractoras según su fecha de matriculación."
+) %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+```
+
+
+<!-- ```{r eval=TRUE,echo=FALSE} -->
+<!-- knitr::kable( -->
+<!-- head((t(yearss))[,1:15], 2), format = "latex", booktabs = TRUE,  align = "c",  -->
+<!-- caption = "\\label{tabla06} Número de celdas de cada variable sin valor (NA)." -->
+<!-- ) %>% -->
+<!-- kable_styling(latex_options = c("striped","condensed", "HOLD_position"), -->
+<!-- position = "center", -->
+<!-- full_width = TRUE) -->
+<!-- ``` -->
+
+<!-- ```{r eval=TRUE,echo=FALSE} -->
+<!-- knitr::kable( -->
+<!-- head((t(yearss))[,16:30], 2), format = "latex", booktabs = TRUE,  align = "c",  -->
+<!-- caption = "\\label{tabla07} Número de celdas de cada variable sin valor (NA)." -->
+<!-- ) %>% -->
+<!-- kable_styling(latex_options = c("striped","condensed", "HOLD_position"), -->
+<!-- position = "center", -->
+<!-- full_width = TRUE) -->
+<!-- ``` -->
+
+<!-- ```{r eval=TRUE,echo=FALSE} -->
+<!-- knitr::kable( -->
+<!-- head((t(yearss))[,31:42], 2), format = "latex", booktabs = TRUE,  align = "c",  -->
+<!-- caption = "\\label{tabla08} Número de celdas de cada variable sin valor (NA)." -->
+<!-- ) %>% -->
+<!-- kable_styling(latex_options = c("striped","condensed", "HOLD_position"), -->
+<!-- position = "center", -->
+<!-- full_width = FALSE) -->
+<!-- ``` -->
+
+```{r eval=TRUE,echo=FALSE}
+colnames(yearss) <- c("Edad", "Datos")
+knitr::kable(
+head((t(yearss))[,1:14], 2), format = "latex", booktabs = TRUE,  align = "c", 
+caption = "\\label{tabla06} Número de cabezas tractoras por años que han transcurrido desde su de primera matriculación.") %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+
+knitr::kable(
+head((t(yearss))[,15:28], 2), format = "latex", booktabs = TRUE,  align = "c") %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+
+knitr::kable(
+head((t(yearss))[,29:42], 2), format = "latex", booktabs = TRUE,  align = "c") %>%
+kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+position = "center",
+full_width = FALSE)
+
+colnames(yearss) <- c("years", "n")
+```
+
+En la tabla \ref{tabla06} podemos ver el número de observaciones según los años que presenten la cabeza tractoras. En esta, vemos como la mayor cantidad de datos se encuentran en las cabezas tractoras entre los 4 y 9 años desde su fecha de primera matriculación.
+
+La correcta visualización de los datos permite detectar y comprender las tendencias, los valores atípicos y los patrones ocultos en grandes conjuntos de datos. Y, además de la tablas, existen muchos tipos de herramientas de visualización populares que permiten mostrar la información de manera eficaz como lo son los gráficos de barras para comparaciones, mapas para datos espaciales, gráficos de líneas para datos temporales y el diagrama de dispersión para comparar dos medidas, entre otros.
+<!-- [@EUCamiones] -->
+
+  <!-- labs(title = "Con la leyenda en la parte superior", -->
+  <!--      subtitle = "Manipulando la leyenda") +  -->
+  <!-- theme(legend.position = "top") -->
+
+```{r include=FALSE}
+  par(mfrow = c(2,1))
+  ggplot(df_brand, aes(x = reorder(brand, n), y = n, fill = brand)) + geom_col() + geom_text(aes(label = paste0((round(n/nrow(data_no_outlier_Mad),2)*100),"%")), hjust = +0.7, colour = "black", size=3.5)+ coord_flip()  + theme(legend.position = "top", text = element_text (size = 12) ) + labs(fill = element_blank(), x="Marca", y="Número de observaciones") # bar graphs numbers of cabezas tractoras for every brand
+  # ggplot(df_brand, aes(x = reorder(brand, mean_years), y = mean_years, colour = brand)) + geom_point() + coord_flip() + theme(legend.position='none', axis.title.y = element_blank() )  
+   ggplot(df_brand, aes(x = reorder(brand, mean_years), y = mean_years, colour = brand)) + geom_point() + coord_flip() + theme(legend.position='none', text = element_text (size = 12))  + labs(x="Marca", y = "Promedio de edad") #bar graphs edad promedio of cabezas tractoras for every brand
+  ##Bar graph
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Datos característicos de las diferentes marcas de cabezas tractoras.}
+\begin{center}
+\includegraphics[width=5.2 in]{figurasR/unnamed-chunk-41-1.pdf} \\
+\includegraphics[width=5.2 in]{figurasR/unnamed-chunk-41-2.pdf} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:brands_graphs}
+\end{figure}
+\end{center}
+
+<!-- https://environmentalcomputing.net/graphics/ggplot/ggplot-labels/ -->
+```{r eval=FALSE, echo=FALSE, out.width='100%',fig.show='hold',fig.align='center', fig.cap="Dos gráficos R cara a cara"}
+  par(mfrow = c(2,1))
+  plot1<-ggplot(df_brand, aes(x = reorder(brand, n), y = n, fill = brand)) + geom_col() + geom_text(aes(label = paste0(round(n/nrow(data_no_outlier_Mad),2),"%")), hjust = +0.7, colour = "black")+ coord_flip()  + theme(legend.position = "top", text = element_text (size = 12)) + labs(x="Brands") # bar graphs numbers of cabezas tractoras for every brand
+  plot2<-ggplot(df_brand, aes(x = reorder(brand, mean_years), y = mean_years, colour = brand)) + geom_point() + coord_flip() + theme(legend.position='none')  #bar graphs edad promedio of cabezas tractoras for every brand
+  plot1+plot2       ##Bar graph
+```
+
+En la figura \ref{fig:brands_graphs} se representan las marcas de las cabezas tractoras respecto al número medio de edad en el que se ha realizado la matriculación y respecto al número de cabezas tractoras que se encuentran de cada marca. De la misma podemos destacar que el mayor número de cabezas tractoras representadas provienen del fabricante de vehículos neerlandés DAF Trucks NV, y que estos presentan una edad promedio de 6,6 años. Además, vemos como los vehículos más antiguos corresponden a las marcas suecas Scania y Volvo, con una edad promedio próxima a los 11 años.
+
+```{r include=FALSE}
+  par(mfrow = c(2,1))
+  ggplot(df_country, aes(x = reorder(country, n), y = n, fill = country)) + geom_col() + geom_text(aes(label = paste0((round(n/nrow(data_no_outlier_Mad),2)*100),"%")),hjust = +0.7, colour = "black", size=3.5) + coord_flip() + theme(legend.position = "top", text = element_text (size = 12), legend.text = element_text (size = 7)) + labs(fill = element_blank(), x="País", y = "Número de observaciones") #bar graphs numbers of cabezas tractoras for every country
+  ggplot(df_country, aes(x = reorder(country, mean_years), y = mean_years, colour = country)) + geom_point()  + coord_flip() + theme(legend.position='none', text = element_text (size = 12)) + labs(x="País", y = "Promedio de edad")   #bar graphs edad promedio of cabezas tractoras for every country       ##Bar graph
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Datos característicos de las diferentes países que ofrecen las cabezas tractoras.}
+\begin{center}
+\includegraphics[width=5.2 in]{figurasR/unnamed-chunk-43-1.pdf} \\
+\includegraphics[width=5.2 in]{figurasR/unnamed-chunk-43-2.pdf} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:countries_graphs}
+\end{figure}
+\end{center}
+
+
+```{r eval=FALSE, echo=FALSE, out.width='90%',fig.show='hold',fig.align='center', fig.cap="\\label{fig:figh}Gr\\'afico de L\\'{\\i}aneas creado con ggplot2. Fuente:elaboraci\\'on propia"}
+  par(mfrow = c(2,1))
+  plot3<-ggplot(df_country, aes(x = country, y = n, fill = country)) + geom_col() + geom_text(aes(label = n),hjust = +0.7, colour = "black") + coord_flip() + theme(legend.position = "top", text = element_text (size = 15))#bar graphs numbers of cabezas tractoras for every country
+  plot4<-ggplot(df_country, aes(x = country, y = mean_years, colour = country)) + geom_point()  + coord_flip() + theme(legend.position='none') #bar graphs edad promedio of cabezas tractoras for every country
+  plot3
+  plot4       ##Bar graph
+```
+En la figura \ref{fig:countries_graphs}  se representan los datos teniendo en cuenta los países en los cuales se encuentra ofertado el vehículo en función del número medio de edad en el que se ha realizado la matriculación y respecto al número de cabezas tractoras que se encuentran de cada país. En esta vemos como Grecia presenta el menor número de vehículos ofertados y, además, presentan el mayor promedio de edad (32 años). Así mismo, como se comento en la tabla \ref{tabla03}, vemos como el mayor número de vehículos proviene de Holanda y que los países en los que la edad promedio de los vehículos ofertados más bajo corresponden a España y a Italia.
+
+```{r include=FALSE, fig.height = 10.9, fig.width = 8, fig.show='hold',fig.align='center'}
+   data_no_outlier_Mad %>%  
+   ggplot() + 
+     aes(x = brand, fill= country) + 
+     geom_bar( color="black") + 
+     facet_grid(country ~ .) + 
+     geom_text(aes(label = ..count..), stat = "count", vjust = -0.1, colour = "black", size=3.5) + 
+     theme(legend.position = "top", text = element_text (size = 12)) + 
+      labs(fill = "Países", x="Marca", y = "Número de observaciones")+
+  ylim(0, 300)
+##Bar graph
+```
+ 
+\begin{center}
+\begin{figure}[H]
+\caption{Número de las cabezas tractoras según el país de venta y marca.}
+\begin{center}
+\includegraphics[width=5.5 in]{figurasR/unnamed-chunk-45-1.pdf} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:countries_price_graphs_1}
+\end{figure}
+\end{center}
+
+En la figura anterior, se puede apreciar a modo resumen de las figuras \ref{fig:countries_graphs} y \ref{fig:countries_price_graphs_1} una representación gráfica de de entre las marcas de cabezas tractoras y el país donde se está vendiendo el vehículo. 
+
+
+```{r include=FALSE, warning=FALSE, message=FALSE}
+  ggplot(data_no_outlier_Mad, aes(x = years, y = price, colour = years.category)) + 
+    geom_point() +
+    theme(legend.position = "top", text = element_text (size = 12)) +#scatter plots y gráfico de dispersion
+    labs(colour = element_blank(), x="Edad", y = "Precio") +
+  scale_y_continuous(limits = c(0, 125000))
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Gráfico de dispersión de los precios de las diferentes cabezas tractoras respecto al tramo de edad al que pertenece.}
+\begin{center}
+\includegraphics[width=6 in]{figurasR/unnamed-chunk-46-1.pdf} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:countries_price_graphs_2}
+\end{figure}
+\end{center}
+
+A partir de la figura de dispersión representada anteriormente, se aprecia una tendencia negativa en el comportamiento del precio de venta con el paso del tiempo. Si bien hay unos matices diferenciadores en cuanto al comportamiento del precio de venta en los años iniciales y en los años ubicados hacia el final de su vida útil, se aprecia que, a nivel general, a medida que el vehículo sea más antiguo, el precio disminuye. 
+
+
+
+
+```{r include=FALSE, warning=FALSE, message=FALSE}
+  ggplot(data_no_outlier_Mad, aes(x = power, fill = years.category)) +
+    geom_histogram(colour = "black") +
+    geom_density() +
+    facet_grid(years.category ~ ., scales = "free") +    ###histograma
+    theme(legend.position = "top", text = element_text (size = 12))+
+    labs(fill = "Tramo de edad", x="Potencia (CV)", y = "Número de observaciones")
+#    ggplot(data_no_outlier_Mad ,aes(x = power, fill= country)) +
+#     geom_histogram( color="black") +
+#     facet_grid(country ~ .)
+
+
+#borro cosas que no uso
+    rm(df_brand, df_country, df_year, resume, resume04, resume07)
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Representación de las potencias de los distintos grupos de cabezas tractoras.}
+\begin{center}
+\includegraphics[width=6 in]{figurasR/unnamed-chunk-47-1.pdf} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:power_graphs}
+\end{figure}
+\end{center}
+
+
+En la siguiente figura \ref{fig:power_graphs} se puede observar las diferentes potencias de las cabezas tractoras que se encuentran ofertadas, estas se han separado según un rango de edad prestablecido anteriormente. Dentro de esta se ve como el mayor número de cabezas tractoras suelen presentar una potencia entre los 400 y los 600 CV y tienen una edad inferior a 15 años. Además, se evidencia como aquellos vehículos que presentan una edad superior tienden a tener una menor potencia, principalmente por los avances tecnológicos, que han traído una mayor potencia en la producción de estas cabezas tractoras.
+
+Una vez explicado algunas características de la base de datos con la que se va a llevar a cabo el análisis, resulta fundamental, si presentan alguna relación la variable endógena (precio de venta) con las variables exógenas (edad del maquinaria, kilómetros recorridos). 
+
+\clearpage   
+```{r include=FALSE}
+#https://www.statology.org/multiple-linear-regression-r/
+  sal <- data_no_outlier_Mad[,c(6,7,9)]
+# library(GGally)
+  colnames(sal) <- c("Precio", "km", "Edad")
+  # pairs(sal[,-1], pch = 18, col = "steelblue") #pairs() function to create a scatterplot of every possible pair of variables:
+  pm <-ggpairs(sal) #create a similar plot that contains the actual linear correlation coefficients for each pair of variables
+  pm +theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) 
+    #theme(axis.text = element_text(size = 5))
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Representación de la correlación respecto a la edad, kilometraje y precio.}
+\begin{center}
+\includegraphics[width=6.2 in]{figurasR/unnamed-chunk-48-1.pdf} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:corr}
+\end{figure}
+\end{center}
+
+En la figura \ref{fig:corr} se aprecia la relación entre edad y el kilometraje presentan una tendencia positiva, en donde los valores se encuentran un poco dispersos,  si bien el coeficiente de correlación no es muy elevado, parece ser significativa.
+
+Del mismo modo, en la figura \ref{fig:corr} se observa como tanto el kilometraje como la edad respecto al precio presentan una tendencía decreciente (una relación inversa). Además, parece existir una mayor fuerza de relación entre la variable precio de venta y la edad desde que se produjo la primera matriculación de la cabeza tractora, al presentar un coeficiente de correlación más cercano a [-1,1], es por ello que en la representación se visualiza una menor dispersión entre las observaciones. Por lo que será importante llevar a cabo diversos modelos OLS de regresión para analizar el comportamiento del precio en función a las variaciones de edad. 
+<!--
+```{r}
+data_no_outlier_Mad %>% 
+  ggplot() +
+  aes(x = price, y = years, color = country) +
+  geom_point() +
+  facet_grid(country ~ .)
+
+#data_no_outlier_Mad %>% 
+#  ggplot() +
+#  aes(x = years, fill= brand) +
+#  geom_bar( color="black") +
+#  facet_grid(brand ~ .)
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+```
+Tal y come se comento anteriormente, en esta grafica se puede observar de manera conjunta la cantidad de cabezas tractoras por paises teniendo en cuenta la edad media, dentro de la cual, se ve que salvo en Holanda, todos los paises tienen la misma tendencia donde la mayor cantidad de cabezas tractoras tiene una edad media menor a 10 años.
+-->
+
+
+
+
+
+
+
+<!-- 
+#----------------------------------------GRAPHICS--------------------------------------------------------------------
+#To make the bars narrower or wider, set width in geom_col()
+#To add space between bars within a group, make width smaller and set the value for position_dodge
+#leer lo de library(patchwork) para poner en una misma parte dos gráficos diferentes
+# Using plot_layout() to specify the heights of each plot
+#geom_point(shape = 21) para cambiar la forma de los puntos
+# coord_flip() para cambiar eje X e Y
+
+# Set the axis labelse
+##xlab("Age in years")
+##ylab("Height in inches")
+##otra forma scale_x_continuous(name = "Age\n(years)")
+#
+##poner titulo al gráfico 
+#ggtitle("Age and Height\nof Schoolchildren")
+
+-->
+

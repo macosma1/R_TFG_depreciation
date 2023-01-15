@@ -1,0 +1,291 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "2/08/2022"
+title: "Capítulo06 - Limpieza de la base de datos (detección de datos anómalos)"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="120%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Limpieza de la base de datos
+
+Una de las ramas de estudio más importantes de la estadística es el análisis de la calidad de los datos puesto que, en caso de presentar problemas (heterogeneidad, faltantes, etc.) pueden conducir a formular predicciones incorrectas y tomar decisiones erróneas con graves consecuencias. Entre los principales problemas que pueden presentar los datos, se encuentran los conocidos como valores atípicos (outliers) que “es una observación que se desvía mucho de otras observaciones y despierta sospechas de ser generada por un mecanismo diferente” [@munoz2013tecnicas].
+
+```{r include=FALSE}
+#grafico
+  boxplot(datos$price~datos$years, 
+        xlab = "Años desde la primera matriculación",  ylab = "Precio", ylim = c(0, 200000)) 
+  #boxplot(datos$price~datos$years,outline=FALSE)
+```
+
+
+\begin{center}
+\begin{figure}[H]
+\caption{Representación gráfica de los datos con outliers.}
+\includegraphics[trim={0 0.35cm 0 1.2cm},clip,scale=1]{figurasR/unnamed-chunk-28-1.pdf}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:Box_Outliers}
+\end{figure}
+\end{center}
+
+```{r include=FALSE}
+#grafico
+  boxplot(datos$price~datos$years.category, 
+        xlab = "Tramos de edades",  ylab = "Precio", ylim = c(0, 200000))
+  #boxplot(datos$price~datos$years.category,outline=FALSE)
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Representación gráfica de los datos con outliers. }
+\includegraphics[trim={0 0.35cm 0 1.2cm},clip,scale=0.85]{figurasR/unnamed-chunk-29-1.pdf}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:Box_Outliers2}
+\end{figure}
+\end{center}
+
+Basadose en lo anteriormente expuesto, a partir de la base de datos bruta recolectada que como se aprecia en las figuras \ref{fig:Box_Outliers} y \ref{fig:Box_Outliers2} presenta valores anómalos, se lleva a cabo la limpieza de registros enviados incorrectamente y de los datos que son sospechosos de ser erróneos, en el sentido que no siguen el mismo patrón que la mayoría. En primer lugar, se eliminan aquellos datos de cabezas tractoras que presenten “NA”, es decir, que no presenten información completa en (precio, kilómetros recorridos y año de primera matriculación). En segundo lugar, se procedió a realizar dos métodos para la detección de estos valores atípicos (Interquartile Range *IQR* y Median Absolute Deviation *MAD*) con el fin de eliminar y/o suavizar aquellos datos que puedan afectar y con ello producir un error en la extracción de la información.
+
+Como primera alternativa, se utilizó la diferencia de rango intercuartílico, al ser una buena medida de variabilidad para distribuciones asimétricas y conjuntos de datos con valores atípicos. Este se calculó utilizando las siguientes formulas, con una constante *c*= 1.5 para valores atípicos leves:
+
+\begin{equation}
+IQR = Q_3-Q_1 
+\label{eq:IQR}
+\end{equation}
+
+\begin{equation}
+T_{min} = Q_1 - ( c * IQR )
+\label{eq:tmin}
+\end{equation}
+
+\begin{equation}
+T_{max} = Q_3 + ( c * IQR )
+\label{eq:tmax}
+\end{equation}
+
+Como segunda alternativa, se utilizó la desviación absoluta alrededor de la mediana, debido a que como indica [@leys2013detecting],la mediana al igual que la media, es una medida de tendencia central que apenas se ve afectada por la presencia de valores atípicos. El *MAD* se calculó utilizando la siguiente formula:
+
+\begin{equation}
+MAD = b * median (|x_i-median(x)|
+\label{eq:MAD}
+\end{equation}
+
+Con este valor se procedió a calcular el umbral conservador ($\alpha$ =3) para la detección de valores anómalos: 
+
+\begin{equation}
+T_{min},T_{max}=median(x) \pm (\alpha * MAD)
+\label{eq:t}
+\end{equation}
+
+
+```{r eval=TRUE, echo=FALSE}
+#---------------------------------------------------#
+  #dim(datos) ## la dimension es de [1] filas=4615 y columnas=2
+  AGE <- unique(datos$years) # obtenemos los AGEs por los que partir el dataframe
+
+#get threshold values for outliers
+  list_quantiles <- tapply(datos$price, datos$years, quantile)
+  Q1s <- sapply(1:length(AGE), function(i) list_quantiles[[i]][2])
+  Q3s <- sapply(1:length(AGE), function(i) list_quantiles[[i]][4])
+  IQRs <- tapply(datos$price, datos$years, IQR)
+  minis <- sapply(1:length(AGE), function(i) list_quantiles[[i]][1])
+  maxis <- sapply(1:length(AGE), function(i) list_quantiles[[i]][5])
+  Mes <- sapply(1:length(AGE), function(i) list_quantiles[[i]][3]) #median
+  MAD <- tapply(datos$price, datos$years, mad)
+
+#Intercuartil
+  Lowers <- Q1s - 1.5*IQRs #valor atípico leve dista --> q < Q1 – 1,5 · IQR o bien q > Q3 + 1,5 · IQR
+  Uppers <- Q3s + 1.5*IQRs 
+
+#Hampel filter -->MAD
+  lower_bound <- Mes - 3 * MAD
+  Upper_bound <- Mes + 3 * MAD
+
+#for to collect the data that pass the filter
+  list_year <- split(datos, datos$years)
+  data_no_outlier <- NULL
+  data_no_outlier_Mad <- NULL
+  for (i in 1:length(AGE)){
+    out <- subset(list_year[[i]], list_year[[i]]$price > Lowers[i] & list_year[[i]]$price < Uppers[i]) #Intercuartile range
+    data_no_outlier <- rbind(data_no_outlier, out)
+    #data_no_outlier <- rbind(out)
+    outMad <- subset(list_year[[i]], list_year[[i]]$price > lower_bound[i] & list_year[[i]]$price < Upper_bound[i]) #Hampel filter -->MAD
+    data_no_outlier_Mad<- rbind(data_no_outlier_Mad, outMad)
+  }
+
+
+#dim(data_no_outlier) ## [1] 4297    2
+#dim(data_no_outlier_Mad) ## [1] 4188    2
+
+
+  #------------------------------------------------------------------------------------------  
+#elimino
+  rm(AGE, i, IQRs, lower_bound, Lowers, MAD, maxis, Mes, minis, Q1s, Q3s, Upper_bound, Uppers, out, outMad, list_quantiles, list_year)
+#---------------------------------------------------------------------------------------------------------------------------------------------------
+list_marca <- data_no_outlier_Mad[2]
+data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(list_marca = ifelse(brand == "Est", "Otro", brand))      
+data_no_outlier_Mad <- data_no_outlier_Mad [, c ("name", "list_marca", "country", "city", "power", "price", "km", "year", "years", "years.category")]
+colnames(data_no_outlier_Mad)[2] <- "brand"
+ rm(list_marca)
+```
+
+Una vez culminada la limpieza de datos con ambos métodos, se observaron lo siguientes resultados del primer método (IQR) en la figura \ref{fig:Box_1}:
+```{r include=FALSE}
+#grafico
+  par(mfrow = c(1,2))
+  boxplot(data_no_outlier$price~data_no_outlier$years, 
+        xlab = "Edades",  ylab = "Precio")
+  boxplot(data_no_outlier$price~data_no_outlier$years.category, 
+        xlab = "Tramos de edades", las = 3) 
+  
+  # ggplot(data_no_outlier, aes(price, years.category)) +
+  #  geom_boxplot()+coord_flip()+
+  #   theme(axis.text.x=element_text(angle=90, hjust=1))+
+  #   labs(y='Tramos de edades', x = element_blank())
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Representación gráfica de los datos posterior a la aplicación del método de diferencia de rango intercuartílico.}
+\includegraphics[trim={0 0.35cm 0 1.2cm},clip,scale=0.85]{figurasR/unnamed-chunk-31-1.pdf}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:Box_1}
+\end{figure}
+\end{center}
+ Se observa como en la figura \ref{fig:Box_1} se reducen considerablemente el número de valores anómalos, produciendo una reducción en la amplitud del rango intercuartílico y de los limites de la caja de bigotes. A su vez, se obtuvieron los resultados del segundo método (MAD), representados en las figuras \ref{fig:Box_2} y \ref{fig:Box_2}: 
+
+ 
+```{r include=FALSE}
+#grafico
+  par(mfrow = c(1,1))
+  boxplot(data_no_outlier_Mad$price~data_no_outlier_Mad$years,outline=FALSE,
+          xlab = "Años desde la primera matriculación",  ylab = "Precio", ylim = c(0, 150000))
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Representación gráfica de los datos sin outliers posterior a la aplicación del método MAD.}
+\includegraphics[trim={0 0.35cm 0 1.2cm},clip,scale=0.85]{figurasR/unnamed-chunk-32-1.pdf}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:Box_2}
+\end{figure}
+\end{center}
+
+
+
+```{r include=FALSE}
+#grafico
+  boxplot(data_no_outlier_Mad$price~data_no_outlier_Mad$years.category,outline=FALSE,
+        xlab = "Tramos de edades", ylab = "Precio", ylim = c(0, 120000))
+```
+
+
+\begin{center}
+\begin{figure}[H]
+\caption{Representación gráfica de los datos sin outliers posterior a la aplicación del método MAD.}
+\includegraphics[trim={0 0.35cm 0 1.2cm},clip,scale=0.85]{figurasR/unnamed-chunk-33-1.pdf}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:Box_3}
+\end{figure}
+\end{center}
+
+ Se puede observar como en la figura \ref{fig:Box_3} se observa como los tramos de edad nuevo y medio presentan distribución es simétrica, en cambio para los tramos de edad viejo y muy viejo, estos presentan una distribución asímetrica negativa.
+ 
+ Además se aprecia como en las figuras \ref{fig:Box_2} y \ref{fig:Box_3} con el método MAD se eliminan una mayor cantidad de observaciones atípicas en comparación al método IQR, produciendo una reducción del total de la muestra a `r nrow(data_no_outlier_Mad)` cabezas tractoras. Se ve como reduce la amplitud del rango intercuartílico y de los limites de la caja de bigotes. Es por ello que se utilizará el método MAD con el fin de reducir las posibilidades de conducir a decisiones erróneas y llevar a cabo el análisis de manera fiable y robusta. 
+
+<!--
+### https://universeofdatascience.com/how-to-remove-outliers-from-data-in-r/
+    https://www.adictosaltrabajo.com/2019/11/28/deteccion-y-reemplazo-de-outliers-con-r/
+#-------------------------------------------------------#
+#----------------------DETECTION OF OUTLIERS---------------------------------# sirve
+#https://aakinshin.net/posts/harrell-davis-double-mad-outlier-detector/
+#https://www.reneshbedre.com/blog/find-outliers.html
+#https://universeofdatascience.com/how-to-remove-outliers-from-data-in-r/
+#-------------------------------------------------------#  
+-->
+
+
+

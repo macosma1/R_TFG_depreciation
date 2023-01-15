@@ -1,0 +1,127 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "22/10/2022"
+title: "Capítulo01 - Introducción"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib"] #, "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Conclusión
+
+<!--## Primera sección -->
+
+En primer lugar 
+
+La mayor disponibilidad de datos nos ha permitido revisar el comportamiento de la depreciación de ciertos activos fijos activos fijos. Nuestros resultados sobre la maquinaria de construcción muestran su patrón de depreciación según el mercado.
+
+En esta tesis de fin de carrera se pretende analizar el comportamiento de los valores y la depreciación en el mercado de la maquinaria usada, concretamente en el mercado de tractores. Para ello, se utilizará el lenguaje de programación R para conseguir una técnica interactiva de recogida de información y construcción de modelos de regresión OLS.
+
+Esta línea de investigación puede seguir desarrollándose ampliando el marco de estudio, no sólo considerando la antigüedad de las máquinas, como en la contabilidad, sino añadiendo otras variables explicativas, como la marca o el modelo. Además, puede extenderse a otros sectores o activos, y dentro del mismo sector, puede repetirse con una sección transversal diferente, para comprobar la estabilidad de los resultados.
+
+El caso de estudio muestra cómo es posible determinar el comportamiento de la depreciación de la cabeza tractora en función de su edad empleando información de mercado, así como de otras variables como los es la marca de la maquinaria. Pudiendose apreciar claramente la importancia de la variable edad en todos los tipos.
+
+
+Debido a que la amortización depende de la vida útil, del valor residual y en algunos casos, del valor de reposición, solo se pueden realizar estimaciones o predicciones sobre las mismas.
+
+El uso e impacto de los costes de amortización en los sistemas productivos, y su importancia en términos estratégicos para los empresarios, hacen imprescindible llevar a cabo una revisión de los métodos de amortización existentes y plantear alternativas que ajusten de una forma más real la depreciación que sufren estos activos.
+
+
+Con el acceso a un volumen de información cada vez mayor, unido a las nuevas tecnologías que permiten el análisis de grandes cantidades de datos, se puede obtener a través de modelos de regresión, unos coeficientes de amortización que se ajusten con mayor precisión a la realidad del mercado. 
+
+A tal fin se han aplicado técnicas de regresión lineal, exponencial y potencial sobre un conjunto de activos relacionados con la maquinaria de obra pública. Tras llevar a cabo los análisis y observar los coeficientes de determinación, se concluye que el grupo de maquinaria relacionada con las excavadoras de ruedas presenta un grado de ajuste R 2 superior al resto del grupo de activos en el modelo de regresión exponencial. No obstante, se analiza también el grupo de maquinaria de excavadoras de cadenas. Con el estudio llevado a cabo se detecta como este segundo grupo de maquinaria presenta una vida útil ligeramente superior a las
+excavadoras de ruedas. Los motivos de esta diferencia son técnicos, y aquí se abriría una nueva línea de investigación, en la que se analicen otros factores relevantes para determinar la depreciación y el estado de conservación de la maquinaria.
+
+
+Se han construido una serie de modelos de valoración de maquinaria de obra pública. Los modelos permiten obtener el valor razonable, así como la medida del descuento entre el valor de oferta y el precio final, donde, de manera generalizada, este valor de descuento es cada vez menor a medida que aumenta la antigüedad, aunque existen casos puntuales en los que ocurre lo contrario.
+
+Esto se ha conseguido gracias a unas variables representativas que se pueden aplicar a este tipo de modelos, el tipo de maquinaria y la antigüedad, descartando cualquier otro tipo de variable que pueda influir. La antigüedad es una variable lo suficientemente representativa como para explicar la casi totalidad del precio del activo, siempre que se haga mediante medias anuales.
+
+Con ello, las maquinarias tienen una recta de regresión que suelen tomar dos funciones de manera general. La más común es la exponencial, pero también es posible que, en algunos casos, se deba utilizar una función logarítmica para poder valorar este tipo de activos. La tendencia nos dice que el precio de subasta es inferior al de oferta, pero, conforme van pasando los años, estos dos valores se aproximan en la mayoría de los casos.
+
+Los modelos obtenidos muestran que la hipótesis de depreciación lineal no se ajusta a la realidad de la maquinaria de obra pública en España. La mayoría de modelos son de tipo exponencial, potencial o logarítmico
+
+Se concluye con estos dos ejemplos que la maquinaria tiene una vida útil mucho mayor que la amortización que aparece en la normativa relacionada con el impuesto sobre sociedades y las empresas mercantiles. Se llega a la conclusión que la vida útil que pueden llegar a tener esta maquinaría puede llegar a los veintiún años, superior al rango que comprende la amortización (como se ha dicho anteriormente, algo de dos veces más que la amortización máxima). Estos resultados hacen que las empresas deban replantearse en muchas ocasiones la vida útil de sus maquinarias.
+
+.
+
+.
+
+..
+
+
+
+
+
+
+
+
+
+
+
+
+
+El desarrollo de este TFG ha permitido aumentar la comprensión de lenguaje R y así como en capacidades en el tratamiento de datos. Por ultimo, resultaría interesante llevar a cabo la validacion cruzada de los modelos de regresión aplicada, ya que permitirían obtener robustez estadística a los diversos coeficientes de depreciación calculados para los activos. Así mismo, de disponer una mayor y mas actualizada base de datos, que permitan contrastar y generar un análisis más fiable

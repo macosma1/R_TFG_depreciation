@@ -1,0 +1,10 @@
+"0",""
+"0","knitr::kable("
+"0","head((t(yearss))[,1:14], 2), format = ""latex"", booktabs = TRUE,  align = ""c"", "
+"0","caption = ""\\label{tabla06} Número de celdas de cada variable sin valor (NA)."") %>%"
+"0","kable_styling(latex_options = c(""striped"",""condensed"", ""HOLD_position""),"
+"0","position = ""center"","
+"0","full_width = FALSE)"
+"2","Error in knitr::kable(head((t(yearss))[, 1:14], 2), format = ""latex"",  : 
+  no se pudo encontrar la función ""%>%""
+"

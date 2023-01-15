@@ -1,0 +1,15 @@
+---
+output: pdf_document
+---
+
+En este trabajo final de grado se busca analizar el comportamiento de los valores y depreciación en el mercado de la maquinaria de ocasión, especificamente el mercado de cabezas tractoras. Para ello, se empleará el lenguaje de programación R mediante el que se pretende alcanzar una técnica interactiva para la recolección de la información y construcción de  modelos OLS de regresión.
+
+El cálculo de la depreciación de la maquinaria con fines valorativos suele hacerse asumiendo una depreciación lineal a imitación de la amortización lineal comúnmente empleada en el ámbito contable y fiscal. Sin embargo, este patrón de depreciación puede no ser adecuado en todas la ocasiones.
+
+En aquellos casos con un mercado secundario es posible contrastar si otro tipo de modelos de depreciación reflejan mejor el comportamiento del valor. Actualmente, existe una gran cantidad de información disponible en internet, principalmente de activos en mercados secundarios, que permiten obtener la información para poder estudiar el comportamiento de el precio de estos activos en función de diversas variables.
+
+En este trabajo se emplea una técnica para la recolección de la información conocida como WebScraping, la cual es capaz de obtener datos específicos, precisos, fiables y ajustados a las necesidades de cada caso de forma automatizada. Posteriormente se lleva a cabo el tratamiento de la base de datos bruta, para eliminar aquellos valores que se desvien mucho de las observaciones y generen valoraciones incorrectas.
+
+Con el fin de obtener una visión general representativa de la depreciación que llegan a sufrir estos activos, se desarrollan diversos modelos de regresión mínimo cuadrática (lineal, exponencial y potencial) y se relaciona la antigüedad de estos activos con su valor y a su vez, se relaciona el efecto que puede llegar a tener la marca lel modelo de la cabeza tractora o el país de donde provenga la maquinaria.
+
+

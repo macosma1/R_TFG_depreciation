@@ -1,0 +1,88 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "22/10/2022"
+title: "Capítulo02 - Objetivos"
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib"] #, "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="95%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Objetivos
+
+## Objetivo general 
+
+El objetivo de este trabajo es analizar el comportamiento de los valores y depreciación de cabezas tractoras en el mercado secundario de maquinaria, para el período comprendido entre los meses de junio a diciembre del año 2022, desarrollando una técnica interactiva para la recolección de la información y modelos de regresión.
+
+
+## Objetivos específicos
+
+\begin{enumerate}
+  \item Seleccionar un método que permita llevar a cabo la recolección de los datos específicos, precisos, fiables y ajustados a las necesidades de cada caso de forma automatizada. 
+  \item Automatizar la extracción de información de la fuente para lograr trabajar con agilidad la data histórica y la data actual.
+  \item Aprender a gestionar bases de datos, analizar el comportamiento de los valores y la depreciación en el mercado de la maquinaria de ocasión.
+  \item Extraer información de las bases aplicando gráficos descriptivos y modelos sencillos a través del lenguaje de programación R con el entorno RStudio.
+\end{enumerate}
+

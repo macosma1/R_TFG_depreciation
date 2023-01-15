@@ -1,0 +1,513 @@
+---
+author: "Manuel Alejandro Costan Macareño"
+date: "22/10/2022"
+title: "Capítulo08 - "
+documentclass: book
+forprint: false  # true: imprime a dos caras, false: libro digital
+fontsize: 12pt # 10pt,11pt
+geometry: margin = 2.5cm 
+bibliography: ["bib/library.bib", "bib/paquetes.bib"]
+metodobib: true  # true: natbib (descomentar: citation_package: natbib) 
+#                  false: pandoc (comentar: citation_package: natbib)
+#natbib: plainnat, abbrvnat, unsrtnat
+biblio-style: "plainnat"
+#Método 2 (pandoc): descomente una línea de las 2 siguientes en caso de usarlo
+#csl: methods-in-ecology-and-evolution.csl      # no numera mejor en las citas
+csl: acm-sig-proceedings-long-author-list.csl  # numera peor en las citas
+link-citations: yes
+output: 
+  pdf_document:
+    keep_tex: no
+    number_sections: yes
+    citation_package: natbib  # comentado usa: pandoc-citeproc
+    #toc: yes
+    fig_caption: yes
+    template: latex/templateMemoriaTFE.tex
+    includes:
+      #before_body: portadas/latex_paginatitulo_modTFE.tex
+      #in_header: latex/latex_preambulo.tex
+      #after_body: latex/latex_antes_enddoc.tex
+---
+
+
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figurasR/',
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.pos="H",fig.align="center",out.width="120%",
+                      cache=FALSE)
+
+```
+
+
+<!-- \setcounter{chapter}{2} -->
+<!-- \setcounter{chapter}{2} escribir 2 para capítulo 3  -->
+<!-- \pagenumbering{arabic} -->
+
+\ifdefined\ifprincipal
+\else
+\setlength{\parindent}{1em}
+\pagestyle{fancy}
+\setcounter{tocdepth}{4}
+\tableofcontents
+<!-- \nocite{*} -->
+\fi
+
+\ifdefined\ifdoblecara
+\fancyhead{}{}
+\fancyhead[LE,RO]{\scriptsize\rightmark}
+\fancyfoot[LO,RE]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[LE,RO]{\footnotesize\thepage}
+\else
+\fancyhead{}{}
+\fancyhead[RO]{\scriptsize\rightmark}
+\fancyfoot[LO]{\scriptsize\slshape \leftmark}
+\fancyfoot[C]{}
+\fancyfoot[RO]{\footnotesize\thepage}
+\fi
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+# Formulación de modelos OLS
+
+Para llevar a cabo la modelización que puede llegar a tener la depreciación del valor de las cabezas tractoras en función de diferentes variables y evaluar cómo estas afectan tanto de forma independiente como conjunta a la depreciación de la maquinaria, se utilizarán diversos modelos OLS de regresión por el método de mínimos cuadrados ordinarios.
+
+
+Estos modelo se basan en la relación de la variable exógena (precio de venta) con la variable o las variables endógenas (edad del maquinaria, kilómetros recorridos, marca, potencia, entre otros). Por tanto, no es un modelo de valoración, ya que no utilizamos para valorar un activo sino para obtener la tasa de depreciación. 
+
+Como indica [@MDFD2008MD], un modelo de regresión lineal: es una técnica de modelado estadístico que consiste en generar un modelo de regresión para describir una variable dependiente, o respuesta continua *Y* como una función de una o varias variables independientes, o predictoras *X*. Este modelo permite comprender y predecir el comportamiento de sistemas complejos o a analizar datos experimentales, financieros y biológicos. Esta se describe de acuerdo con la siguiente ecuación:
+
+\begin{equation}
+Y= \beta_0+ \sum_{i=1}^n \beta_n X_n  
+\label{eq:lin}
+\end{equation}
+
+Resulta fundamental llevar a cabo diferentes modelizaciones en busca de encontrar un modelo que explique mejor el comportamiento de estos activos, debido a que existe la posibilidad que el conjunto de datos no se llegue a explicar bien por una relación lineal, por esta razón, partiendo de la anterior ecuación, se llevaran a cabo unas variaciones para encontrar un método de regresión exponencial y potencial.
+
+ Un modelo de regresión exponencial es una técnica que busca encontrar la ecuación de la función exponencial $Y= \beta_0* \beta_1^X$ que se ajuste mejor a un conjunto de datos, y que, al sacarle logaritmo, se obtendría la siguiente ecuación:
+
+\begin{equation}
+\ln{Y}= \ln{\beta_0}+ \sum_{i=1}^n\beta_n X_n 
+\label{eq:exp}
+\end{equation}
+
+
+Un modelo de regresión potencial es aquel en el que la función de ajuste es una función del tipo potencial del tipo $Y= \beta_0*X^{\beta_1}$, el cual, según [@MDFD2008MD], al linealizarlo, se obtendría la siguiente expresión:
+
+\begin{equation}
+\ln{Y}= \ln{\beta_0}+ \sum_{i=1}^n \beta_n*ln{X_n}
+\label{eq:pot}
+\end{equation}
+
+En la siguiente tabla se puede observar un resumen de las diferentes ecuaciones empleadas para la modelización de la depreciación de las cabezas tractoras: 
+\vspace{0.3 cm}
+<!-- falta ajustar las ecuaciones a modelos con multiples variables-->
+
+\begin{table}[h!]\centering
+\caption{\label{tabla001} Ecuaciones de las diferentes modelizaciones}
+\end{table}
+
+|       Modelo     |                 Ecuación de ajuste                   |     Transformación de la ecuación      |  Tasa de depreciación   |
+|:----------------:|:----------------------------------------------------:|:--------------------------------------:|:-----------------------:|
+|                  |                                                      |                                        |                         |
+| Lineal           | $Y= \beta_0+ \sum_{i=1}^n \beta_n*X_n$               | $Y= \beta_0+ \sum_{i=1}^n \beta_n*X_n$ |  $dr = \frac{\beta}{X}$ |
+|                  |                                                      |                                        |                         |
+| Exponencial      | $\ln{Y}= \ln{\beta_0}+ \sum_{i=1}^n\beta_n X_n$      | $Y= \beta_0* \beta_1^X$                |  $dr = X^\beta$         |
+|                  |                                                      |                                        |                         |
+| Potencial        | $\ln{Y}= \ln{\beta_0}+ \sum_{i=1}^n \beta_n*ln{X_n}$ | $Y= \beta_0*X^{\beta_1}$               |  $dr = \beta$           |
+
+<!-- Se pueden usar los dos puntos “:” para alinear el contenido de las columnas en la -->
+<!-- línea inferior de la cabecera. De forma que: -->
+<!-- • |:----| ajustará el contenido a la izquierda (comportamiento por defecto). -->
+<!-- • |----:| ajustará el contenido a la derecha. -->
+<!-- • |:---:| ajustará el contenido al centro. -->
+
+
+
+<!-- \begin{center} -->
+<!-- \begin{tabular}{|p{2cm}|c|l|r|} -->
+<!-- \hline -->
+<!-- Edad & Nacimientos & Mujeres & TFR por 1000 \\ \hline -->
+<!-- 20 & 20 & 100 & 200 \\ \hline -->
+<!-- 21 & 25 & 100 & 250 \\ \hline -->
+<!-- 22 & 30 & 100 & 300 \\ \hline -->
+<!-- 23 & 35 & 100 & 350 \\ \hline -->
+<!-- 24 & 40 & 100 & 400 \\ \hline -->
+<!-- \multicolumn{1}{|c|}{Total} & -->
+<!-- \multicolumn{1}{r|}{150} & -->
+<!-- \multicolumn{1}{c|}{500} & -->
+<!-- \multicolumn{1}{c|}{1500} \\ \hline -->
+<!-- 20-24 & 150 & 500 & 300 \\ \hline -->
+<!-- \end{tabular} -->
+<!-- \end{center} -->
+
+
+De acuerdo con la Ley 27/2014, de 27 de noviembre, el  artículo 12.1.a) del Impuesto sobre Sociedades (LIS) español, la maquinaria  se amortizará durante su vida util, y será admisible cualquier método que contemple las características técnico-económicas del activo, o derecho y, si no pudieran determinarse de forma fiable se adoptará el método lineal de amortización. Sin embargo, a diferencia de este, en el mercado secundario, se reconoce que estos activos tienen una vida más larga que la legal o la contable. [@BOE272014] 
+
+
+Como se ha ido comentando, en la depreciación de la maquinaria puede influir diversos factores como la marca, la potencia, el kilometraje, etc. Sin embargo, como se representó en la tabla \ref{tabla001}, para evaluar la depreciación de la cabeza tractora se estableció un coeficiente de depreciación básico basado en la edad de los activos.
+ 
+
+## Bondad del ajuste del modelo
+
+La bondad de ajuste de un modelo de regresión se refiere al grado en que éste es conveniente como modelo que representa a las variables implicadas en el mismo. Tal como hemos visto, al ajustar un modelo de regresión a la distribución conjunta de 2 variables obtendremos la mejor recta de regresión de entre todas las posibles que se pueden ajustar a esa distribución, ahora bien, ello no significa que sea buena como modelo que represente a ambas variables. Las medidas más utilizadas para medir la calidad del ajuste son: error estándar de los residuos *RSE*, el test F y el utilizado en este trabajo, el coeficiente de determinación $R^2$.
+
+El coeficiente de determinación $R^2$ describe la proporción de variabilidad observada en la variable dependiente Y explicada por el modelo y relativa a la variabilidad total, es decir, valora si la regresión que estamos aplicando es representativa y puede predecir el valor de manera adecuada. Su coeficiente está acotado entre 0 y 1, de modo que cuanto más próximo sea el valor a 1, mejor será la bondad de ajuste del modelo de regresión a la distribución conjunta de las variables. Al ser ajustado, permite la comparación entre diferentes modelos, aunque el valor mínimo que tiene que alcanzar el coeficiente para comenzar a considerar que es representativo varía en función del que realiza el estudio. 
+
+Este valor se calcula mediante la ecuación (\ref{eq:R2}), en donde *SSr* es la medida de la variabilidad del modelo de regresión y la *SSt* es la correspondiente a la medida de la variabilidad del valor sin considerar el efecto de la variable explicativa t.
+
+\begin{equation}
+R^2 = \frac{SS_R}{SS_t} , 0 \leq R^2 \leq 1
+\label{eq:R2}
+\end{equation}
+
+
+
+<!-- a parti de aqui se explicaria un poquito mas, se empezaria a hablar de la modelizacion y sus resultados -->
+<!-- El mercado no lineal, segun la legislacion se sigo un modelo de regresion lineal, sin embargo, al exponerlos en un grafico, se observa que estos sueele presentar un comportamiento mas cernano al exponencial (mercado no lineal) -->
+
+
+```{r eval=FALSE,echo=FALSE}
+resume08<- rbind(describe(data_no_outlier_Mad$years), describe(data_no_outlier_Mad$price), describe(data_no_outlier_Mad$km)) #similar as summary but it show the result as a dataframe
+rownames(resume08) <- c("Year", "Price", "Km")
+
+knitr::kable(
+  head(resume08[, c(2,3,4,7,12,13)], 4), format = "latex", booktabs = TRUE,  align = "c", 
+  caption = "\\label{tabla02} valores estadísticos de las variables a estudiar" ) %>%
+ kable_styling(latex_options = c("striped","condensed", "HOLD_position"),
+               position = "center",
+               full_width = FALSE)
+```
+
+<!-- #Formulas:  -->
+<!--  #lineal -->
+<!--    # y = a + b * x  -->
+<!--    # b = Rxy * Sy / Sx = Covxy / (Sx)^2 -->
+<!--    # a = mean(y) - (mean(x) * b) -->
+<!--  #exponencial -->
+<!--    # ln(y) = ln(a) + b * x   y = a * exp(b * x) -->
+<!--    # b = Cov(x*ln(y)) / (Sx)^2 -->
+<!--    # ln(a) = mean(ln(y)) - (mean(x) * b) -->
+<!--    # despejo a -->
+<!--  #power -->
+<!--  #veo validez con R^2 -->
+
+
+<!-- # X = years  independiente, cuantitativo, discreto -->
+<!-- # Y = Price  dependienge, cuantitativo, continuo -->
+
+## Modelización del precio respecto a la edad
+
+Despues de haber aplicado la técnica de MAD para suprimir los valores atípicos, se llevaron a cabo tres modelos de regresión lineal por mínimos cuadrados ordinarios del precio respecto a los años que han pasado desde la primera matriculación de cada cabeza tractora comentados con anterioridad. Como se representó en la tabla \ref{tabla_002} en la página \pageref{tabla_002}, se utilizarón `r nrow(data_no_outlier_Mad)`  datos para llevar a cabo el análisis.
+
+En las siguiente tabla se representa de manera resumida los principales coeficientes estadísticos obtenidos de cada modelo según a los datos calculados en la página \pageref{D_M1}, en las tablas (\ref{D_M1}, \ref{D_M2} y \ref{D_M3}), entre ellos, el coeficientes de ajuste, el coeficiente de depreciación, la desviación estándar de los residuos, los coeficientes $\beta$ y debajo de estos, el error estándar.
+
+```{r include=FALSE}
+### Modelo 1#```{r eval=TRUE, echo=FALSE, out.width='75%', fig.align='center', fig.cap = "\\label{Mod1} Intervalo de confianza de todos los modelos de los diferentes modelos de regresión lineal."} no me funciona el label
+#lineal
+  #calculo manual, este da resultados con mas decimales
+    # b_lineal = cov(data_no_outlier_Mad$years, data_no_outlier_Mad$price) / (resume07 [4,4])^2
+    # a_lineal = resume07 [2,3] - (resume07 [4,3] * b_lineal)
+    # r_2_lineal = (cov(data_no_outlier_Mad$years, data_no_outlier_Mad$price) / ((resume07 [4,4]) * (resume07 [2,4])))^2
+    # r_2_lineal = (cor(data_no_outlier_Mad$years, data_no_outlier_Mad$price))^2 #da igual, pero es otra forma
+    # coef_depre_lineal = b_lineal / a_lineal
+    # data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(y_linel = a_lineal + b_lineal * data_no_outlier_Mad$years) #creamos la Y 
+  #calculo con funcionn lm
+    reg_years_price_lineal = lm(price ~ years, data = data_no_outlier_Mad) #nos da el a y el b
+    data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(y_lineal = fitted(reg_years_price_lineal)) #creamos la Y , el fitted no da la Y calculada del modelo
+    summary(reg_years_price_lineal)
+    
+    #confint(reg_years_price_lineal) #saco intervalo de confianza #resultado de arriba nos dice que, con una confianza del 95%, la pendiente se encuentra entre  -2455.887 y -2310.062.
+    #residuals(reg_years_price_lineal) #saco los valores residuales
+    lineal_years_price_coeff_beta <- reg_years_price_lineal$coefficients
+    lineal_years_price_coeff_depre <- round(lineal_years_price_coeff_beta[2]/lineal_years_price_coeff_beta[1], digits = 4)
+    lineal_years_price_coeff_R <- summary(reg_years_price_lineal)$r.square
+    #lineal_years_price_coeff_R <- summary(reg_years_price_lineal)$adj.r.square #para el R ajustado
+
+    #el apa model no va no se pq
+    # model <- lm(price ~ years, data = data_no_outlier_Mad)
+    #apaTables::apa.reg.table(model)
+# --------------------------------------------------------------------------------------------------------------------------------------------
+
+### Modelo 2
+# #exp
+  #manual
+    # b_exp = cov(data_no_outlier_Mad$years, log(data_no_outlier_Mad$price)) / (resume07 [4,4])^2
+    # a_exp = mean(log(data_no_outlier_Mad$price)) - (resume07 [4,3] * b_exp)
+    # a_exp = exp(a_exp)
+    # r_2_exp = (cov(data_no_outlier_Mad$years, log(data_no_outlier_Mad$price)) / (sd(log(data_no_outlier_Mad$price)) * (resume07 [4,4])))^2
+    # r_2_exp = (cor(data_no_outlier_Mad$years, log(data_no_outlier_Mad$price)))^2 #no se pq me da diferente a lo que da en el excel
+    # coef_depre_exp = exp(b_exp)
+    
+  #con formula
+    reg_years_price_exp = lm(log(price) ~ years, data = data_no_outlier_Mad) #nos da el a y el b
+    data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(y_exp = exp(fitted(reg_years_price_exp))) #creamos la Y , el fitted no da la Y calculada del modelo
+    summary(reg_years_price_exp)
+    
+    #confint(reg_years_price_exp) #saco intervalo de confianza.
+    #residuals(reg_years_price_exp) #saco los valores residuales
+    exp_years_price_coeff_beta <- reg_years_price_exp$coefficients
+    exp_years_price_coeff_depre <- round(exp(exp_years_price_coeff_beta[2]), digits =4)
+    exp_years_price_coeff_R <- summary(reg_years_price_exp)$r.square
+    #exp_years_price_coeff_R <- summary(reg_years_price_exp)$adj.r.square #para el R ajustado
+#--------------------------------------------------------------------------------------------------------------------------------------------
+
+### Modelo 3
+#power
+  #manual
+    # b_power = cov(log(data_no_outlier_Mad$years), log(data_no_outlier_Mad$price)) / (sd(log(data_no_outlier_Mad$years)))^2
+    # a_power = mean(log(data_no_outlier_Mad$price)) - (mean(log(data_no_outlier_Mad$years)) * b_power)
+    # a_power = exp(a_power)
+    # r_2_power = (cov(log(data_no_outlier_Mad$years), log(data_no_outlier_Mad$price)) / (sd(log(data_no_outlier_Mad$years) * sd(log(data_no_outlier_Mad$price)))))^2
+    # r_2_power = (cor(log(data_no_outlier_Mad$years), log(data_no_outlier_Mad$price)))^2 #no se pq me da diferente a lo que da en el excel
+    # coef_depre_power = b_power
+    
+  #con formula
+    reg_years_price_power = lm(log(price) ~ log(years), data = data_no_outlier_Mad) #nos da el a y el b
+    data_no_outlier_Mad <- data_no_outlier_Mad %>% mutate(y_power = exp(fitted(reg_years_price_power))) #creamos la Y , el fitted no da la Y calculada del modelo
+    summary(reg_years_price_power)
+    
+    #confint(reg_years_price_power) #saco intervalo de confianza.
+    #residuals(reg_years_price_power) #saco los valores residuales
+    power_years_price_coeff_beta <- reg_years_price_power$coefficients
+    power_years_price_coeff_depre <- round(power_years_price_coeff_beta[2], digits = 4)
+    power_years_price_coeff_R <- summary(reg_years_price_power)$r.square
+    #power_years_price_coeff_R <- summary(reg_years_price_power)$adj.r.square #para el R ajustado
+```
+
+
+```{r include= FALSE}
+#stargazer(reg_years_price_lineal, reg_years_price_exp, reg_years_price_power, type="text", df=FALSE) #coef de a le faltaria hacer el exp(a)
+#https://www.jakeruss.com/cheatsheets/stargazer/
+#https://rdrr.io/cran/stargazer/man/stargazer_stat_code_list.html  #stargazer: list of statistic codes
+
+my_models <- list()
+my_models[['reg_years_price_lineal']]   <- lm(price ~ years, data = data_no_outlier_Mad)
+my_models[['reg_years_price_exp']]   <- lm(log(price) ~ years, data = data_no_outlier_Mad)
+my_models[['reg_years_price_power']] <- lm(log(price) ~ log(years), data = data_no_outlier_Mad)
+stargazer::stargazer(my_models, type = "text", column.labels = c("Modelo1", "Modelo2", "Modelo3"),  covariate.labels=c("Lineal(years)","Log(years)","Constante"), single.row = TRUE, df=FALSE, omit.stat=c("LL","adj.rsq"), no.space=FALSE, add.lines = list(c("Coeff depre", lineal_years_price_coeff_depre, exp_years_price_coeff_depre, power_years_price_coeff_depre)), 
+notes = c(" ---------------------------------------------","*** Significant at the 1 percent level.", "** Significant at the 5 percent level.", "* Significantat the 10 percent level."),
+out="Modelos_regresion/Modelos_regresion.html")
+knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/Modelos_regresion/Modelos_regresion.html") 
+#keep.stat="n", solo deja observaciones 
+#star.cutoffs = c(0.05, 0.01, 0.001)) # star.cutoffs = NULL by default
+#df=FALSE hace que no salga el 4171 de valores que usa en el modelo del df
+#title="Tabla 1. Diferentes modelos OLS",
+#digits = 1 numeros de decimales de la tabla salvo los agregados
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Diferentes modelos de regresión lineal.}
+\begin{center}
+\includegraphics[width=4.7 in]{figurasR/unnamed-chunk-53-1.pdf}
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig_mod_reg}
+\end{figure}
+\end{center}
+
+
+En la anterior tabla se puede ver como para todos los tipos de maquinaria y modelos muestran un nivel de significación de 1% "***", es decir, presentan un nivel de 1% o inferior de significación. Lo que significa que hay evidencias estadísticas de que hay una diferencia que puede deberse en parte a la edad de la máquina.
+
+Así mismo, proporciona información sobre los coeficientes $\beta1$, pudiendo ver como se esperaba, que todos los valores resultan negativos. Esto se debe a una tendencia negativa en el comportamiento del precio de venta con el paso del tiempo. También vemos que la tabla proporciona información sobre el coeficiente de R² de cada modelo, tal y como se definen en la ecuacion \ref{eq:R2}. Como se ha comentado, R²  explica que parte de la variabilidad de un factor puede ser causada o explicada por otro, en este caso, el (price) en funcion de la variable explicativa (years). Se aprecia como en los tres modelos propuestos, el coeficiente es superior o muy próximo a 0.5, esto implica que la variable explicativa "edad"  como se comento con anterioridad, es representativa para determinar el precio de este tipo de activos, sin embargo hay otros factores que afectan al valor de los activos que no se han tenido en cuenta en el análisis. A su vez, vemos como tanto el modelo exponencial como potencial son superiores al modelo lineal, siendo el segundo el que mayor coeficiente presenta.
+
+Además, se calculó el coeficiente de depreciación de mercado, tal y como se definen en la tabla \ref{tabla001} con el que se puede evaluar el desgaste de la maquinaria, a fin de comparar este valor con el coeficiente establecido por los organismos oficiales. En este se ve como las cabezas tractoras presentan en la regresión lineal un coeficiente de 4,25%, viniendo a ser su vida util aproximada de 23,5 años. 
+
+No obstante, si se analiza el modelo de regresión exponencial mediante un ejemplo de una adquisición de 1.000 euros, al tener un coeficiente de depreciación de 0,9144, en los cinco primeros años de vida útil presentarían un valor sobre el precio inicial del 63,93%, en el décimo año este porcentaje desciende hasta el 40,87%, en el vigésimo año se situaría en el 16,70% y, finalmente,  a los 50 años este activo tan solo tendría un 1,14% del valor inicial.
+ <!-- se calcula 1000*0.914^5 -->
+
+Con el coeficiente hallado a través del modelo potencial, se sufrirían un deterioro mucho más acelerado en sus primeros años. Suponiendo el mismo ejemplo anterior, con el coeficiente de depreciación de 0.9787, al quinto año tendríamos un un valor de  20,69% y al decimo año, un valor de 10.5%.
+
+Destacar que para los tres modelos representados en la página \pageref{D_M1}, en las tablas (\ref{D_M1}, \ref{D_M2} y \ref{D_M3}), el  p-value modelo es significativo (2.2e-16) por lo que se puede aceptar que el modelo no es por azar.
+
+```{r include= FALSE}
+#saco intervalo de confianza de todos los modelos
+confi <- list()
+confi[['Lineal1']] <- c((confint(reg_years_price_lineal))[1,1], (confint(reg_years_price_lineal))[1,2])
+confi[['Lineal2']] <- c((confint(reg_years_price_lineal))[2,1], (confint(reg_years_price_lineal))[2,2])
+confi[['Exp1']] <- c((confint(reg_years_price_exp))[1,1], (confint(reg_years_price_exp))[1,2])
+confi[['Exp2']] <- c((confint(reg_years_price_exp))[2,1], (confint(reg_years_price_exp))[2,2])
+confi[['Power1']] <- c((confint(reg_years_price_power))[1,1], (confint(reg_years_price_power))[1,2])
+confi[['Power2']] <- c((confint(reg_years_price_power))[2,1], (confint(reg_years_price_power))[2,2])
+
+confi<- t(as.data.frame(confi))
+colnames(confi) <- c("2.5%", "97.5%")
+rownames(confi) <- c("Lineal- (Intercept)", "Lineal - years", "Exp - (Intercept)", "Exp - years", "Power - (Intercept)", "Power - years")
+stargazer::stargazer(confi, type = "text", align = TRUE,  df=FALSE,   out="Modelos_regresion/confi.html")
+knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/Modelos_regresion/confi.html") 
+# flip = TRUE, 
+#tidy(reg_years_price_lineal) #covariate.labels=c("", "2.5", "97.5","2.5", "97.5","2.5", "97.5"), 
+# tidy(summary(reg_years_price_lineal))
+# augment(reg_years_price_lineal)
+# glance(reg_years_price_lineal)
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Intervalo de confianza de todos los modelos de los diferentes modelos de regresión lineal.}
+\begin{center}
+\includegraphics[trim={0 3.8cm 0 0},clip,scale=0.75]{figurasR/unnamed-chunk-54-1.pdf}\\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig_coeff}
+\end{figure}
+\end{center}
+
+También, se calculó el intervalo de confianza de los resultados previamente calculados, estos nos indican que con una confianza del 95%, la pendiente se encuentra entre esos valores.
+
+
+```{r include=FALSE}
+#tendencia que realmente sigue
+ggplot( data = data_no_outlier_Mad,
+        mapping = aes( x= years,
+                       y = price))+
+  geom_point()+
+  geom_smooth()
+#-------------------------------------------------------------------------------------------------------------------------------
+```
+
+<!-- \begin{center} -->
+<!-- \begin{figure}[H] -->
+<!-- \caption{Gráfico de dispersión de los datos de las cabezas tractoras a analizar y su respectiva modelo de regresión lineal.} -->
+<!-- \includegraphics[width=6 in]{figurasR/unnamed-chunk-57-1.pdf} \\ -->
+<!-- \begin{center} -->
+<!--   \footnotesize -->
+<!--   \textit{Fuente:} \text{(Elaboración propia)} -->
+<!--   \normalsize -->
+<!-- \end{center} -->
+<!-- \label{fig:dispersion_years_price} -->
+<!-- \end{figure} -->
+<!-- \end{center} -->
+
+
+```{r eval=FALSE,echo=FALSE}
+      rm(lineal_years_price_coeff_beta, lineal_years_price_coeff_depre, lineal_years_price_coeff_R, exp_years_price_coeff_beta, exp_years_price_coeff_depre, exp_years_price_coeff_R, power_years_price_coeff_beta, power_years_price_coeff_depre, power_years_price_coeff_R)
+  # #2da forma
+  #   #varias tendencias graficadas, este da diferente al correcto, que es el de abajo de este
+  #   ggplot( data = data_no_outlier_Mad,
+  #           mapping = aes( x= years,
+  #                          y = price))+
+  #     geom_point()+
+  #     geom_smooth(method='lm', formula=y~x, se=FALSE, col='red', lty=5)+
+  #     geom_smooth(method='lm', formula=y~log10(x), se=FALSE, col='dodgerblue1', lty=2)+
+  #     geom_smooth(method='lm', formula=y~dexp(x), se=FALSE, col='purple', lty=3)+
+  #     ggtitle("TITULO")
+```
+
+```{r include=FALSE}
+  #como comente arriba, este de abajo da diferente al de arriba, (uno lo calculo yo antes)
+    ggplot(data_no_outlier_Mad, aes(years)) + # basic graphical object 
+      geom_point(aes(y = price)) +
+      geom_line(aes(y=y_lineal, colour="Lineal"),  linetype=2, size=1) + # first layer 
+      geom_line(aes(y=y_exp, colour="Exponencial"),  linetype=3, size=1) + # second layer
+      geom_line(aes(y=y_power, colour="Potencial"),  linetype=4, size=1)+ # second layer
+      scale_color_manual("", 
+                         breaks =  c("Lineal", "Exponencial", "Potencial"),
+                         values = c("red", "green", "blue"))+
+      #labs(title = "TITULO")+
+      labs( x="Edad", y = "Precio")+
+      theme(plot.title = element_text(hjust = 0.5), legend.position = "top") +
+      ylim(-2000,200000)
+```
+
+\begin{center}
+\begin{figure}[H]
+\caption{Gráfico de dispersión de los datos de las cabezas tractoras a analizar y su respectivos modelos de regresión.}
+\begin{center}
+\includegraphics[width=6 in]{figurasR/unnamed-chunk-57-1.pdf} \\
+\end{center}
+\begin{center}
+  \footnotesize
+  \textit{Fuente:} \text{(Elaboración propia)}
+  \normalsize
+\end{center}
+\label{fig:modelos_regresion}
+\end{figure}
+\end{center}
+
+En la figura \ref{fig:modelos_regresion} se ve como en los primeros años de vida de una máquina, los valores caen rápidamente con los modelos exponencial y de potencia (depreciación acelerada), teniendo esta ultima inicialmente una pendiente más pronunciada. Posteriormente, sus curvas se suavizan (depreciación moderada), mientras que el modelo lineal tiene un descenso constante de los valores. 
+
+
+<!-- ```{r include=FALSE,warning=FALSE} -->
+<!-- plot2<-  -->
+<!--   {plot(data_no_outlier_Mad$years, data_no_outlier_Mad$price) #, main = "TITULO") -->
+<!--     legend("topright", legend = c("lineal", "power", "semilog"), lty= c(2, 3, 4), lwd = 1, col = c("red", "blue", "green"))  -->
+<!--     lines(data_no_outlier_Mad$years, data_no_outlier_Mad$y_lineal , col = "red", linetype=2) -->
+<!--     lines(data_no_outlier_Mad$years, data_no_outlier_Mad$y_exp , col = "blue", linetype=3) -->
+<!--     lines(data_no_outlier_Mad$years, data_no_outlier_Mad$y_power , col = "green", linetype=4)} -->
+
+<!--   #--------------------------------------------------------------------------------------------------------------------------------------------   -->
+<!-- ``` -->
+
+<!-- \begin{center} -->
+<!-- \begin{figure}[H] -->
+<!-- \caption{Gráfico de dispersión de los datos de las cabezas tractoras a analizar y su respectivos modelos de regresión.} -->
+<!-- \begin{center} -->
+<!-- \includegraphics[width=6 in]{figurasR/unnamed-chunk-57-1.pdf} \\ -->
+<!-- \end{center} -->
+<!-- \begin{center} -->
+<!--   \footnotesize -->
+<!--   \textit{Fuente:} \text{(Elaboración propia)} -->
+<!--   \normalsize -->
+<!-- \end{center} -->
+<!-- \label{fig:modelos_regresion_1} -->
+<!-- \end{figure} -->
+<!-- \end{center} -->
+
+
+
+<!-- A continuación, clasificamos los tipos de máquinas y modelos según sus valores de R 2 y los clasificamos como con tres signos "+++", dos "++" y uno "+". -->
+
+
+
+
+
+
+
+
+<!-- ```{r include= FALSE} -->
+<!-- coeff<- list() -->
+<!-- coeff[["Modelo1"]]<- reg_years_price_lineal$coefficients -->
+<!-- coeff[["Modelo2"]]<- reg_years_price_exp$coefficients -->
+<!-- coeff[["Modelo3"]]<- reg_years_price_power$coefficients -->
+<!-- coeff[["Modelo4"]]<- t(as.data.frame(c(lineal_years_price_coeff_depre, summary(reg_years_price_lineal)$r.square ))) -->
+<!-- coeff[["Modelo5"]]<- t(as.data.frame(c(exp_years_price_coeff_depre, summary(reg_years_price_exp)$r.square ))) -->
+<!-- coeff[["Modelo6"]]<- t(as.data.frame(c(power_years_price_coeff_depre, summary(reg_years_price_power)$r.square ))) -->
+
+<!-- dat <- rbind(coeff[["Modelo4"]], coeff[["Modelo5"]], coeff[["Modelo6"]] ) -->
+<!-- colnames(dat) <- c("coeff_depre", "r_square") -->
+<!-- rownames(dat) <- c("lineal", "exp", "power") -->
+<!-- coeff <- t(as.data.frame(coeff[1:3])) -->
+<!-- colnames(coeff) <- c("Bo", "B1") -->
+<!-- coeff <- cbind(dat,coeff) -->
+<!-- stargazer::stargazer(coeff, type = "text", align = TRUE, df=FALSE, style = "qje", out="coeff.html") -->
+<!-- ``` -->
+
+<!-- ```{r include= FALSE, out.width='75%', fig.align='center', fig.cap = "\\label{fig_coeff} Coeficientes de los diferentes modelos de regresión lineal."} -->
+<!-- knitr::include_url("file:///home/macosma1/Escritorio/MemoriaTFE/MemoriaMACM/coeff.html")  -->
+<!-- ``` -->
+
+<!-- \begin{center} -->
+<!-- \begin{figure}[H] -->
+<!-- \caption{Coeficientes de los diferentes modelos de regresión lineal.} -->
+<!-- \includegraphics[trim={0 6cm 0 0},clip,scale=1]{figurasR/unnamed-chunk-55-1.pdf}\\ -->
+<!-- \begin{center} -->
+<!--   \footnotesize -->
+<!--   \textit{Fuente:} \text{(Elaboración propia)} -->
+<!--   \normalsize -->
+<!-- \end{center} -->
+<!-- \label{fig_coeff} -->
+<!-- \end{figure} -->
+<!-- \end{center} -->
+

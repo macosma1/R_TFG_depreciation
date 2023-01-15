@@ -1,0 +1,1282 @@
+"","name","brand","country","city","power","price","km","year","stringAsFactors"
+"1","Cabeza tractora Volvo FH 500 Globetrotter XL","Volvo","ESPAÑA","Madrid",NA,NA,1028143,"2016",FALSE
+"2","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Madrid",500,NA,989955,"2016",FALSE
+"3","Cabeza tractora Volvo FH 500 Globetrotter XL","Volvo","ESPAÑA","Massanassa",500,NA,10,"2017",FALSE
+"4","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Onzonilla",460,26860,724209,"2016",FALSE
+"5","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Onzonilla",460,39669,552482,"2017",FALSE
+"6","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Onzonilla",460,39669,554241,"2017",FALSE
+"7","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Onzonilla",480,39669,450000,"2017",FALSE
+"8","Cabeza tractora productos peligrosos / ADR Volvo FH12 460","Volvo","ESPAÑA","Torrent",460,35000,1251639,"2012",FALSE
+"9","Cabeza tractora productos peligrosos / ADR Volvo FH 500","Volvo","ESPAÑA","Torrent",500,35000,830152,"2015",FALSE
+"10","Cabeza tractora productos peligrosos / ADR Mercedes Actros 1851","Mercedes","ESPAÑA","Torrent",510,23000,969144,"2012",FALSE
+"11","Cabeza tractora productos peligrosos / ADR Volvo FH","Volvo","ESPAÑA","Torrent",NA,40000,863033,"2015",FALSE
+"12","Cabeza tractora Renault T-Series 480 T4X2 E6","Renault","ESPAÑA","Igollo De Camargo",480,36500,674908,"2015",FALSE
+"13","Cabeza tractora Iveco Stralis AS 440 S51 TP","Iveco","ESPAÑA","Igollo De Camargo",510,38900,684071,"2017",FALSE
+"14","Cabeza tractora productos peligrosos / ADR MAN TGX 18.480","MAN","ESPAÑA","Lucena",480,24000,803000,"2014",FALSE
+"15","Cabeza tractora Scania S 500","Scania","ESPAÑA","Alcala De Guadaira",NA,69000,635400,"2018",FALSE
+"16","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Seseña Nuevo",NA,NA,1243082,"2012",FALSE
+"17","Cabeza tractora Volvo FH13 460","Volvo","ESPAÑA","Gamarra",460,NA,694000,"2014",FALSE
+"18","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Motilla Del Palancar",460,42500,450000,"2017",FALSE
+"19","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Tarragona",460,46000,483000,"2019",FALSE
+"20","Cabeza tractora Mercedes Arocs","Mercedes","ESPAÑA","Les Franqueses Del Vallè",430,NA,480495,"2015",FALSE
+"21","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Alcala De Guadaira",460,31000,339250,"2015",FALSE
+"22","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Motilla Del Palancar",460,42500,450000,"2017",FALSE
+"23","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Tarragona",460,46000,483000,"2019",FALSE
+"24","Cabeza tractora Mercedes Arocs","Mercedes","ESPAÑA","Les Franqueses Del Vallè",430,NA,480495,"2015",FALSE
+"25","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Alcala De Guadaira",460,31000,339250,"2015",FALSE
+"26","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Cazalegas",460,49000,558000,"2016",FALSE
+"27","Cabeza tractora Iveco Stralis AS440D46T/P","Iveco","ESPAÑA","Igollo De Camargo",449,30500,453332,"2012",FALSE
+"28","Cabeza tractora Iveco Stralis AS440S46","Iveco","ESPAÑA","Igollo De Camargo",NA,30500,455153,"2012",FALSE
+"29","Cabeza tractora Iveco Stralis AS440D46T/P","Iveco","ESPAÑA","Igollo De Camargo",449,30500,457229,"2012",FALSE
+"30","Cabeza tractora MAN TGX","MAN","ESPAÑA","Madrid",NA,37000,610035,"2009",FALSE
+"31","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Ciudad Real",480,49000,424873,"2017",FALSE
+"32","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46TP HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",460,40500,365137,"2016",FALSE
+"33","Cabeza tractora Renault Premium 450 DXI","Renault","ESPAÑA","Els Hostalets De Pierola",450,9000,1300000,"2007",FALSE
+"34","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","ESPAÑA","Torrent",480,NA,614054,"2018",FALSE
+"35","Cabeza tractora Mercedes Actros 1845 L","Mercedes","ESPAÑA","Alcasser / Valencia",450,29800,792154,"2015",FALSE
+"36","Cabeza tractora Scania P 410","Scania","ESPAÑA","Alcasser / Valencia",410,35800,525128,"2016",FALSE
+"37","Cabeza tractora Iveco AS 460 E6 Hi-Way Intarder/ACC/LDW/2 Tank/Kühlbox","Iveco","ESPAÑA","Alcasser / Valencia",460,28800,693814,"2017",FALSE
+"38","Cabeza tractora Mercedes Actros 1845 E6 MP4 Retarder / 2 Tank","Mercedes","ESPAÑA","Alcasser / Valencia",451,29800,792154,"2015",FALSE
+"39","Cabeza tractora MAN TGA 18.463","MAN","ESPAÑA","Villarrobledo (Ab)",460,NA,168239,"2003",FALSE
+"40","Cabeza tractora Renault T-Series 480 T4X2 E6","Renault","ESPAÑA","Guadarrama",480,28500,928000,"2015",FALSE
+"41","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","ESPAÑA","Torrent",480,NA,649274,"2016",FALSE
+"42","Cabeza tractora Renault T520 High cab","Renault","ESPAÑA","El Viso De Alcor",NA,NA,770000,"2015",FALSE
+"43","Cabeza tractora Renault T-Series 480.18 DTI 13","Renault","ESPAÑA","Lugo",480,NA,426000,"2019",FALSE
+"44","Cabeza tractora Mercedes Arocs 1843 LS","Mercedes","ESPAÑA","Alcala De Guadaira",430,42500,505000,"2016",FALSE
+"45","Cabeza tractora Volvo FH 500 Globetrotter XL","Volvo","ESPAÑA","Massanassa",500,36900,823500,"2015",FALSE
+"46","Cabeza tractora Volvo FH12 460","Volvo","ESPAÑA","Sant Celoni",460,11500,1460000,"2004",FALSE
+"47","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Hospitalet De Llobregat,",460,40082,343340,"2017",FALSE
+"48","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Hospitalet De Llobregat,",460,40082,345680,"2017",FALSE
+"49","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Hospitalet De Llobregat,",460,40082,343346,"2017",FALSE
+"50","Cabeza tractora Volvo FH 480","Volvo","ESPAÑA","Peligros (Granada)",480,30000,1123992,"2008",FALSE
+"51","Cabeza tractora Volvo FH 480","Volvo","ESPAÑA","Peligros (Granada)",480,27000,1151477,"2008",FALSE
+"52","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Valencia",448,93300,146482,"2021",FALSE
+"53","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Alcala De Guadaira",NA,33500,667273,"2016",FALSE
+"54","Cabeza tractora Scania R 500","Scania","ESPAÑA","Alcala De Guadaira",NA,27000,1165276,"2013",FALSE
+"55","Cabeza tractora Scania R 500","Scania","ESPAÑA","Alcala De Guadaira",NA,69900,576272,"2018",FALSE
+"56","Cabeza tractora Scania R 500","Scania","ESPAÑA","Alcala De Guadaira",NA,68900,610114,"2018",FALSE
+"57","Cabeza tractora Scania R 440","Scania","ESPAÑA","Alcala De Guadaira",NA,18500,848915,"2012",FALSE
+"58","Cabeza tractora Iveco Stralis AT440S48T/P","Iveco","ESPAÑA","Palma De Mallorca",480,52000,321095,"2018",FALSE
+"59","Cabeza tractora productos peligrosos / ADR DAF XF 530 FT","DAF","ESPAÑA","Tarragona",530,69900,410000,"2019",FALSE
+"60","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Motilla Del Palancar",460,39500,367151,"2016",FALSE
+"61","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Motilla Del Palancar",460,48000,568492,"2017",FALSE
+"62","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S50T/P","Iveco","ESPAÑA","Motilla Del Palancar",499,41000,567219,"2016",FALSE
+"63","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Motilla Del Palancar",460,39000,382492,"2016",FALSE
+"64","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,40500,391428,"2016",FALSE
+"65","Cabeza tractora Iveco Stralis AT440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,37000,538211,"2017",FALSE
+"66","Cabeza tractora Renault Premium 420","Renault","ESPAÑA","Cazalegas",420,6000,1700000,"2004",FALSE
+"67","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,57000,589918,"2017",FALSE
+"68","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,64300,364392,"2019",FALSE
+"69","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64800,481416,"2018",FALSE
+"70","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,59000,599530,"2017",FALSE
+"71","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,60500,589442,"2017",FALSE
+"72","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69400,418306,"2019",FALSE
+"73","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,68600,328112,"2019",FALSE
+"74","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,65800,312360,"2018",FALSE
+"75","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65800,471773,"2018",FALSE
+"76","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,66200,387005,"2018",FALSE
+"77","Cabeza tractora DAF XF","DAF","ESPAÑA","San Fernando De Henares",NA,99,999,"2018",FALSE
+"78","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,64400,467869,"2018",FALSE
+"79","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69700,402675,"2019",FALSE
+"80","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,63400,443763,"2018",FALSE
+"81","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64700,444397,"2018",FALSE
+"82","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,68300,469294,"2018",FALSE
+"83","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,68900,438863,"2019",FALSE
+"84","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62600,509779,"2018",FALSE
+"85","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64700,444397,"2018",FALSE
+"86","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,68300,469294,"2018",FALSE
+"87","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,68900,438863,"2019",FALSE
+"88","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62600,509779,"2018",FALSE
+"89","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65300,439273,"2018",FALSE
+"90","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,66600,433471,"2018",FALSE
+"91","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,63700,574079,"2018",FALSE
+"92","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,61800,500703,"2018",FALSE
+"93","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69500,413644,"2019",FALSE
+"94","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,60300,591443,"2017",FALSE
+"95","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62200,536053,"2017",FALSE
+"96","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,67600,495275,"2018",FALSE
+"97","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,60300,591097,"2017",FALSE
+"98","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,59700,469675,"2018",FALSE
+"99","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,60800,441706,"2018",FALSE
+"100","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,60600,603860,"2018",FALSE
+"101","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,59800,562027,"2017",FALSE
+"102","Cabeza tractora DAF XF 530","DAF","ESPAÑA","San Fernando De Henares",NA,65200,525715,"2018",FALSE
+"103","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65600,464780,"2019",FALSE
+"104","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62400,534710,"2017",FALSE
+"105","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65200,478813,"2018",FALSE
+"106","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62400,534710,"2017",FALSE
+"107","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65200,478813,"2018",FALSE
+"108","Cabeza tractora DAF XF","DAF","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"109","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,60500,509355,"2018",FALSE
+"110","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62000,538955,"2017",FALSE
+"111","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64600,388442,"2018",FALSE
+"112","Cabeza tractora Renault T","Renault","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"113","Cabeza tractora productos peligrosos / ADR Renault T-Series 460 T4X2 CITERNIER E6","Renault","ESPAÑA","Vilamalla",460,41500,424000,"2016",FALSE
+"114","Cabeza tractora Scania R-series","Scania","ESPAÑA","Quintana De Orden",NA,NA,1300000,"2006",FALSE
+"115","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Quintana De Orden",NA,NA,999000,"2014",FALSE
+"116","Cabeza tractora",NA,"ESPAÑA","Palma De Mallorca",NA,18150,NA,NA,FALSE
+"117","Cabeza tractora Iveco ad 440 s43t-p","Iveco","ESPAÑA","Palma De Mallorca",NA,19360,NA,NA,FALSE
+"118","Cabeza tractora productos peligrosos / ADR Iveco Stralis 440 S 500","Iveco","ESPAÑA","Vila",500,42000,571000,"2017",FALSE
+"119","Cabeza tractora Scania G 410","Scania","ESPAÑA","Torrefarrera",410,21000,1,"2014",FALSE
+"120","Cabeza tractora Iveco Stralis AS 440 S 50 TP","Iveco","ESPAÑA","Vilagarcía De Arousa",500,36000,620560,"2015",FALSE
+"121","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Vilagarcía De Arousa",460,45000,293720,"2017",FALSE
+"122","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","ESPAÑA","Vilagarcía De Arousa",480,40000,273020,"2015",FALSE
+"123","Cabeza tractora MAN TGA 40.480","MAN","ESPAÑA","Vilagarcía De Arousa",480,6800,1360851,"2005",FALSE
+"124","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Vilagarcía De Arousa",460,27300,672482,"2015",FALSE
+"125","Cabeza tractora Iveco Stralis 480","Iveco","ESPAÑA","Vilagarcía De Arousa",480,29500,688918,"2014",FALSE
+"126","Cabeza tractora Iveco Stralis AS 500 E6 Hi-Way / Kühlbox / Nur 274Tkm!","Iveco","ESPAÑA","Alcasser / Valencia",501,30800,274953,"2014",FALSE
+"127","Cabeza tractora Mercedes Actros 1851 EURO 6 MP4 Retarder / 2 Tank / ACC","Mercedes","ESPAÑA","Alcasser / Valencia",510,31800,765197,"2014",FALSE
+"128","Cabeza tractora Iveco Stralis AS 400 LNG GAS Intarder/ACC/LDW/2 Tank/K","Iveco","ESPAÑA","Alcasser / Valencia",400,29800,481212,"2017",FALSE
+"129","Cabeza tractora DAF XF105 460","Est","ESPAÑA","Tarambana",460,10000,1013736,"2007",FALSE
+"130","Cabeza tractora Renault T-High 480 T4X2 E6","Renault","ESPAÑA","Massanassa",480,46600,464000,"2017",FALSE
+"131","Cabeza tractora Mercedes Antos 1832","Mercedes","ESPAÑA","Alcala De Guadaira",320,NA,490000,"2015",FALSE
+"132","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Onzonilla",480,26860,733781,"2016",FALSE
+"133","Cabeza tractora productos peligrosos / ADR Renault Premium","Renault","ESPAÑA","Villamuriel De Cerrato",450,10000,1625000,"2008",FALSE
+"134","Cabeza tractora productos peligrosos / ADR DAF XF 460","DAF","ESPAÑA","León",460,39900,670000,"2016",FALSE
+"135","Cabeza tractora DAF XF 480","DAF","ESPAÑA","León",480,67900,379000,"2018",FALSE
+"136","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","ESPAÑA","León",480,76900,209000,"2018",FALSE
+"137","Cabeza tractora DAF XF 460","DAF","ESPAÑA","León",460,31900,851000,"2015",FALSE
+"138","Cabeza tractora DAF XF 480","DAF","ESPAÑA","León",480,68900,525000,"2018",FALSE
+"139","Cabeza tractora DAF XF 480","DAF","ESPAÑA","León",480,69900,375000,"2018",FALSE
+"140","Cabeza tractora DAF XF 480","DAF","ESPAÑA","León",480,61900,629000,"2017",FALSE
+"141","Cabeza tractora DAF XF","DAF","ESPAÑA","León",450,49900,378000,"2018",FALSE
+"142","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","ESPAÑA","León",480,74900,205000,"2018",FALSE
+"143","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","ESPAÑA","León",480,NA,349000,"2018",FALSE
+"144","Cabeza tractora DAF XF 480","DAF","ESPAÑA","León",480,69900,477000,"2018",FALSE
+"145","Cabeza tractora DAF XF 460","DAF","ESPAÑA","León",460,37900,814000,"2015",FALSE
+"146","Cabeza tractora Renault T520 High cab T520 HIGH SLEEPER CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,33500,722300,"2015",FALSE
+"147","Cabeza tractora Scania R 440","Scania","ESPAÑA","Alcala De Guadaira",NA,18500,817658,"2011",FALSE
+"148","Cabeza tractora Mercedes Actros 1846","Mercedes","ESPAÑA","Terrassa",460,24500,1250000,"2013",FALSE
+"149","Cabeza tractora Scania R 450","Scania","ESPAÑA","Terrassa",450,27500,830000,"2015",FALSE
+"150","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Zaragoza",500,46000,753000,"2017",FALSE
+"151","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,61600,661716,"2018",FALSE
+"152","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,52600,681792,"2017",FALSE
+"153","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Almazora",480,49000,561000,"2017",FALSE
+"154","Cabeza tractora productos peligrosos / ADR Renault T-Series","Renault","ESPAÑA","Beriain",480,58900,363056,"2018",FALSE
+"155","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Valencia",450,60700,561502,"2019",FALSE
+"156","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,73600,471119,"2019",FALSE
+"157","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,62900,601649,"2018",FALSE
+"158","Cabeza tractora Mercedes ACTROS 1840","Mercedes","ESPAÑA","Benavente",NA,NA,NA,"2002",FALSE
+"159","Cabeza tractora Renault 450DXI","Renault","ESPAÑA","Benavente",NA,NA,NA,"2014",FALSE
+"160","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","ESPAÑA","Villabona",480,60000,257749,"2018",FALSE
+"161","Cabeza tractora Iveco Stralis AS 440 S51 TP","Iveco","ESPAÑA","Villabona",510,57500,415040,"2018",FALSE
+"162","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Binefar",520,52000,549700,"2018",FALSE
+"163","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Motilla Del Palancar",480,45500,650212,"2018",FALSE
+"164","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Motilla Del Palancar",460,39500,360415,"2016",FALSE
+"165","Cabeza tractora Iveco Stralis AT440S46T/P","Iveco","ESPAÑA","Motilla Del Palancar",460,52000,479429,"2018",FALSE
+"166","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Motilla Del Palancar",480,49000,577814,"2017",FALSE
+"167","Cabeza tractora Iveco Stralis AS440S48T/P XP","Iveco","ESPAÑA","Motilla Del Palancar",480,45500,628272,"2018",FALSE
+"168","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Motilla Del Palancar",460,40500,377488,"2016",FALSE
+"169","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Motilla Del Palancar",480,49000,573754,"2017",FALSE
+"170","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Ciudad Real",480,32500,707205,"2016",FALSE
+"171","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Ciudad Real",480,51500,432978,"2017",FALSE
+"172","Cabeza tractora Iveco Stralis AT440S46TP","Iveco","ESPAÑA","Ciudad Real",460,37000,589860,"2017",FALSE
+"173","Cabeza tractora Renault","Renault","ESPAÑA","Palma De Mallorca",NA,54450,NA,NA,FALSE
+"174","Cabeza tractora Renault","Renault","ESPAÑA","Palma De Mallorca",NA,54450,NA,NA,FALSE
+"175","Cabeza tractora Iveco Stralis AS 440 S 46","Iveco","ESPAÑA","Torrent",460,NA,666124,"2016",FALSE
+"176","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Torrent",460,NA,924008,"2014",FALSE
+"177","Cabeza tractora Mercedes Actros 1852 LS","Mercedes","ESPAÑA","Alcala De Guadaira",520,58000,378000,"2018",FALSE
+"178","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Cordovilla",460,57000,428094,"2018",FALSE
+"179","Cabeza tractora Iveco AS440S48TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,33500,564296,"2016",FALSE
+"180","Cabeza tractora Renault T 430","Renault","ESPAÑA","Teruel",NA,28000,659986,"2014",FALSE
+"181","Cabeza tractora Iveco AS440S46T/P HW EVO AUT INT E6","Iveco","ESPAÑA","Teruel",NA,47900,456984,"2017",FALSE
+"182","Cabeza tractora Iveco AS440S48T/P HW EVO AUT INT E6","Iveco","ESPAÑA","Teruel",NA,47900,491011,"2017",FALSE
+"183","Cabeza tractora Iveco AS440S48TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,33500,597033,"2016",FALSE
+"184","Cabeza tractora Iveco AS440S46TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,34500,554346,"2016",FALSE
+"185","Cabeza tractora Iveco AS440S46T/P HW EVO AUT INT E6","Iveco","ESPAÑA","Teruel",NA,47900,455657,"2017",FALSE
+"186","Cabeza tractora Iveco AS440S46TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,34500,525372,"2016",FALSE
+"187","Cabeza tractora Iveco AS440S46TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,40000,461644,"2017",FALSE
+"188","Cabeza tractora Iveco Stralis AS440S51T/P","Iveco","ESPAÑA","Coslada",510,53000,497639,"2017",FALSE
+"189","Cabeza tractora Iveco Stralis AS440S51T/P","Iveco","ESPAÑA","Coslada",510,50500,523081,"2017",FALSE
+"190","Cabeza tractora Scania R 450","Scania","ESPAÑA","Tarragona",450,52000,670000,"2017",FALSE
+"191","Cabeza tractora Renault Premium 440 DXI","Renault","ESPAÑA","Els Hostalets De Pierola",440,8000,1400000,"2005",FALSE
+"192","Cabeza tractora Scania R 470","Scania","ESPAÑA","Els Hostalets De Pierola",470,9500,855928,"2005",FALSE
+"193","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Valle De Trápaga",460,52500,357000,"2017",FALSE
+"194","Cabeza tractora Iveco Stralis AS 440 S51 TP","Iveco","ESPAÑA","Valle De Trápaga",510,45000,612000,"2017",FALSE
+"195","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS 440 S51 TP","Iveco","ESPAÑA","Valle De Trápaga",510,45000,603000,"2017",FALSE
+"196","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Molina De Segura",480,48000,542195,"2017",FALSE
+"197","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,50500,483076,"2017",FALSE
+"198","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Molina De Segura",480,51500,462515,"2017",FALSE
+"199","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,39500,434662,"2016",FALSE
+"200","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",480,50500,417300,"2017",FALSE
+"201","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Molina De Segura",480,49000,527629,"2017",FALSE
+"202","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Molina De Segura",480,51500,458392,"2017",FALSE
+"203","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,39500,483684,"2016",FALSE
+"204","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,52500,339811,"2017",FALSE
+"205","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,39000,587620,"2016",FALSE
+"206","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Zaragoza",480,45500,477096,"2017",FALSE
+"207","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Zaragoza",480,50400,420677,"2018",FALSE
+"208","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Zaragoza",480,50400,439918,"2018",FALSE
+"209","Cabeza tractora Iveco Stralis AT440S48T/P","Iveco","ESPAÑA","Zaragoza",480,48000,404434,"2018",FALSE
+"210","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Zaragoza",460,46500,425358,"2018",FALSE
+"211","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Zaragoza",480,46000,471187,"2017",FALSE
+"212","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Zaragoza",460,45000,464323,"2017",FALSE
+"213","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Zaragoza",460,46500,304762,"2017",FALSE
+"214","Cabeza tractora Iveco Stralis AS 440 S51 TP","Iveco","ESPAÑA","Zaragoza",510,49000,430118,"2018",FALSE
+"215","Cabeza tractora MAN TGA 18.400 LX","MAN","ESPAÑA","Vera De Bidasoa",400,18000,832100,"2008",FALSE
+"216","Cabeza tractora Renault Premium 450 DXI","Renault","ESPAÑA","Vera De Bidasoa",450,7899,1315000,"2007",FALSE
+"217","Cabeza tractora productos peligrosos / ADR Iveco Stralis AT 440 S 46 TP","Productos","ESPAÑA","Telde",460,41500,494084,"2016",FALSE
+"218","Cabeza tractora Iveco Stralis AT 440 S 46 TP","Est","ESPAÑA","Telde",460,37000,573668,"2016",FALSE
+"219","Cabeza tractora Iveco Stralis AT 440 S 46 TP","Est","ESPAÑA","Telde",460,37000,601506,"2016",FALSE
+"220","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Telde",460,33058,450000,"2016",FALSE
+"221","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Telde",460,33058,450000,"2016",FALSE
+"222","Cabeza tractora productos peligrosos / ADR Iveco Stralis AT440S46T/P","Iveco","ESPAÑA","Telde",460,34298,494084,"2016",FALSE
+"223","Cabeza tractora Mercedes Actros 1848","Mercedes","ESPAÑA","Alcasser / Valencia",480,30800,741572,"2016",FALSE
+"224","Cabeza tractora Mercedes Actros 1848","Mercedes","ESPAÑA","Alcasser / Valencia",480,64800,242771,"2018",FALSE
+"225","Cabeza tractora Scania P 410","Scania","ESPAÑA","Alcasser / Valencia",410,42800,382611,"2016",FALSE
+"226","Cabeza tractora Iveco AT 460 EURO 6 ZF-Intarder / ACC / LDW","Iveco","ESPAÑA","Alcasser / Valencia",460,31800,299864,"2016",FALSE
+"227","Cabeza tractora Iveco Stralis","Iveco","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"228","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,67700,471562,"2018",FALSE
+"229","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,67400,388273,"2019",FALSE
+"230","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,74700,413326,"2018",FALSE
+"231","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Amorebieta",460,29000,560000,"2013",FALSE
+"232","Cabeza tractora Mercedes Actros 1840 LS","Mercedes","ESPAÑA","Amorebieta",400,31800,620000,"2015",FALSE
+"233","Cabeza tractora Volvo FH 500 Globetrotter","Volvo","ESPAÑA","Amorebieta",500,41600,580000,"2014",FALSE
+"234","Cabeza tractora Renault","Renault","ESPAÑA","Palma De Mallorca",NA,12100,NA,NA,FALSE
+"235","Cabeza tractora Scania R R450_NEW TYRES_NEW FACE_STANCLIMA","Scania","ESPAÑA","Tarragona",450,52000,785000,"2017",FALSE
+"236","Cabeza tractora Iveco Stralis AS440S46TP- CNG","Iveco","ESPAÑA","Tarragona",460,19750,5e+05,"2018",FALSE
+"237","Cabeza tractora Iveco Stralis AS440S50T/P","Iveco","ESPAÑA","Onzonilla",499,34298,496500,"2016",FALSE
+"238","Cabeza tractora Iveco Stralis AS 440 S51 TP","Iveco","ESPAÑA","La Cañada De San Urbano",480,36000,535012,"2016",FALSE
+"239","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","ESPAÑA","La Cañada De San Urbano",480,35000,657061,"2017",FALSE
+"240","Cabeza tractora Iveco Stralis AS 440 S51 TP","Iveco","ESPAÑA","La Cañada De San Urbano",510,NA,492103,"2018",FALSE
+"241","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","ESPAÑA","La Cañada De San Urbano",480,35000,688643,"2017",FALSE
+"242","Cabeza tractora Iveco Stralis AS440S50T/P","Iveco","ESPAÑA","Almazora",499,52500,395962,"2017",FALSE
+"243","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Almazora",480,53500,380446,"2017",FALSE
+"244","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Almazora",460,50500,445886,"2017",FALSE
+"245","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Almazora",460,50500,337390,"2017",FALSE
+"246","Cabeza tractora Renault Premium 450 DXI","Renault","ESPAÑA","Cazalegas",450,19000,999999,"2010",FALSE
+"247","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,40500,390993,"2016",FALSE
+"248","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Ciudad Real",480,39000,550025,"2016",FALSE
+"249","Cabeza tractora Iveco Stralis 440 S 46","Iveco","ESPAÑA","Villabona",460,40500,380443,"2016",FALSE
+"250","Cabeza tractora Iveco Stralis 440 S 46","Iveco","ESPAÑA","Villabona",460,59000,329827,"2018",FALSE
+"251","Cabeza tractora Iveco Stralis","Iveco","ESPAÑA","Molina De Segura",460,50500,459142,"2017",FALSE
+"252","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Barcelona",460,39500,406010,"2016",FALSE
+"253","Cabeza tractora Iveco Stralis AT440S46T/P","Iveco","ESPAÑA","Barcelona",460,56000,104721,"2017",FALSE
+"254","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Barcelona",460,59000,301505,"2018",FALSE
+"255","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Barcelona",460,50500,450000,"2017",FALSE
+"256","Cabeza tractora Renault","Renault","ESPAÑA","Getafe",430,45500,470043,"2016",FALSE
+"257","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Sada",480,43500,674869,"2017",FALSE
+"258","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Sada",460,59000,363898,"2018",FALSE
+"259","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Sada",460,32500,736977,"2016",FALSE
+"260","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Sada",480,43500,667019,"2017",FALSE
+"261","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Sada",480,43500,686708,"2017",FALSE
+"262","Cabeza tractora Renault Midlum","Renault","ESPAÑA","Madrid",NA,33600,404680,"2010",FALSE
+"263","Cabeza tractora Iveco Stralis 440 S 48","Iveco","ESPAÑA","Madrid",480,60000,455572,"2018",FALSE
+"264","Cabeza tractora Iveco Stralis AS 440 S 48","Iveco","ESPAÑA","Madrid",480,58000,455572,"2018",FALSE
+"265","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Madrid",460,52000,479429,"2018",FALSE
+"266","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Madrid",136,56000,306566,"2017",FALSE
+"267","Cabeza tractora Iveco Stralis AT 440 S 46","Iveco","ESPAÑA","Quart De Poblet",460,NA,345032,"2017",FALSE
+"268","Cabeza tractora Iveco Stralis AS 440 S 48 TXP","Iveco","ESPAÑA","Quart De Poblet",480,NA,585637,"2016",FALSE
+"269","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","ESPAÑA","Quart De Poblet",480,NA,341192,"2019",FALSE
+"270","Cabeza tractora Iveco Stralis 430","Iveco","ESPAÑA","Quart De Poblet",430,NA,22,"2022",FALSE
+"271","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Coslada",460,52500,333758,"2017",FALSE
+"272","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Valle De Trápaga",460,57000,415000,"2018",FALSE
+"273","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Valle De Trápaga",460,48000,548369,"2017",FALSE
+"274","Cabeza tractora Iveco Stralis AS440S46T/P HW AUT INTARDER","Iveco","ESPAÑA","Cordovilla",460,32500,732611,"2016",FALSE
+"275","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Hospitalet De Llobregat,",460,40082,654032,"2016",FALSE
+"276","Cabeza tractora Volvo FM 340","Volvo","ESPAÑA","Castellon",340,NA,574000,"2008",FALSE
+"277","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","ESPAÑA","Alicante",480,NA,614054,"2018",FALSE
+"278","Cabeza tractora Iveco Stralis 440 S 48","Iveco","ESPAÑA","Alicante",480,NA,614054,"2018",FALSE
+"279","Cabeza tractora Iveco Stralis AS 440 S 48","Iveco","ESPAÑA","Alicante",480,NA,574016,"2016",FALSE
+"280","Cabeza tractora Iveco Stralis AT 440 S 46 TP","Iveco","ESPAÑA","Alicante",460,NA,148831,"2017",FALSE
+"281","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Gijon",480,40500,481859,"2016",FALSE
+"282","Cabeza tractora Iveco Stralis AT440S46T/P","Iveco","ESPAÑA","Gijon",460,42500,455793,"2017",FALSE
+"283","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Gijon",460,43500,609730,"2017",FALSE
+"284","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Gijon",480,45500,600534,"2018",FALSE
+"285","Cabeza tractora Iveco AS440S46TP Hi Way AUT","Iveco","ESPAÑA","Teruel",NA,29900,540795,"2015",FALSE
+"286","Cabeza tractora Iveco AS440S46TP Hi Way AUT INT","Iveco","ESPAÑA","Teruel",NA,18500,953689,"2015",FALSE
+"287","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Alcalá De Guadaira",480,49000,537854,"2017",FALSE
+"288","Cabeza tractora Iveco Stralis AS440S45T/P","Iveco","ESPAÑA","Alcalá De Guadaira",500,36400,552337,"2015",FALSE
+"289","Cabeza tractora Iveco Stralis AT440S46T/P","Iveco","ESPAÑA","Alcalá De Guadaira",460,57500,187623,"2018",FALSE
+"290","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Alcalá De Guadaira",480,49000,588374,"2017",FALSE
+"291","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Alcala De Guadaira",460,35900,497000,"2015",FALSE
+"292","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Gamarra",460,NA,904000,"2007",FALSE
+"293","Cabeza tractora Volvo FH 500 Globetrotter XL","Volvo","ESPAÑA","Tarragona",500,47750,650000,"2017",FALSE
+"294","Cabeza tractora Scania G 410","Scania","ESPAÑA","Tarragona",410,13750,850000,"2015",FALSE
+"295","Cabeza tractora Volvo FH 500 Globetrotter XL","Volvo","ESPAÑA","Tarragona",500,47750,650000,"2017",FALSE
+"296","Cabeza tractora Scania G 410","Scania","ESPAÑA","Tarragona",410,13750,850000,"2015",FALSE
+"297","Cabeza tractora Iveco Stralis AS440S51T/P","Iveco","ESPAÑA","Alcalá De Guadaira",510,52500,586877,"2017",FALSE
+"298","Cabeza tractora Renault Premium 420 DCI","Renault","ESPAÑA","Els Hostalets De Pierola",420,6500,596727,"2001",FALSE
+"299","Cabeza tractora Renault Magnum 480","Renault","ESPAÑA","Els Hostalets De Pierola",480,8500,1178366,"2006",FALSE
+"300","Cabeza tractora MAN TGX 18.480 XLX","MAN","ESPAÑA","Els Hostalets De Pierola",480,12500,1045670,"2008",FALSE
+"301","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Zierbena",460,46900,350145,"2017",FALSE
+"302","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Zierbena",480,46500,541731,"2018",FALSE
+"303","Cabeza tractora productos peligrosos / ADR Renault T-Series","Renault","ESPAÑA","Zierbena",440,94460,33733,"2021",FALSE
+"304","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Alcala De Guadaira",430,45000,385000,"2016",FALSE
+"305","Cabeza tractora Renault T-Series 480.18 DTI 13","Renault","ESPAÑA","Lugo",480,NA,423000,"2019",FALSE
+"306","Cabeza tractora Renault T-Series 480.18 DTI 13","Renault","ESPAÑA","Lugo",480,NA,697000,"2015",FALSE
+"307","Cabeza tractora Scania R 420","Scania","ESPAÑA","Lugo",420,NA,823000,"2008",FALSE
+"308","Cabeza tractora Renault Premium 430 DXI","Renault","ESPAÑA","Cazalegas",430,23000,811000,"2011",FALSE
+"309","Cabeza tractora Renault T-High","Renault","ESPAÑA","La Muela",520,56000,578000,"2017",FALSE
+"310","Cabeza tractora Renault T-High","Renault","ESPAÑA","La Muela",520,56000,623097,"2017",FALSE
+"311","Cabeza tractora Renault T-High","Renault","ESPAÑA","Tárrega",520,53000,636110,"2017",FALSE
+"312","Cabeza tractora Renault C-Series","Renault","ESPAÑA","Tárrega",440,62900,212102,"2018",FALSE
+"313","Cabeza tractora MAN 18.480","MAN","ESPAÑA","Madrid",NA,25800,421717,"2015",FALSE
+"314","Cabeza tractora Mercedes Actros","Mercedes","ESPAÑA","Madrid",NA,25800,394050,"2015",FALSE
+"315","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,48000,558324,"2017",FALSE
+"316","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,39000,598732,"2016",FALSE
+"317","Cabeza tractora productos peligrosos / ADR Renault T-Series","Renault","ESPAÑA","Cuart De Poblet",520,59000,546500,"2018",FALSE
+"318","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,40500,385228,"2016",FALSE
+"319","Cabeza tractora Iveco Stralis AS440S46T/P HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",460,39500,456786,"2016",FALSE
+"320","Cabeza tractora Iveco Stralis AS440S46T/P HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",460,39500,412722,"2016",FALSE
+"321","Cabeza tractora Iveco AS440S46TP Hi Way AUT INT","Iveco","ESPAÑA","Teruel",NA,29900,571306,"2015",FALSE
+"322","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,34000,789363,"2016",FALSE
+"323","Cabeza tractora DAF XF 460 SSC","DAF","ESPAÑA","Santa Fe",460,58500,505894,"2016",FALSE
+"324","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,40000,636695,"2016",FALSE
+"325","Cabeza tractora DAF XF 440","DAF","ESPAÑA","Santa Fe",440,43000,530649,"2017",FALSE
+"326","Cabeza tractora Scania R 450","Scania","ESPAÑA","Santa Fe",450,58000,863251,"2017",FALSE
+"327","Cabeza tractora Scania R 450","Scania","ESPAÑA","Santa Fe",450,58000,861265,"2017",FALSE
+"328","Cabeza tractora Scania R 450","Scania","ESPAÑA","Santa Fe",450,65000,795142,"2018",FALSE
+"329","Cabeza tractora Mercedes Actros 1845 LS","Mercedes","ESPAÑA","Santa Fe",450,23000,1024661,"2014",FALSE
+"330","Cabeza tractora Mercedes Actros 1845 LS","Mercedes","ESPAÑA","Santa Fe",450,37000,736132,"2015",FALSE
+"331","Cabeza tractora Mercedes","Mercedes","ESPAÑA","Santa Fe",400,34500,695786,"2016",FALSE
+"332","Cabeza tractora Volvo F16 FH 650_GLOB._STAND CLIMA_CHASIS SPOILERS","Volvo","ESPAÑA","Tarragona",650,1e+05,5e+05,"2019",FALSE
+"333","Cabeza tractora Mercedes Actros 1842 LS","Mercedes","ESPAÑA","Santa Fe",420,37000,590361,"2016",FALSE
+"334","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,43000,552208,"2017",FALSE
+"335","Cabeza tractora Mercedes Arocs 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,41500,591249,"2017",FALSE
+"336","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,47500,591588,"2017",FALSE
+"337","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,54000,253300,"2018",FALSE
+"338","Cabeza tractora Mercedes Actros 1846 LS","Mercedes","ESPAÑA","Santa Fe",460,55000,504408,"2018",FALSE
+"339","Cabeza tractora Mercedes Actros 1846 LS","Mercedes","ESPAÑA","Santa Fe",460,55000,485489,"2018",FALSE
+"340","Cabeza tractora Iveco Stralis AT 430","Iveco","ESPAÑA","Santa Fe",460,84000,1,"2016",FALSE
+"341","Cabeza tractora Mercedes","Mercedes","ESPAÑA","Santa Fe",400,34500,637096,"2016",FALSE
+"342","Cabeza tractora DAF XF105 510","DAF","ESPAÑA","Santa Fe",510,11500,1006932,"2010",FALSE
+"343","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Santa Fe",460,15000,1205516,"2013",FALSE
+"344","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Santa Fe",460,17000,1274854,"2014",FALSE
+"345","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",510,35500,786010,"2014",FALSE
+"346","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,30500,798462,"2014",FALSE
+"347","Cabeza tractora DAF XF 460 SSC","DAF","ESPAÑA","Santa Fe",460,31000,1107461,"2014",FALSE
+"348","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",NA,33000,1029610,"2016",FALSE
+"349","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",510,35000,796372,"2016",FALSE
+"350","Cabeza tractora DAF CF FAT 400","DAF","ESPAÑA","Santa Fe",400,29000,797456,"2016",FALSE
+"351","Cabeza tractora Renault Premium 460 DXI","Renault","ESPAÑA","Sant Celoni",460,18500,779000,"2014",FALSE
+"352","Cabeza tractora Mercedes Actros 2040","Mercedes","ESPAÑA","Sant Celoni",400,25800,513000,"2000",FALSE
+"353","Cabeza tractora Scania R 440","Scania","ESPAÑA","Alcasser / Valencia",440,24800,880770,"2014",FALSE
+"354","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Fuente El Saz De Jarama",450,26000,768786,"2015",FALSE
+"355","Cabeza tractora Mercedes Actros 1842","Mercedes","ESPAÑA","Fuente El Saz De Jarama",420,16500,1865441,"2012",FALSE
+"356","Cabeza tractora Scania R 164R480","Scania","ESPAÑA","Santiago De Compostela",480,NA,1801000,"2001",FALSE
+"357","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Alcasser / Valencia",460,43800,597214,"2018",FALSE
+"358","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Alcasser / Valencia",460,45800,573141,"2018",FALSE
+"359","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Alcasser / Valencia",460,43800,614254,"2018",FALSE
+"360","Cabeza tractora Mercedes Actros 1848","Mercedes","ESPAÑA","Alcasser / Valencia",480,29800,753101,"2015",FALSE
+"361","Cabeza tractora Mercedes Actros 1851 LS","Mercedes","ESPAÑA","Alcala De Guadaira",510,59500,470000,"2019",FALSE
+"362","Cabeza tractora Volvo FH 500 Globetrotter XL","Volvo","ESPAÑA","Massanassa",500,36700,847600,"2015",FALSE
+"363","Cabeza tractora Mercedes Actros","Mercedes","ESPAÑA","Massanassa",510,45900,497000,"2016",FALSE
+"364","Cabeza tractora Mercedes Actros 1843","Mercedes","ESPAÑA","Alcasser / Valencia",430,33800,425458,"2015",FALSE
+"365","Cabeza tractora Iveco Stralis 480","Iveco","ESPAÑA","Alcasser / Valencia",480,45800,391064,"2017",FALSE
+"366","Cabeza tractora Iveco Stralis 460 Hi-Way","Iveco","ESPAÑA","Alcasser / Valencia",460,27800,757985,"2016",FALSE
+"367","Cabeza tractora MAN TGS 18.480","MAN","ESPAÑA","Zaragoza",480,NA,425000,"2009",FALSE
+"368","Cabeza tractora MAN TGX 18.440 XLX","MAN","ESPAÑA","Alcasser / Valencia",440,24800,521850,"2012",FALSE
+"369","Cabeza tractora Scania P 410 / Retarder / Hydraulik / ACC / LDW / Navi","Scania","ESPAÑA","Alcasser / Valencia",411,35800,539610,"2016",FALSE
+"370","Cabeza tractora DAF XF 106.460 SC / Retarder / LDW / ACC / 2 Liegen","DAF","ESPAÑA","Alcasser / Valencia",460,37800,687652,"2017",FALSE
+"371","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,840,510000,"2016",FALSE
+"372","Cabeza tractora MAN TGX 18.460","MAN","ESPAÑA","Alicante",460,950,425000,"2018",FALSE
+"373","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Zaragoza",460,46000,563414,"2017",FALSE
+"374","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Gijon",460,40500,428119,"2016",FALSE
+"375","Cabeza tractora Renault T-High","Renault","ESPAÑA","Sevilla",520,52000,580845,"2018",FALSE
+"376","Cabeza tractora Renault T-High","Renault","ESPAÑA","Sevilla",520,50000,645413,"2018",FALSE
+"377","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Zierbena",480,54300,488737,"2017",FALSE
+"378","Cabeza tractora Iveco AS440S46TP Hi Way AUT INT","Iveco","ESPAÑA","Teruel",NA,29900,598290,"2015",FALSE
+"379","Cabeza tractora Iveco AS440S46T/P Hi Way","Iveco","ESPAÑA","Teruel",NA,NA,416760,"2014",FALSE
+"380","Cabeza tractora Scania S 450_HIGHCABINE_RETARDER_STAND- SKIRTS","Scania","ESPAÑA","Tarragona",450,69900,730000,"2018",FALSE
+"381","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,39500,469154,"2016",FALSE
+"382","Cabeza tractora Iveco Stralis AS440S46TP AUT INT","Iveco","ESPAÑA","Ciudad Real",460,45500,183241,"2016",FALSE
+"383","Cabeza tractora MAN TGS","MAN","ESPAÑA","Madrid",NA,34700,379429,"2013",FALSE
+"384","Cabeza tractora productos peligrosos / ADR Renault T-High","Renault","ESPAÑA","Cazalegas",480,48000,631000,"2015",FALSE
+"385","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Cazalegas",440,46000,527000,"2016",FALSE
+"386","Cabeza tractora Volvo FH 12","Volvo","ESPAÑA","Quintana De Orden",NA,NA,8e+05,"2000",FALSE
+"387","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,48000,561709,"2017",FALSE
+"388","Cabeza tractora Iveco S-WAY 430","Iveco","ESPAÑA","Torrent",430,NA,22,"2022",FALSE
+"389","Cabeza tractora productos peligrosos / ADR Iveco Stralis","Iveco","ESPAÑA","Castellon",NA,NA,506406,"2013",FALSE
+"390","Cabeza tractora Iveco Stralis AS 440 S51 TP","Iveco","ESPAÑA","La Cañada De San Urbano",510,NA,537286,"2018",FALSE
+"391","Cabeza tractora MAN TGS 26.400","MAN","ESPAÑA","Vigo",400,50000,975050,"2009",FALSE
+"392","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Madrid",500,NA,858229,"2016",FALSE
+"393","Cabeza tractora DAF XF 106","DAF","ESPAÑA","Alcasser / Valencia",480,49800,598574,"2018",FALSE
+"394","Cabeza tractora Mercedes Actros 2040","Mercedes","ESPAÑA","Zaragoza",400,NA,702000,"2002",FALSE
+"395","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69400,414258,"2019",FALSE
+"396","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,68500,435308,"2019",FALSE
+"397","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69700,399720,"2019",FALSE
+"398","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69800,396160,"2019",FALSE
+"399","Cabeza tractora DAF XF 460","DAF","ESPAÑA","San Fernando De Henares",462,49800,730060,"2017",FALSE
+"400","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69500,413162,"2019",FALSE
+"401","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,66100,490205,"2019",FALSE
+"402","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69500,413010,"2019",FALSE
+"403","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69400,420880,"2019",FALSE
+"404","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69500,420330,"2019",FALSE
+"405","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69000,437560,"2019",FALSE
+"406","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,65600,324722,"2019",FALSE
+"407","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,65700,276850,"2018",FALSE
+"408","Cabeza tractora Scania R 450","Scania","ESPAÑA","Vilablareix",450,65000,550000,"2018",FALSE
+"409","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Alcalá De Guadaira",480,49500,588373,"2017",FALSE
+"410","Cabeza tractora Renault T-High","Renault","ESPAÑA","Cazalegas",520,57500,488000,"2017",FALSE
+"411","Cabeza tractora Volvo FL12 380","Volvo","ESPAÑA","Torrent",380,NA,628906,"1998",FALSE
+"412","Cabeza tractora Iveco Stralis AS 440","Iveco","ESPAÑA","Torrent",NA,NA,5e+05,"2016",FALSE
+"413","Cabeza tractora Iveco Stralis AS440S48TP HW EVO E6","Iveco","ESPAÑA","Ciudad Real",480,53500,366455,"2017",FALSE
+"414","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,57000,423029,"2018",FALSE
+"415","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,34500,608227,"2016",FALSE
+"416","Cabeza tractora Mercedes Actros","Mercedes","ESPAÑA","Madrid",NA,22700,596705,"2013",FALSE
+"417","Cabeza tractora Volvo FH","Volvo","ESPAÑA","Castellon",NA,NA,799276,"2017",FALSE
+"418","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,56600,649245,"2017",FALSE
+"419","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,56400,662175,"2017",FALSE
+"420","Cabeza tractora DAF XF 460","DAF","ESPAÑA","San Fernando De Henares",462,50200,732740,"2017",FALSE
+"421","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,68900,441270,"2019",FALSE
+"422","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,58000,645742,"2017",FALSE
+"423","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69600,409357,"2019",FALSE
+"424","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,57700,557562,"2017",FALSE
+"425","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,57800,617972,"2017",FALSE
+"426","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,58900,669890,"2017",FALSE
+"427","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,56000,625874,"2017",FALSE
+"428","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64700,530814,"2018",FALSE
+"429","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,55700,652229,"2017",FALSE
+"430","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,64300,511837,"2017",FALSE
+"431","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69300,419545,"2019",FALSE
+"432","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,71200,430457,"2018",FALSE
+"433","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,69600,406555,"2019",FALSE
+"434","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,55600,534500,"2018",FALSE
+"435","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,67900,412260,"2019",FALSE
+"436","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,50500,459520,"2017",FALSE
+"437","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Monforte De Lemos",500,24000,1330000,"2011",FALSE
+"438","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Molina De Segura",460,18900,850000,"2014",FALSE
+"439","Cabeza tractora DAF CF85 430","DAF","ESPAÑA","Vitoria Gasteis",430,13000,1300000,"2005",FALSE
+"440","Cabeza tractora Renault Premium 450 DXI","Renault","ESPAÑA","Vitoria Gasteis",450,7500,1300000,"2007",FALSE
+"441","Cabeza tractora DAF XF95 530","DAF","ESPAÑA","Vitoria Gasteis",530,13000,1800000,"2005",FALSE
+"442","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Massanassa",450,43400,416500,"2016",FALSE
+"443","Cabeza tractora productos peligrosos / ADR Renault T-Series 440","Renault","ESPAÑA","Massanassa",440,42300,403000,"2017",FALSE
+"444","Cabeza tractora productos peligrosos / ADR Renault T-Series 440","Renault","ESPAÑA","Massanassa",460,36500,536700,"2016",FALSE
+"445","Cabeza tractora rebajado Renault T-Series 460.18 DTI 11","Renault","ESPAÑA","Lucena",460,35000,703000,"2015",FALSE
+"446","Cabeza tractora DAF XF105 510","DAF","ESPAÑA","Massanassa",510,39900,581000,"2016",FALSE
+"447","Cabeza tractora DAF CF","DAF","ESPAÑA","Santa Fe",400,32000,774554,"2016",FALSE
+"448","Cabeza tractora DAF CF FT 400","DAF","ESPAÑA","Santa Fe",400,30000,616968,"2016",FALSE
+"449","Cabeza tractora DAF CF","DAF","ESPAÑA","Santa Fe",400,30000,693281,"2016",FALSE
+"450","Cabeza tractora DAF CF FT 370","DAF","ESPAÑA","Santa Fe",370,30000,591381,"2016",FALSE
+"451","Cabeza tractora DAF CF 460","DAF","ESPAÑA","Santa Fe",460,30500,819838,"2016",FALSE
+"452","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",510,37000,767987,"2016",FALSE
+"453","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,34000,789363,"2016",FALSE
+"454","Cabeza tractora DAF XF 460 SSC","DAF","ESPAÑA","Santa Fe",460,58500,505894,"2016",FALSE
+"455","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,40000,636695,"2016",FALSE
+"456","Cabeza tractora DAF XF 440","DAF","ESPAÑA","Santa Fe",440,43000,530649,"2017",FALSE
+"457","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,51000,559785,"2017",FALSE
+"458","Cabeza tractora DAF XF 530","DAF","ESPAÑA","Santa Fe",530,68000,404292,"2018",FALSE
+"459","Cabeza tractora DAF XF 530","DAF","ESPAÑA","Santa Fe",530,NA,509107,"2018",FALSE
+"460","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,427183,"2018",FALSE
+"461","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,442044,"2018",FALSE
+"462","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,396027,"2018",FALSE
+"463","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,391423,"2018",FALSE
+"464","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,417361,"2018",FALSE
+"465","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,413392,"2019",FALSE
+"466","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,434485,"2019",FALSE
+"467","Cabeza tractora Volvo FH 500 Globetrotter XL","Volvo","ESPAÑA","Massanassa",500,NA,1,"2017",FALSE
+"468","Cabeza tractora Renault T520 High cab T520 HIGH SLEEPER CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,47000,672600,"2018",FALSE
+"469","Cabeza tractora productos peligrosos / ADR Scania P 450","Scania","ESPAÑA","Sant Celoni",450,26800,622000,"2015",FALSE
+"470","Cabeza tractora Volvo FH 460","Volvo","ESPAÑA","Vigo",460,20000,1560782,"2010",FALSE
+"471","Cabeza tractora DAF XF530 4x2 Tractor unit","DAF","ESPAÑA","Amposta",530,92110,399535,"2019",FALSE
+"472","Cabeza tractora DAF XF480 4x2 Tractor unit (6 unit available)","DAF","ESPAÑA","Amposta",480,74000,372088,"2019",FALSE
+"473","Cabeza tractora Mercedes SK 1850","Mercedes","ESPAÑA","Sunbilla",500,12500,351000,"1995",FALSE
+"474","Cabeza tractora Iveco","Iveco","ESPAÑA","Castellon",510,NA,1,"2012",FALSE
+"475","Cabeza tractora Renault Gamme T 460","Renault","ESPAÑA","Los Palacios Y Villafran",469,33500,503184,"2016",FALSE
+"476","Cabeza tractora Iveco Stralis 440 S 46","Iveco","ESPAÑA","Madrid",460,48000,537736,"2017",FALSE
+"477","Cabeza tractora Mercedes Actros","Mercedes","ESPAÑA","Madrid",NA,69000,330401,"2017",FALSE
+"478","Cabeza tractora Iveco Stralis AS440S48TOP HW EVO E6","Iveco","ESPAÑA","Ciudad Real",480,51500,453346,"2017",FALSE
+"479","Cabeza tractora Iveco Stralis AS440S46 T/P HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",460,39500,458232,"2016",FALSE
+"480","Cabeza tractora Iveco Stralis AS440S51 TP EVO","Iveco","ESPAÑA","Ciudad Real",510,48500,563740,"2017",FALSE
+"481","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,49300,661711,"2017",FALSE
+"482","Cabeza tractora Scania R","Scania","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"483","Cabeza tractora MAN TGX","MAN","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"484","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,70200,450396,"2018",FALSE
+"485","Cabeza tractora Mercedes Actros","Mercedes","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"486","Cabeza tractora DAF XF 530","DAF","ESPAÑA","San Fernando De Henares",NA,65200,455362,"2018",FALSE
+"487","Cabeza tractora Volvo FH13 460","Volvo","ESPAÑA","Fuente El Saz De Jarama",460,119000,95000,"2021",FALSE
+"488","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,49800,540997,"2018",FALSE
+"489","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Valencia",448,93200,168479,"2021",FALSE
+"490","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,75200,435658,"2019",FALSE
+"491","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,75000,440066,"2019",FALSE
+"492","Cabeza tractora Volvo FMX 13.460","Volvo","ESPAÑA","Massanassa",460,36600,516000,"2014",FALSE
+"493","Cabeza tractora Iveco CABEZA TRACTORA GRUA IVECO 440 HIAB 245 E-6 + 2","Iveco","ESPAÑA","Valladolid",NA,64500,412000,"2006",FALSE
+"494","Cabeza tractora Iveco AS440S42TP Hi Way AUT INT","Iveco","ESPAÑA","Teruel",NA,29500,544214,"2016",FALSE
+"495","Cabeza tractora Iveco AS440S46TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,40000,461606,"2017",FALSE
+"496","Cabeza tractora Iveco AS440S46TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,34500,595335,"2016",FALSE
+"497","Cabeza tractora MAN TGA 18.480 XLX","MAN","ESPAÑA","Els Hostalets De Pierola",480,9500,1369004,"2007",FALSE
+"498","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",480,51500,423549,"2017",FALSE
+"499","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Molina De Segura",480,51500,483638,"2017",FALSE
+"500","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,64500,470195,"2018",FALSE
+"501","Cabeza tractora MAN TGX 18.500 XXL","MAN","ESPAÑA","Alcasser / Valencia",500,45800,649845,"2018",FALSE
+"502","Cabeza tractora Iveco Stralis AT 460","Iveco","ESPAÑA","Alcasser / Valencia",460,31800,299864,"2016",FALSE
+"503","Cabeza tractora Iveco Stralis AS 440","Iveco","ESPAÑA","Alcasser / Valencia",400,29800,481212,"2017",FALSE
+"504","Cabeza tractora Scania P 410 / Retarder / Hydraulik / ACC / LDW/Navi","Scania","ESPAÑA","Alcasser / Valencia",411,35800,525128,"2016",FALSE
+"505","Cabeza tractora Scania","Scania","ESPAÑA","Alcasser / Valencia",410,35800,539610,"2016",FALSE
+"506","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Alcasser / Valencia",450,29800,847315,"2015",FALSE
+"507","Cabeza tractora Mercedes Actros 1851","Mercedes","ESPAÑA","Alcasser / Valencia",510,31800,765197,"2014",FALSE
+"508","Cabeza tractora Volvo FM 460 / E6 / Hydraulik / LDW / Liege","Volvo","ESPAÑA","Alcasser / Valencia",460,34800,699826,"2016",FALSE
+"509","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Alcasser / Valencia",460,47800,593063,"2018",FALSE
+"510","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,39000,523171,"2016",FALSE
+"511","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Fuente El Saz De Jarama",460,15300,1080000,"2012",FALSE
+"512","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Fuente El Saz De Jarama",460,15000,1424965,"2012",FALSE
+"513","Cabeza tractora DAF XF105 510","DAF","ESPAÑA","Fuente El Saz De Jarama",510,16000,1217000,"2013",FALSE
+"514","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Fuente El Saz De Jarama",460,19000,823161,"2013",FALSE
+"515","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Molina De Segura",460,32500,7e+05,"2016",FALSE
+"516","Cabeza tractora Volvo FH 500 Globetrotter XL","Volvo","ESPAÑA","Sils",500,42500,1227012,"2016",FALSE
+"517","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S51T/P","Iveco","ESPAÑA","Barcelona",510,58500,123654,"2017",FALSE
+"518","Cabeza tractora DAF XF 530","DAF","ESPAÑA","Fuente El Saz De Jarama",NA,98000,15500,"2021",FALSE
+"519","Cabeza tractora Renault T520 High cab T520 HIGH SLEEPER CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,35000,701276,"2016",FALSE
+"520","Cabeza tractora Renault C430","Renault","ESPAÑA","Alcala De Guadaira",NA,37000,649600,"2017",FALSE
+"521","Cabeza tractora Volvo FM 450","Volvo","ESPAÑA","Nava De Campaña (Hellin)",NA,37000,747000,"2017",FALSE
+"522","Cabeza tractora Volvo FM 450","Volvo","ESPAÑA","Nava De Campaña (Hellin)",NA,37000,674000,"2017",FALSE
+"523","Cabeza tractora Iveco STRALIS 480","Iveco","ESPAÑA","Benavente",NA,NA,NA,"2011",FALSE
+"524","Cabeza tractora Volvo FM 410","Volvo","ESPAÑA","Bizkaia",410,NA,556000,"2013",FALSE
+"525","Cabeza tractora Volvo FH13","Volvo","ESPAÑA","Seseña Nuevo",NA,NA,1435054,"2009",FALSE
+"526","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Madrid",460,48000,587310,"2017",FALSE
+"527","Cabeza tractora Iveco AS440S46TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,33500,599668,"2016",FALSE
+"528","Cabeza tractora Iveco AS440S48TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,33500,588129,"2016",FALSE
+"529","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Gijon",460,48000,532100,"2017",FALSE
+"530","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Almazora",460,50500,325868,"2017",FALSE
+"531","Cabeza tractora Scania R 480","Scania","ESPAÑA","Castellon",480,NA,1366199,"2008",FALSE
+"532","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Ciudad Real",480,34500,606013,"2016",FALSE
+"533","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,39500,402292,"2016",FALSE
+"534","Cabeza tractora DAF XF 530","DAF","ESPAÑA","Alcasser / Valencia",530,58800,391381,"2018",FALSE
+"535","Cabeza tractora Iveco AS440S46TP Hi Way","Iveco","ESPAÑA","Teruel",NA,28500,530474,"2015",FALSE
+"536","Cabeza tractora Iveco Stralis AS440S46TP HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",460,42500,257160,"2016",FALSE
+"537","Cabeza tractora Iveco Stralis AS440S48TP HW EVO E6","Iveco","ESPAÑA","Ciudad Real",480,58000,422043,"2018",FALSE
+"538","Cabeza tractora Renault T-High","Renault","ESPAÑA","Cazalegas",520,52000,610900,"2017",FALSE
+"539","Cabeza tractora Renault T-High","Renault","ESPAÑA","Cazalegas",520,50000,669600,"2018",FALSE
+"540","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Lleida",460,24800,905000,"2014",FALSE
+"541","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Valladolid",460,28000,625000,"2015",FALSE
+"542","Cabeza tractora Iveco AT440S46T/P Hi Road EVO AUT INT","Iveco","ESPAÑA","Teruel",NA,31000,626890,"2017",FALSE
+"543","Cabeza tractora Iveco Stralis AS440S48T/P HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",480,40000,533484,"2016",FALSE
+"544","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,63800,572641,"2018",FALSE
+"545","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,60800,554612,"2018",FALSE
+"546","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62000,569765,"2018",FALSE
+"547","Cabeza tractora Mercedes Actros 1845 LS","Mercedes","ESPAÑA","Santa Fe",450,37000,736132,"2015",FALSE
+"548","Cabeza tractora Mercedes Actros 1842 LS","Mercedes","ESPAÑA","Santa Fe",420,37000,590361,"2016",FALSE
+"549","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,62700,478603,"2018",FALSE
+"550","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,58400,665321,"2018",FALSE
+"551","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Sevilla",460,26000,876413,"2014",FALSE
+"552","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Sevilla",480,53000,525986,"2018",FALSE
+"553","Cabeza tractora Renault T-High","Renault","ESPAÑA","Sevilla",520,52000,573859,"2018",FALSE
+"554","Cabeza tractora Iveco Stralis AS440S48T/P HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",480,40000,527856,"2016",FALSE
+"555","Cabeza tractora Iveco Stralis AS440S46TP E6 AUT INT","Iveco","ESPAÑA","Ciudad Real",460,40500,342128,"2016",FALSE
+"556","Cabeza tractora Iveco AS440S46TP Hi Way AUT INT","Iveco","ESPAÑA","Teruel",NA,29900,570105,"2015",FALSE
+"557","Cabeza tractora Mercedes Actros 1845 LS","Mercedes","ESPAÑA","Alcala De Guadaira",450,49900,467000,"2017",FALSE
+"558","Cabeza tractora Mercedes Actros 1845 LS","Mercedes","ESPAÑA","Alcala De Guadaira",450,46000,487000,"2016",FALSE
+"559","Cabeza tractora Renault T-High 520 T4X2 E6","Renault","ESPAÑA","Santa Cruz De Mudela",520,38000,920000,"2022",FALSE
+"560","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,49800,792036,"2017",FALSE
+"561","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,50700,747272,"2017",FALSE
+"562","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,57500,704223,"2018",FALSE
+"563","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,57700,696323,"2018",FALSE
+"564","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,50900,735194,"2017",FALSE
+"565","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,51000,760577,"2017",FALSE
+"566","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,51700,725808,"2017",FALSE
+"567","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,51600,730523,"2017",FALSE
+"568","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,51700,728095,"2017",FALSE
+"569","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,50500,787278,"2017",FALSE
+"570","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,50700,777551,"2017",FALSE
+"571","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,51500,735455,"2017",FALSE
+"572","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,52400,691480,"2017",FALSE
+"573","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,53300,643913,"2017",FALSE
+"574","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Valencia",500,50900,763615,"2017",FALSE
+"575","Cabeza tractora Scania R 450","Scania","ESPAÑA","Villarrobledo (Ab)",NA,46000,633000,"2017",FALSE
+"576","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,66400,528018,"2018",FALSE
+"577","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,67500,488398,"2018",FALSE
+"578","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,69600,327487,"2019",FALSE
+"579","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62400,496655,"2019",FALSE
+"580","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,67300,489732,"2018",FALSE
+"581","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,63300,530258,"2019",FALSE
+"582","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,68500,470873,"2018",FALSE
+"583","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,67400,396330,"2018",FALSE
+"584","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,62500,548698,"2019",FALSE
+"585","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,66200,521430,"2018",FALSE
+"586","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,65700,294064,"2018",FALSE
+"587","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,68900,433635,"2019",FALSE
+"588","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,69300,294287,"2019",FALSE
+"589","Cabeza tractora Iveco Stralis AS440S48TP HW EVO E6","Iveco","ESPAÑA","Ciudad Real",480,51500,444807,"2017",FALSE
+"590","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Ciudad Real",480,35500,682721,"2016",FALSE
+"591","Cabeza tractora DAF Non spécifié","DAF","ESPAÑA","Castellon",NA,NA,1e+06,"2012",FALSE
+"592","Cabeza tractora Iveco Stralis 480 X-WAY","Iveco","ESPAÑA","Alcala De Guadaira",480,NA,350,"2022",FALSE
+"593","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Alcasser / Valencia",480,49800,596574,"2018",FALSE
+"594","Cabeza tractora Renault","Renault","ESPAÑA","Palma De Mallorca",NA,50820,NA,NA,FALSE
+"595","Cabeza tractora Renault T-High 520 T4X2 E6","Est","ESPAÑA","Lucena",520,63000,493500,"2019",FALSE
+"596","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,74200,457950,"2019",FALSE
+"597","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Valencia",450,67500,373671,"2019",FALSE
+"598","Cabeza tractora Scania R 440","Scania","ESPAÑA","Alcala De Guadaira",NA,13000,1121756,"2012",FALSE
+"599","Cabeza tractora Renault Premium 420 DCI","Renault","ESPAÑA","Alcala De Guadaira",NA,7500,1189850,"2001",FALSE
+"600","Cabeza tractora Renault T-High 520 T4X2 E6","Renault","ESPAÑA","Santa Cruz De Mudela",520,42000,717300,"2016",FALSE
+"601","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,48000,531240,"2017",FALSE
+"602","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,66000,466839,"2018",FALSE
+"603","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,60600,587159,"2017",FALSE
+"604","Cabeza tractora Iveco Stralis","Iveco","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"605","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,64200,576859,"2018",FALSE
+"606","Cabeza tractora Scania R","Scania","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"607","Cabeza tractora Renault Premium 460","Renault","ESPAÑA","Sentmenat",460,17000,1100000,"2011",FALSE
+"608","Cabeza tractora DAF XF 106 460 SC","DAF","ESPAÑA","Sentmenat",460,18000,1100000,"2020",FALSE
+"609","Cabeza tractora Iveco AS440S46T/P HW EVO AUT INT E6","Iveco","ESPAÑA","Teruel",NA,47900,430607,"2017",FALSE
+"610","Cabeza tractora Iveco Stralis 440 S 46","Est","ESPAÑA","Quart De Poblet",460,25500,646300,"2015",FALSE
+"611","Cabeza tractora Iveco Stralis AS 440 S 50 TP","Est","ESPAÑA","Quart De Poblet",500,38500,450000,"2016",FALSE
+"612","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Est","ESPAÑA","Quart De Poblet",480,37000,385000,"2016",FALSE
+"613","Cabeza tractora Scania G 340","Scania","ESPAÑA","Imarcoain",340,NA,354540,"2016",FALSE
+"614","Cabeza tractora Iveco Stralis AS440S48 T/P","Iveco","ESPAÑA","Alcala De Guadaira",NA,39900,296130,"2016",FALSE
+"615","Cabeza tractora Renault T-High","Renault","ESPAÑA","Molina De Segura",520,33500,722300,"2015",FALSE
+"616","Cabeza tractora Renault T-High","Renault","ESPAÑA","Molina De Segura",520,53000,608500,"2017",FALSE
+"617","Cabeza tractora Renault Magnum 480","Renault","ESPAÑA","Paiporta",480,14800,1275000,"2011",FALSE
+"618","Cabeza tractora Iveco Stralis AT 440 S 33 TP CNG","Iveco","ESPAÑA","Sant Celoni",330,15800,652000,"2014",FALSE
+"619","Cabeza tractora Renault T-High","Renault","ESPAÑA","Cazalegas",520,52000,587200,"2017",FALSE
+"620","Cabeza tractora Renault T-High","Renault","ESPAÑA","Cazalegas",520,54000,545000,"2018",FALSE
+"621","Cabeza tractora Renault T-High","Renault","ESPAÑA","Cazalegas",520,52000,600600,"2017",FALSE
+"622","Cabeza tractora Renault T-High","Renault","ESPAÑA","Cazalegas",520,50000,654000,"2017",FALSE
+"623","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Tárrega",460,50500,475235,"2018",FALSE
+"624","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65700,394386,"2018",FALSE
+"625","Cabeza tractora Renault T","Renault","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"626","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,64500,464268,"2018",FALSE
+"627","Cabeza tractora Renault T 520","Renault","ESPAÑA","Abarán",520,NA,684000,NA,FALSE
+"628","Cabeza tractora Mercedes ACTROS 1851","Mercedes","ESPAÑA","Abarán",510,NA,841000,NA,FALSE
+"629","Cabeza tractora Renault T 460 COMFORT","Renault","ESPAÑA","Abarán",460,NA,773000,NA,FALSE
+"630","Cabeza tractora Renault T 460 COMFORT","Renault","ESPAÑA","Abarán",460,NA,852000,NA,FALSE
+"631","Cabeza tractora Renault T 460 COMFORT","Renault","ESPAÑA","Abarán",460,NA,773000,NA,FALSE
+"632","Cabeza tractora Renault T 460 COMFORT","Renault","ESPAÑA","Abarán",460,NA,852000,NA,FALSE
+"633","Cabeza tractora Renault T 480 COMFORT","Renault","ESPAÑA","Abarán",480,NA,878000,NA,FALSE
+"634","Cabeza tractora Mercedes ACTROS 1848","Mercedes","ESPAÑA","Abarán",480,NA,726000,NA,FALSE
+"635","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Valladolid",460,13000,915000,"2012",FALSE
+"636","Cabeza tractora Iveco Stralis AS 440 S 56 TP","Iveco","ESPAÑA","Valladolid",560,26000,752000,"2015",FALSE
+"637","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,NA,510000,"2016",FALSE
+"638","Cabeza tractora MAN TGX 18.460","MAN","ESPAÑA","Alicante",460,NA,425000,"2018",FALSE
+"639","Cabeza tractora Renault T-Series 460 T4X2 E6","Renault","ESPAÑA","Molina De Segura",460,28900,7e+05,"2016",FALSE
+"640","Cabeza tractora Renault T-Series 480 T4X2 E6","Renault","ESPAÑA","Molina De Segura",480,31900,650000,"2015",FALSE
+"641","Cabeza tractora Renault T-Series 460 T4X2 E6","Renault","ESPAÑA","Molina De Segura",460,35900,5e+05,"2016",FALSE
+"642","Cabeza tractora Scania R 420","Scania","ESPAÑA","Molina De Segura",420,8900,1,"2006",FALSE
+"643","Cabeza tractora Renault D-Series 380.19 DTI 11","Renault","ESPAÑA","Molina De Segura",430,28900,5e+05,"2017",FALSE
+"644","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Molina De Segura",460,33500,750000,"2016",FALSE
+"645","Cabeza tractora Renault C-Series 480.19 DTI 13","Renault","ESPAÑA","Molina De Segura",480,34900,5e+05,"2016",FALSE
+"646","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,74100,459550,"2019",FALSE
+"647","Cabeza tractora Volvo FH13 540","Volvo","ESPAÑA","Valencia",550,64300,655676,"2017",FALSE
+"648","Cabeza tractora Mercedes Arocs 1843","Mercedes","ESPAÑA","Aguadulce",430,30999,480000,"2016",FALSE
+"649","Cabeza tractora Volvo FH 460","Volvo","ESPAÑA","Fuente El Saz De Jarama",460,89000,435517,"2019",FALSE
+"650","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Fuente El Saz De Jarama",500,48000,771000,"2017",FALSE
+"651","Cabeza tractora Mercedes Actros 1845 LS","Mercedes","ESPAÑA","Sant Celoni",450,21500,1186000,"2014",FALSE
+"652","Cabeza tractora Iveco AS440S46TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,34500,527662,"2016",FALSE
+"653","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,68200,443605,"2018",FALSE
+"654","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,59000,608630,"2017",FALSE
+"655","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,66300,391926,"2018",FALSE
+"656","Cabeza tractora Iveco Stralis AS 440 S 48","Iveco","ESPAÑA","Molina De Segura",480,51500,423488,"2017",FALSE
+"657","Cabeza tractora Iveco Stralis AS440S46T/P HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",460,39500,429508,"2016",FALSE
+"658","Cabeza tractora MAN TGX","MAN","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"659","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,59500,516341,"2018",FALSE
+"660","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,66100,467031,"2018",FALSE
+"661","Cabeza tractora Renault Magnum 440 DXI","Renault","ESPAÑA","Els Hostalets De Pierola",440,8500,1256598,"2006",FALSE
+"662","Cabeza tractora Mercedes Arocs","Mercedes","ESPAÑA","Carmona",510,NA,415000,"2014",FALSE
+"663","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Massanassa",480,35900,566700,"2015",FALSE
+"664","Cabeza tractora Renault T-High 520 T4X2 E6","Renault","ESPAÑA","Massanassa",520,49900,482000,"2017",FALSE
+"665","Cabeza tractora Volvo FH 460","Volvo","ESPAÑA","Massanassa",460,49900,409000,"2017",FALSE
+"666","Cabeza tractora Volvo FH 460 Globetrotter","Volvo","ESPAÑA","Massanassa",460,39900,572500,"2014",FALSE
+"667","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Massanassa",500,43400,697000,"2016",FALSE
+"668","Cabeza tractora Renault Premium 450.18","Renault","ESPAÑA","Vilamalla",450,10000,1760000,"2008",FALSE
+"669","Cabeza tractora Renault T-High 520 T4X2 E6","Renault","ESPAÑA","Lucena",520,42000,722000,"2016",FALSE
+"670","Cabeza tractora Renault T-High 520 T4X2 E6","Renault","ESPAÑA","Lucena",520,46000,806000,"2016",FALSE
+"671","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,51400,502792,"2018",FALSE
+"672","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,74900,443181,"2019",FALSE
+"673","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,75900,419085,"2019",FALSE
+"674","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,74500,451669,"2019",FALSE
+"675","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Valencia",482,72000,509174,"2019",FALSE
+"676","Cabeza tractora Mercedes","Mercedes","ESPAÑA","Fuente El Saz De Jarama",NA,20900,1350000,"2012",FALSE
+"677","Cabeza tractora Iveco Stralis AT 440 S 46","Iveco","ESPAÑA","Sant Celoni",460,25800,342000,"2016",FALSE
+"678","Cabeza tractora Iveco AS440S46TP Hi Way Euro6 AUT INT","Iveco","ESPAÑA","Teruel",NA,33500,597207,"2016",FALSE
+"679","Cabeza tractora DAF XF 530","DAF","ESPAÑA","San Fernando De Henares",NA,59400,687093,"2018",FALSE
+"680","Cabeza tractora Scania P 450","Scania","ESPAÑA","Sant Celoni",450,38500,622000,"2017",FALSE
+"681","Cabeza tractora Volvo FH","Volvo","ESPAÑA","Guarromán",500,NA,485388,"2018",FALSE
+"682","Cabeza tractora Volvo FH","Volvo","ESPAÑA","Guarromán",500,NA,551431,"2018",FALSE
+"683","Cabeza tractora Renault T-Series 440","Renault","ESPAÑA","Massanassa",440,29900,518000,"2015",FALSE
+"684","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Massanassa",500,43900,664900,"2016",FALSE
+"685","Cabeza tractora DAF CF 460","DAF","ESPAÑA","Alicante",460,NA,450000,"2017",FALSE
+"686","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,NA,510000,"2016",FALSE
+"687","Cabeza tractora MAN FAT","MAN","ESPAÑA","Massalfasar",NA,75000,2e+05,"2003",FALSE
+"688","Cabeza tractora MAN TGS 18.480","MAN","ESPAÑA","Massalfasar",480,30000,4e+05,"2014",FALSE
+"689","Cabeza tractora MAN TGS 18.480","MAN","ESPAÑA","Iñás",480,35000,545000,"2015",FALSE
+"690","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Vilamalla",NA,NA,450000,"2016",FALSE
+"691","Cabeza tractora Iveco Magirus 480","Iveco","ESPAÑA","Vilamalla",480,NA,960000,"2014",FALSE
+"692","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Vilamalla",480,NA,NA,NA,FALSE
+"693","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS 440 S 46 TP","Productos","ESPAÑA","Reus",460,NA,350000,"2017",FALSE
+"694","Cabeza tractora Iveco Stralis AS 440 S 46 TP","CV","ESPAÑA","Reus",460,NA,495000,"2016",FALSE
+"695","Cabeza tractora Iveco Stralis AS 440 S 46 TP","CV","ESPAÑA","Reus",460,NA,498000,"2017",FALSE
+"696","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Est","ESPAÑA","Reus",480,NA,598231,"2017",FALSE
+"697","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,48000,569707,"2017",FALSE
+"698","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,62000,498442,"2018",FALSE
+"699","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,64200,455331,"2018",FALSE
+"700","Cabeza tractora DAF XF 460","DAF","ESPAÑA","San Fernando De Henares",462,36800,809048,"2015",FALSE
+"701","Cabeza tractora MAN TGA 18.480","MAN","ESPAÑA","Soria",480,NA,660000,"2003",FALSE
+"702","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Valencia",448,94100,142136,"2021",FALSE
+"703","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,62000,450416,"2018",FALSE
+"704","Cabeza tractora DAF XF FT XF450","DAF","ESPAÑA","San Fernando De Henares",NA,66500,312594,"2018",FALSE
+"705","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Molina De Segura",480,49000,525900,"2017",FALSE
+"706","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,39500,434104,"2016",FALSE
+"707","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Molina De Segura",460,48000,534491,"2017",FALSE
+"708","Cabeza tractora Volvo FH 500 Globetrotter","Volvo","ESPAÑA","Puerto Lumbreras",500,39500,716000,"2015",FALSE
+"709","Cabeza tractora Scania G 124G400","Scania","ESPAÑA","O Corgo",400,NA,999999,"1997",FALSE
+"710","Cabeza tractora Volvo FH12 460","Volvo","ESPAÑA","O Corgo",460,NA,999999,"2001",FALSE
+"711","Tractora semi cisterna DAF","DAF","ESPAÑA","Seseña Nuevo",460,NA,NA,"2001",FALSE
+"712","Cabeza tractora Scania R 480","Scania","ESPAÑA","Seseña Nuevo",NA,NA,1178293,"2007",FALSE
+"713","Cabeza tractora Renault T-High 520 T4X2 E6","Renault","ESPAÑA","Lucena",520,48000,641000,"2016",FALSE
+"714","Cabeza tractora Scania R 440","Scania","ESPAÑA","Lucena",440,14000,1260000,"2010",FALSE
+"715","Cabeza tractora Renault Magnum 480.18","Renault","ESPAÑA","Lucena",480,16000,1310000,"2013",FALSE
+"716","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Lucena",460,28000,651000,"2016",FALSE
+"717","Cabeza tractora Renault Premium 460","Renault","ESPAÑA","Lucena",460,18000,997000,"2013",FALSE
+"718","Cabeza tractora Renault T-High 520 T4X2 E6","Renault","ESPAÑA","Lucena",520,32000,912000,"2015",FALSE
+"719","Cabeza tractora Iveco Stralis 440 S 48","Iveco","ESPAÑA","Lucena",480,6000,1948000,"2005",FALSE
+"720","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Lucena",460,22000,767000,"2015",FALSE
+"721","Cabeza tractora Scania R 520","Scania","ESPAÑA","Fuente El Saz De Jarama",NA,37000,1030000,"2014",FALSE
+"722","Cabeza tractora Volvo FH12 500","Volvo","ESPAÑA","Valdemoro",500,NA,520000,"2014",FALSE
+"723","Cabeza tractora Volvo FH12 460","Volvo","ESPAÑA","Valdemoro",460,NA,690000,"2014",FALSE
+"724","Cabeza tractora Renault T520 High cab T520 HIGH SLEEPER CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,55000,600500,"2019",FALSE
+"725","Cabeza tractora Renault T-Series 460 T4X2 E6","Renault","ESPAÑA","Constantí",460,29500,655000,"2015",FALSE
+"726","Cabeza tractora convoy excepcional Renault Kerax 420.34","Renault","ESPAÑA","Puerto Lumbreras",420,NA,337000,"2005",FALSE
+"727","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,59900,564784,"2017",FALSE
+"728","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,39500,429832,"2016",FALSE
+"729","Cabeza tractora Iveco S-WAY AS440S51TP","Iveco","ESPAÑA","Teruel",NA,NA,NA,NA,FALSE
+"730","Cabeza tractora Iveco AS440S42TP Hi Way AUT INT","Iveco","ESPAÑA","Teruel",NA,29500,530912,"2016",FALSE
+"731","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62200,544008,"2017",FALSE
+"732","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,71400,424393,"2018",FALSE
+"733","Cabeza tractora DAF XF 530","DAF","ESPAÑA","San Fernando De Henares",NA,64400,506944,"2019",FALSE
+"734","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,62500,475948,"2017",FALSE
+"735","Cabeza tractora Volvo FH","Volvo","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"736","Cabeza tractora Iveco Stralis AS440S46TP HW AUT INT E6","Iveco","ESPAÑA","Ciudad Real",460,39500,422957,"2016",FALSE
+"737","Cabeza tractora Mercedes Actros 1845 LS","Mercedes","ESPAÑA","Santa Fe",450,23000,1024661,"2014",FALSE
+"738","Cabeza tractora Mercedes Actros 1851 LS","Mercedes","ESPAÑA","Santa Fe",510,44000,628589,"2016",FALSE
+"739","Cabeza tractora Mercedes","Mercedes","ESPAÑA","Santa Fe",400,34500,695786,"2016",FALSE
+"740","Cabeza tractora Mercedes","Mercedes","ESPAÑA","Santa Fe",400,34500,637096,"2016",FALSE
+"741","Cabeza tractora Mercedes Actros 1842 LS","Mercedes","ESPAÑA","Santa Fe",420,37000,590361,"2016",FALSE
+"742","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,43000,552208,"2017",FALSE
+"743","Cabeza tractora Mercedes Actros 1851 LS","Mercedes","ESPAÑA","Santa Fe",510,46500,531690,"2017",FALSE
+"744","Cabeza tractora Mercedes Arocs 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,41500,591249,"2017",FALSE
+"745","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,47500,591588,"2017",FALSE
+"746","Cabeza tractora Scania R 410","Scania","ESPAÑA","Santa Fe",430,54000,253300,"2018",FALSE
+"747","Cabeza tractora Mercedes Actros 1852 LS","Mercedes","ESPAÑA","Santa Fe",520,NA,413125,"2019",FALSE
+"748","Cabeza tractora DAF XF105 510","DAF","ESPAÑA","Santa Fe",510,11500,1006932,"2010",FALSE
+"749","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Santa Fe",460,15000,1205516,"2013",FALSE
+"750","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Santa Fe",460,17000,1274854,"2014",FALSE
+"751","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",510,35500,786010,"2014",FALSE
+"752","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,36000,604178,"2014",FALSE
+"753","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,30500,798462,"2014",FALSE
+"754","Cabeza tractora DAF XF 460 SSC","DAF","ESPAÑA","Santa Fe",460,31000,1107461,"2014",FALSE
+"755","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",NA,33000,1029610,"2016",FALSE
+"756","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",510,35000,796372,"2016",FALSE
+"757","Cabeza tractora DAF CF","DAF","ESPAÑA","Santa Fe",400,31000,583546,"2016",FALSE
+"758","Cabeza tractora DAF CF FAT 400","DAF","ESPAÑA","Santa Fe",400,29000,797456,"2016",FALSE
+"759","Cabeza tractora DAF CF","DAF","ESPAÑA","Santa Fe",400,32000,774554,"2016",FALSE
+"760","Cabeza tractora DAF CF","DAF","ESPAÑA","Santa Fe",400,30000,693281,"2016",FALSE
+"761","Cabeza tractora DAF CF FT 400","DAF","ESPAÑA","Santa Fe",400,30000,616968,"2016",FALSE
+"762","Cabeza tractora DAF CF FT 370","DAF","ESPAÑA","Santa Fe",370,30000,591381,"2016",FALSE
+"763","Cabeza tractora DAF CF 460","DAF","ESPAÑA","Santa Fe",460,30500,819838,"2016",FALSE
+"764","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",510,37000,767987,"2016",FALSE
+"765","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,34000,789363,"2016",FALSE
+"766","Cabeza tractora DAF XF 460 SSC","DAF","ESPAÑA","Santa Fe",460,58500,505894,"2016",FALSE
+"767","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,39000,636695,"2016",FALSE
+"768","Cabeza tractora DAF XF 440","DAF","ESPAÑA","Santa Fe",440,43000,530649,"2017",FALSE
+"769","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,51000,559785,"2017",FALSE
+"770","Cabeza tractora DAF XF 530","DAF","ESPAÑA","Santa Fe",530,68000,404292,"2018",FALSE
+"771","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,413392,"2019",FALSE
+"772","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,378120,"2019",FALSE
+"773","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,434485,"2019",FALSE
+"774","Cabeza tractora Renault T-Series 520.18 DTI 13","Renault","ESPAÑA","Vilamalla",520,45000,460000,"2016",FALSE
+"775","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,NA,510000,"2016",FALSE
+"776","Cabeza tractora Renault T-High","Renault","ESPAÑA","Sevilla",520,75000,225259,"2020",FALSE
+"777","Cabeza tractora DAF Hydraulik XF 450 LOF","DAF","ESPAÑA","Llucmajor",451,49000,360000,"2018",FALSE
+"778","Cabeza tractora MAN TGX 18.460","MAN","ESPAÑA","Alicante",460,NA,425000,"2018",FALSE
+"779","Cabeza tractora Renault T-High","Renault","ESPAÑA","Sevilla",520,75000,242305,"2020",FALSE
+"780","Cabeza tractora Renault T-High","Renault","ESPAÑA","Molina De Segura",520,47000,660000,"2018",FALSE
+"781","Cabeza tractora productos peligrosos / ADR Renault T-Series","Renault","ESPAÑA","Molina De Segura",460,39000,688500,"2015",FALSE
+"782","Cabeza tractora Renault T-High","Renault","ESPAÑA","Molina De Segura",520,47000,650700,"2018",FALSE
+"783","Cabeza tractora Iveco Stralis AT 440 S 46 TP","Iveco","ESPAÑA","Canovelles",460,30000,424000,"2016",FALSE
+"784","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Noain",460,8500,1464000,"2011",FALSE
+"785","Cabeza tractora Scania R 360","Scania","ESPAÑA","Vitoria Gasteis",NA,15500,1e+06,"2012",FALSE
+"786","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Figueres",500,35000,1075000,"2015",FALSE
+"787","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Molina De Segura",460,33500,750000,"2017",FALSE
+"788","Cabeza tractora Volvo FH 4","Volvo","ESPAÑA","Guarromán",500,NA,686285,"2018",FALSE
+"789","Cabeza tractora Scania L 164L480","Scania","ESPAÑA","Fuente El Saz De Jarama",480,9500,2300000,"2005",FALSE
+"790","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Molina De Segura",480,55000,525500,"2018",FALSE
+"791","Cabeza tractora Renault T-High","Renault","ESPAÑA","Molina De Segura",520,55000,549000,"2017",FALSE
+"792","Cabeza tractora Renault Non spécifié","Renault","ESPAÑA","Castellon",NA,NA,1e+06,"1998",FALSE
+"793","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Castellon",NA,NA,560000,"2016",FALSE
+"794","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,58800,473007,"2018",FALSE
+"795","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64800,482127,"2018",FALSE
+"796","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64500,480662,"2018",FALSE
+"797","Cabeza tractora Mercedes Actros","Mercedes","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"798","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64900,441325,"2018",FALSE
+"799","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,65100,496373,"2018",FALSE
+"800","Cabeza tractora Volvo FH","Volvo","ESPAÑA","San Fernando De Henares",NA,99,999,"2017",FALSE
+"801","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,64800,474569,"2018",FALSE
+"802","Cabeza tractora productos peligrosos / ADR Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Ciudad Real",460,40500,384721,"2016",FALSE
+"803","Cabeza tractora Iveco Stralis AS 440 S 50","Iveco","ESPAÑA","Sant Celoni",500,9800,929000,"2010",FALSE
+"804","Cabeza tractora Scania R 490","Scania","ESPAÑA","Sant Celoni",490,39500,698000,"2017",FALSE
+"805","Cabeza tractora Mercedes Actros 1848 LS","Mercedes","ESPAÑA","Sant Celoni",480,34500,710000,"2016",FALSE
+"806","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,63900,471045,"2018",FALSE
+"807","Cabeza tractora Scania R 420","Scania","ESPAÑA","Fuente El Saz De Jarama",420,9500,1612886,"2006",FALSE
+"808","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,43000,552208,"2017",FALSE
+"809","Cabeza tractora DAF XF 460 SSC","DAF","ESPAÑA","Santa Fe",460,31000,1107461,"2014",FALSE
+"810","Cabeza tractora DAF XF 530","DAF","ESPAÑA","Santa Fe",530,68000,404292,"2018",FALSE
+"811","Cabeza tractora DAF CF","DAF","ESPAÑA","Santa Fe",400,32000,774554,"2016",FALSE
+"812","Cabeza tractora DAF XF 440","DAF","ESPAÑA","Santa Fe",440,43000,530649,"2017",FALSE
+"813","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,51000,547463,"2017",FALSE
+"814","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Santa Fe",430,43000,552208,"2017",FALSE
+"815","Cabeza tractora DAF CF FT 400","DAF","ESPAÑA","Santa Fe",400,30000,616968,"2016",FALSE
+"816","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",NA,33000,1029610,"2016",FALSE
+"817","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,378120,"2019",FALSE
+"818","Cabeza tractora DAF CF FAT 400","DAF","ESPAÑA","Santa Fe",400,29000,797456,"2016",FALSE
+"819","Cabeza tractora DAF XF 480","DAF","ESPAÑA","Santa Fe",480,70000,434485,"2019",FALSE
+"820","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",510,35000,796372,"2016",FALSE
+"821","Cabeza tractora DAF CF FT 370","DAF","ESPAÑA","Santa Fe",370,30000,591381,"2016",FALSE
+"822","Cabeza tractora DAF CF 460","DAF","ESPAÑA","Santa Fe",460,30500,819838,"2016",FALSE
+"823","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,30500,798462,"2014",FALSE
+"824","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Santa Fe",460,36000,604178,"2014",FALSE
+"825","Cabeza tractora Mercedes nc","Mercedes","ESPAÑA","Santa Fe",400,34500,695786,"2016",FALSE
+"826","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Santa Fe",460,17000,1274854,"2014",FALSE
+"827","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Santa Fe",510,35500,786010,"2014",FALSE
+"828","Cabeza tractora DAF XF105 510","DAF","ESPAÑA","Santa Fe",510,11500,1006932,"2010",FALSE
+"829","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Massanassa",480,39900,413800,"2016",FALSE
+"830","Cabeza tractora productos peligrosos / ADR Scania R 450","Scania","ESPAÑA","Massanassa",450,43900,638600,"2017",FALSE
+"831","Cabeza tractora Renault T520 High cab T520 HIGH SLEEPER CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,47000,650700,"2018",FALSE
+"832","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,66400,404697,"2019",FALSE
+"833","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Fuente El Saz De Jarama",460,23500,1100000,"2015",FALSE
+"834","Cabeza tractora Iveco Stralis AS440S46T/P LNG","Iveco","ESPAÑA","Alcala De Guadaira",NA,59500,263350,"2019",FALSE
+"835","Cabeza tractora DAF XF 530","DAF","ESPAÑA","San Fernando De Henares",NA,62700,582500,"2019",FALSE
+"836","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Fuente El Saz De Jarama",NA,13800,745785,"2013",FALSE
+"837","Cabeza tractora Mercedes Actros 1845 LS","Mercedes","ESPAÑA","Santa Fe",450,23000,1024661,"2014",FALSE
+"838","Cabeza tractora DAF CF","DAF","ESPAÑA","Santa Fe",400,32000,774554,"2016",FALSE
+"839","Cabeza tractora Mercedes","Mercedes","ESPAÑA","Santa Fe",400,34500,695786,"2016",FALSE
+"840","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Massanassa",460,34500,451700,"2015",FALSE
+"841","Cabeza tractora Scania R 450","Scania","ESPAÑA","Vilablareix",NA,53000,632416,"2018",FALSE
+"842","Cabeza tractora Volvo FH 4","Volvo","ESPAÑA","Guarromán",500,NA,456089,"2019",FALSE
+"843","Cabeza tractora Volvo FH 4","Volvo","ESPAÑA","Guarromán",500,NA,652628,"2018",FALSE
+"844","Cabeza tractora Volvo FH 4","Volvo","ESPAÑA","Guarromán",500,NA,1091150,"2015",FALSE
+"845","Cabeza tractora Volvo FH","Volvo","ESPAÑA","Guarromán",500,NA,795482,"2018",FALSE
+"846","Cabeza tractora Volvo FH 4","Volvo","ESPAÑA","Guarromán",459,NA,708118,"2016",FALSE
+"847","Cabeza tractora Iveco Trakker AD 720 T 48 T","Iveco","ESPAÑA","Zaragoza",480,82000,362000,"2005",FALSE
+"848","Cabeza tractora Iveco Stralis AS 440 S 50 TP","Est","ESPAÑA","Quart De Poblet",500,35000,620000,"2016",FALSE
+"849","Cabeza tractora Iveco Stralis AS440S40TP LNG","Iveco","ESPAÑA","Sant Celoni",400,39500,415000,"2017",FALSE
+"850","Cabeza tractora Iveco Stralis AT 440 S 33 TP CNG","Iveco","ESPAÑA","Sant Celoni",330,19500,580000,"2015",FALSE
+"851","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65500,402140,"2018",FALSE
+"852","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,67000,418051,"2018",FALSE
+"853","Cabeza tractora Iveco Stralis 440 S 46","Iveco","ESPAÑA","Valladolid",460,34000,490559,"2016",FALSE
+"854","Cabeza tractora Iveco Stralis 400","Iveco","ESPAÑA","Amorebieta",400,15500,18500,"2005",FALSE
+"855","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Fuente El Saz De Jarama",460,9500,1248000,"2010",FALSE
+"856","Cabeza tractora Volvo FH13 520","Volvo","ESPAÑA","Fuente El Saz De Jarama",520,39500,636000,"2006",FALSE
+"857","Cabeza tractora DAF XF 530","DAF","ESPAÑA","Fuente El Saz De Jarama",530,110000,1,"2022",FALSE
+"858","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Fuente El Saz De Jarama",460,16000,1440066,"2013",FALSE
+"859","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,NA,510000,"2016",FALSE
+"860","Cabeza tractora MAN TGX 18.460","MAN","ESPAÑA","Alicante",460,NA,425000,"2018",FALSE
+"861","Cabeza tractora DAF CF 460","DAF","ESPAÑA","Alicante",460,NA,520000,"2017",FALSE
+"862","Cabeza tractora Volvo FH 540","Volvo","ESPAÑA","Vilamalla",NA,NA,4e+05,"2018",FALSE
+"863","Cabeza tractora Scania R 500","Scania","ESPAÑA","Fuente El Saz De Jarama",500,14500,1451922,"2009",FALSE
+"864","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Est","ESPAÑA","Quart De Poblet",460,35000,515000,"2016",FALSE
+"865","Cabeza tractora productos peligrosos / ADR DAF CF 460","DAF","ESPAÑA","Alcala De Los Gazules",460,17000,590000,"2012",FALSE
+"866","Cabeza tractora productos peligrosos / ADR Mercedes Actros 1843","Mercedes","ESPAÑA","Alcala De Los Gazules",430,34900,530000,"2017",FALSE
+"867","Cabeza tractora Renault T520 High cab T520 HIGH SLEEPER CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,53000,608500,"2017",FALSE
+"868","Cabeza tractora Renault T-Series 460 T4X2 E6","Renault","ESPAÑA","Molina De Segura",460,28900,7e+05,"2017",FALSE
+"869","Cabeza tractora Renault T-Series 480 T4X2 E6","Renault","ESPAÑA","Molina De Segura",480,35900,5e+05,"2016",FALSE
+"870","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,66200,509979,"2018",FALSE
+"871","Cabeza tractora Renault T-Series 480.18 DTI 13","Renault","ESPAÑA","Vilamalla",480,37000,505500,"2016",FALSE
+"872","Cabeza tractora Volvo FH12","Volvo","ESPAÑA","Vilamalla",NA,8000,8e+05,"2004",FALSE
+"873","Cabeza tractora Renault T-Series 460.18 DTI 11","Renault","ESPAÑA","Vilamalla",460,37000,392000,"2016",FALSE
+"874","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Massanassa",480,37600,4e+05,"2016",FALSE
+"875","Cabeza tractora Renault T-Series 520","Renault","ESPAÑA","Castellón De La Plana",520,NA,625000,"2018",FALSE
+"876","Cabeza tractora Renault T460 DAY CAB ADR","Renault","ESPAÑA","Alcala De Guadaira",NA,41000,697000,"2016",FALSE
+"877","Cabeza tractora Renault T460 DAY CAB ADR","Renault","ESPAÑA","Alcala De Guadaira",NA,39000,688500,"2015",FALSE
+"878","Cabeza tractora Iveco Stralis AT440T/P46","Iveco","ESPAÑA","Alcala De Guadaira",NA,43000,270432,"2018",FALSE
+"879","Cabeza tractora Renault T-Series 480 T4X2 E6","Renault","ESPAÑA","Molina De Segura",480,34900,5e+05,"2016",FALSE
+"880","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Est","ESPAÑA","Quart De Poblet",460,35000,490000,"2016",FALSE
+"881","Cabeza tractora Volvo FM12 380","Volvo","ESPAÑA","Sallent",380,6300,110000,"2000",FALSE
+"882","Cabeza tractora Renault T-High","Renault","ESPAÑA","Molina De Segura",520,47000,672600,"2018",FALSE
+"883","Cabeza tractora Renault","Renault","ESPAÑA","Molina De Segura",380,33000,636723,"2017",FALSE
+"884","Cabeza tractora Renault T-High","Renault","ESPAÑA","Molina De Segura",520,34000,880648,"2016",FALSE
+"885","Cabeza tractora productos peligrosos / ADR Renault T-Series","Renault","ESPAÑA","Molina De Segura",460,41000,697000,"2016",FALSE
+"886","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Molina De Segura",480,37000,696700,"2015",FALSE
+"887","Cabeza tractora productos peligrosos / ADR Renault Premium","Renault","ESPAÑA","Molina De Segura",460,27000,430000,"2013",FALSE
+"888","Cabeza tractora productos peligrosos / ADR Renault Premium","Renault","ESPAÑA","Molina De Segura",430,24500,709600,"2013",FALSE
+"889","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Molina De Segura",480,42000,573000,"2016",FALSE
+"890","Cabeza tractora Scania R 500","Scania","ESPAÑA","Lorca",500,13500,1915000,"2005",FALSE
+"891","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Massanassa",460,38900,562000,"2017",FALSE
+"892","Cabeza tractora productos peligrosos / ADR Scania R 450","Scania","ESPAÑA","Massanassa",450,43900,618900,"2017",FALSE
+"893","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Fuente El Saz De Jarama",460,38000,740000,"2017",FALSE
+"894","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,NA,510000,"2016",FALSE
+"895","Cabeza tractora MAN TGX 18.460","MAN","ESPAÑA","Alicante",460,NA,425000,"2018",FALSE
+"896","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65600,426601,"2018",FALSE
+"897","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,65000,440157,"2020",FALSE
+"898","Cabeza tractora Scania R","Scania","ESPAÑA","O Carballiño",381,NA,540000,"1999",FALSE
+"899","Cabeza tractora Mercedes Actros 1845","Mercedes","ESPAÑA","Fuente El Saz De Jarama",450,18500,1080000,"2014",FALSE
+"900","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Granollers",460,31000,702000,"2015",FALSE
+"901","Cabeza tractora Renault T-High 520 T4X2 E6","Renault","ESPAÑA","Santa Cruz De Mudela",520,37000,860000,"2014",FALSE
+"902","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Santa Cruz De Mudela",500,33000,770000,"2013",FALSE
+"903","Cabeza tractora MAN TGX 18.440","MAN","ESPAÑA","Lleida",440,595,4e+05,"2015",FALSE
+"904","Cabeza tractora MAN TGX 18.500","MAN","ESPAÑA","Lleida",500,NA,569000,"2017",FALSE
+"905","Cabeza tractora MAN TGX 18.440","MAN","ESPAÑA","Tarragona",440,595,4e+05,"2015",FALSE
+"906","Cabeza tractora MAN TGX 18.500","MAN","ESPAÑA","Tarragona",500,NA,569000,"2017",FALSE
+"907","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Constantí",460,NA,980000,"2015",FALSE
+"908","Cabeza tractora Scania R 450","Scania","ESPAÑA","Constantí",NA,NA,670000,"2015",FALSE
+"909","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Molina De Segura",480,45000,583000,"2017",FALSE
+"910","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Molina De Segura",480,41000,607881,"2015",FALSE
+"911","Cabeza tractora Mercedes Actros 1848 LS","Mercedes","ESPAÑA","Madrid",480,NA,476305,"2016",FALSE
+"912","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Molina De Segura",480,58000,411192,"2018",FALSE
+"913","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",482,65500,564182,"2018",FALSE
+"914","Cabeza tractora Scania R 490","Scania","ESPAÑA","Alcala De Guadaira",NA,48900,586793,"2016",FALSE
+"915","Cabeza tractora Iveco STRALIS 460","Iveco","ESPAÑA","Benavente",NA,NA,NA,"2014",FALSE
+"916","Cabeza tractora Scania P114L460","Scania","ESPAÑA","Benavente",NA,NA,NA,"1999",FALSE
+"917","Cabeza tractora Scania R480","Scania","ESPAÑA","Benavente",NA,NA,NA,"2014",FALSE
+"918","Cabeza tractora Volvo FH12.460","Volvo","ESPAÑA","Benavente",NA,NA,NA,"2006",FALSE
+"919","Cabeza tractora Renault PREMIUM 460","Renault","ESPAÑA","Benavente",NA,NA,NA,"2002",FALSE
+"920","Cabeza tractora MAN 410 6X4 PALFINGER PK 36002","MAN","ESPAÑA","Valladolid",NA,83500,358000,"2005",FALSE
+"921","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,75500,360700,"2019",FALSE
+"922","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Calahorra",480,NA,495000,"2017",FALSE
+"923","Cabeza tractora productos peligrosos / ADR Volvo FH 460","Volvo","ESPAÑA","Vitoria Gasteis",460,24000,1100000,"2012",FALSE
+"924","Cabeza tractora Volvo FH 440","Volvo","ESPAÑA","Vitoria Gasteis",440,12000,1800000,"2006",FALSE
+"925","Cabeza tractora Volvo FH 420","Volvo","ESPAÑA","Vitoria Gasteis",420,7500,7e+05,"2001",FALSE
+"926","Cabeza tractora Scania L 94L","Scania","ESPAÑA","Vitoria Gasteis",NA,5600,6e+05,"1997",FALSE
+"927","Cabeza tractora Scania R 124","Scania","ESPAÑA","Vitoria Gasteis",NA,8000,6e+05,"1999",FALSE
+"928","Cabeza tractora Volvo FH13 480","Volvo","ESPAÑA","Vitoria Gasteis",480,13500,1400000,"2006",FALSE
+"929","Cabeza tractora productos peligrosos / ADR Renault Gamme T 460","Renault","ESPAÑA","Vitoria Gasteis",460,25000,1e+06,"2016",FALSE
+"930","Cabeza tractora Volvo FH12 460","Volvo","ESPAÑA","Vitoria Gasteis",460,13000,1600000,"2004",FALSE
+"931","Cabeza tractora Volvo FH 460","Volvo","ESPAÑA","Vitoria Gasteis",460,13500,1600000,"2006",FALSE
+"932","Cabeza tractora productos peligrosos / ADR Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Vitoria Gasteis",585,23000,1e+06,"2015",FALSE
+"933","Cabeza tractora Scania R 410","Scania","ESPAÑA","Paiporta",410,49500,382000,"2016",FALSE
+"934","Cabeza tractora Renault T-High 480 T4X2 E6","Renault","ESPAÑA","Santa Cruz De Mudela",480,36000,1140000,"2014",FALSE
+"935","Tractora semi cisterna productos químicos Scania G 480","Scania","ESPAÑA","Soria",480,NA,1e+05,"2013",FALSE
+"936","Tractora semi plataforma caja abierta Renault Premium 420","Renault","ESPAÑA","Soria",420,NA,1e+05,"2022",FALSE
+"937","Cabeza tractora MAN TGS 18.440","MAN","ESPAÑA","Zaragoza",440,20000,740000,"2009",FALSE
+"938","Cabeza tractora DAF CF85 460","DAF","ESPAÑA","Paiporta",460,12500,1150000,"2012",FALSE
+"939","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Massanassa",500,77900,273000,"2018",FALSE
+"940","Cabeza tractora MAN 19.414","MAN","ESPAÑA","Fuente El Saz De Jarama",NA,15500,373878,"2000",FALSE
+"941","Cabeza tractora Mercedes Actros 1848 LS","Mercedes","ESPAÑA","Madrid",480,NA,600289,"2016",FALSE
+"942","Cabeza tractora Iveco AS440S50T/P","Iveco","ESPAÑA","Alcala De Guadaira",NA,36000,566000,"2016",FALSE
+"943","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Alcala De Guadaira",NA,19000,944814,"2014",FALSE
+"944","Cabeza tractora Renault T-High","Renault","ESPAÑA","Sevilla",520,54000,537689,"2018",FALSE
+"945","Cabeza tractora productos peligrosos / ADR MAN TGS 18.400","MAN","ESPAÑA","Castellon",400,NA,850,"2012",FALSE
+"946","Cabeza tractora Renault T-Series","Renault","ESPAÑA","Molina De Segura",520,39000,751000,"2016",FALSE
+"947","Cabeza tractora Scania R124 420","Scania","ESPAÑA","Arbucies",420,5800,797223,"2003",FALSE
+"948","Cabeza tractora MAN TGX 18.500","MAN","ESPAÑA","Riudellots De La Selva",500,NA,569000,"2017",FALSE
+"949","Cabeza tractora MAN TGX 18.440","MAN","ESPAÑA","Riudellots De La Selva",440,595,4e+05,"2015",FALSE
+"950","Cabeza tractora Renault T-High","Renault","ESPAÑA","Molina De Segura",520,55000,549800,"2017",FALSE
+"951","Cabeza tractora Mercedes Actros 2046","Mercedes","ESPAÑA","Sallent",460,38900,433000,"2007",FALSE
+"952","Cabeza tractora Mercedes Actros 2044","Mercedes","ESPAÑA","Sallent",440,42900,295000,"2008",FALSE
+"953","Cabeza tractora Mercedes Actros 1848 LS","Mercedes","ESPAÑA","Alcala De Los Gazules",480,41900,7e+05,"2017",FALSE
+"954","Cabeza tractora MAN TGA 430","MAN","ESPAÑA","Seseña Nuevo",NA,NA,950676,"2004",FALSE
+"955","Cabeza tractora DAF XF 105.460","DAF","ESPAÑA","Seseña Nuevo",NA,NA,1074000,"2007",FALSE
+"956","Cabeza tractora Renault Premium 420 DCI","Renault","ESPAÑA","Seseña Nuevo",420,NA,242006,"2006",FALSE
+"957","Cabeza tractora Renault Premium 430 DXI","Renault","ESPAÑA","Alcala De Guadaira",NA,24500,709600,"2013",FALSE
+"958","Cabeza tractora Renault T480 SLEEPER CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,37000,696700,"2015",FALSE
+"959","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Alcala De Guadaira",NA,17000,654750,"2014",FALSE
+"960","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Huercal De Almeria",430,45900,529620,"2017",FALSE
+"961","Cabeza tractora Scania P 380","Scania","ESPAÑA","Carlet",380,NA,967359,"2007",FALSE
+"962","Cabeza tractora Scania P 124 GB 420","Scania","ESPAÑA","Carlet",420,NA,1323000,"2004",FALSE
+"963","Cabeza tractora Iveco Stralis AS 440 S 46","Iveco","ESPAÑA","Huercal De Almeria",460,29900,514242,"2016",FALSE
+"964","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","ESPAÑA","Huercal De Almeria",430,40900,744016,"2017",FALSE
+"965","Cabeza tractora Scania R 450","Scania","ESPAÑA","Vilablareix",NA,44000,639700,"2016",FALSE
+"966","Cabeza tractora Renault T-Series 460 T4X2 E6","Renault","ESPAÑA","Vilamalla",460,33000,619000,"2015",FALSE
+"967","Cabeza tractora Scania R 164R580","Scania","ESPAÑA","Fuente El Saz De Jarama",580,6500,1625000,"2001",FALSE
+"968","Cabeza tractora Volvo FH13 440","Volvo","ESPAÑA","Fuente El Saz De Jarama",440,14000,890000,"2006",FALSE
+"969","Cabeza tractora Scania R 450","Scania","ESPAÑA","Massanassa",450,40600,595000,"2015",FALSE
+"970","Tractora semi lona Renault Premium 400.18","Renault","ESPAÑA","Madrid",400,15000,167675,"1999",FALSE
+"971","Cabeza tractora Volvo CABEZA TRACTORA VOLVO 520 6x4 PALFINGER PK 44002","Volvo","ESPAÑA","Valladolid",NA,98000,379000,"2008",FALSE
+"972","Cabeza tractora DAF XF 480","DAF","ESPAÑA","San Fernando De Henares",NA,67200,434188,"2019",FALSE
+"973","Cabeza tractora Scania R 420","Scania","ESPAÑA","Fuente El Saz De Jarama",420,8000,1775000,"2005",FALSE
+"974","Cabeza tractora Volvo FM 450","Volvo","ESPAÑA","Talavera De La Reina",450,25000,1160000,"2014",FALSE
+"975","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Massanassa",480,30900,688000,"2014",FALSE
+"976","Cabeza tractora Renault Magnum 480","Renault","ESPAÑA","Fuente El Saz De Jarama",480,7500,130000,"2006",FALSE
+"977","Cabeza tractora Renault Magnum 460","Renault","ESPAÑA","Fuente El Saz De Jarama",460,8500,1360000,"2010",FALSE
+"978","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Alcala De Guadaira",NA,37900,492811,"2016",FALSE
+"979","Cabeza tractora Iveco Stralis AS440S46T/P","Iveco","ESPAÑA","Alcala De Guadaira",NA,37900,477816,"2016",FALSE
+"980","Cabeza tractora Volvo FMX 420","Volvo","ESPAÑA","Massanassa",420,41900,498000,"2016",FALSE
+"981","Cabeza tractora Volvo FH 460","Volvo","ESPAÑA","Massanassa",460,28500,1014600,"2014",FALSE
+"982","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Massanassa",500,34600,861900,"2014",FALSE
+"983","Cabeza tractora Iveco Stralis AS440S51 XP T/P EVO","Iveco","ESPAÑA","Alcala De Guadaira",NA,44500,632469,"2017",FALSE
+"984","Cabeza tractora Iveco Stralis AS440S48T/P ADR","Iveco","ESPAÑA","Alcala De Guadaira",NA,37900,657455,"2016",FALSE
+"985","Cabeza tractora BMC TUGRA TGR 1846","BMC","ESPAÑA","Madrid",460,NA,1,"2022",FALSE
+"986","Cabeza tractora Iveco STRALIS 480","Iveco","ESPAÑA","Benavente",NA,NA,NA,"2006",FALSE
+"987","Cabeza tractora Renault PREMIUM 420.18T","Renault","ESPAÑA","Benavente",NA,NA,NA,"2002",FALSE
+"988","Cabeza tractora MAN TGA 18.480","MAN","ESPAÑA","Benavente",NA,NA,NA,"2005",FALSE
+"989","Cabeza tractora Iveco STRALIS 450","Iveco","ESPAÑA","Benavente",NA,NA,NA,"2012",FALSE
+"990","Cabeza tractora Volvo FH12.420","Volvo","ESPAÑA","Benavente",NA,NA,NA,"1999",FALSE
+"991","Cabeza tractora Iveco STRALIS 500","Iveco","ESPAÑA","Benavente",NA,10000,1125000,"2007",FALSE
+"992","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Massanassa",480,31600,420300,"2014",FALSE
+"993","Cabeza tractora Renault T-High 480 T4X2 E6","Renault","ESPAÑA","Massanassa",480,45900,476400,"2017",FALSE
+"994","Cabeza tractora productos peligrosos / ADR Scania R 450","Scania","ESPAÑA","Massanassa",450,43900,603900,"2017",FALSE
+"995","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Castellón De La Plana",480,NA,50,NA,FALSE
+"996","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Castellón De La Plana",480,NA,420000,"2017",FALSE
+"997","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Castellón De La Plana",480,NA,510000,"2017",FALSE
+"998","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Castellón De La Plana",480,NA,550000,"2017",FALSE
+"999","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Castellón De La Plana",500,NA,610000,"2017",FALSE
+"1000","Cabeza tractora Volvo FH13 460","Volvo","ESPAÑA","Castellón De La Plana",460,NA,5e+05,"2017",FALSE
+"1001","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Castellón De La Plana",480,NA,470000,"2016",FALSE
+"1002","Cabeza tractora Iveco Stralis 460 eev","Iveco","ESPAÑA","Santa Cruz De Mudela",460,12000,9e+05,"2012",FALSE
+"1003","Cabeza tractora Renault T-High","Renault","ESPAÑA","Santa Cruz De Mudela",520,35900,8e+05,"2014",FALSE
+"1004","Cabeza tractora Iveco Stralis AT440T/P46","Iveco","ESPAÑA","Alcala De Guadaira",NA,42000,342398,"2018",FALSE
+"1005","Cabeza tractora Iveco STRALIS 500","Iveco","ESPAÑA","Benavente",NA,NA,NA,"2013",FALSE
+"1006","Cabeza tractora Iveco STRALIS 450","Iveco","ESPAÑA","Benavente",NA,11000,966,"2008",FALSE
+"1007","Cabeza tractora Renault PREMIUM 450.18","Renault","ESPAÑA","Benavente",NA,12000,788790,"2008",FALSE
+"1008","Cabeza tractora Volvo FH12.460","Volvo","ESPAÑA","Benavente",NA,10000,2066851,"2003",FALSE
+"1009","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Talavera De La Reina",480,33000,951000,"2014",FALSE
+"1010","Cabeza tractora Scania G 450","Scania","ESPAÑA","Alcala De Guadaira",NA,50000,443905,"2016",FALSE
+"1011","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,NA,425000,"2018",FALSE
+"1012","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,NA,425000,"2018",FALSE
+"1013","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alicante",460,950,425000,"2018",FALSE
+"1014","Cabeza tractora productos peligrosos / ADR DAF XF 106 460 SC","DAF","ESPAÑA","Bizkaia",460,NA,688000,"2014",FALSE
+"1015","Cabeza tractora Iveco Stralis AS440S50","Iveco","ESPAÑA","Alcala De Guadaira",NA,54000,532950,"2015",FALSE
+"1016","Cabeza tractora Iveco AS440X48/4X4 HI-TRACTION","Iveco","ESPAÑA","Alcala De Guadaira",NA,87900,87521,"2019",FALSE
+"1017","Cabeza tractora Volvo FH12 380","Volvo","ESPAÑA","Lucena",380,NA,928594,"1996",FALSE
+"1018","Cabeza tractora Scania R 450","Scania","ESPAÑA","Massanassa",450,41900,749000,"2017",FALSE
+"1019","Cabeza tractora Scania R 450","Scania","ESPAÑA","Massanassa",450,42900,662500,"2017",FALSE
+"1020","Cabeza tractora Scania R 450","Scania","ESPAÑA","Massanassa",450,41900,705000,"2017",FALSE
+"1021","Cabeza tractora Scania R 490","Scania","ESPAÑA","Alcala De Guadaira",NA,47500,696218,"2016",FALSE
+"1022","Cabeza tractora Renault T520 DAY CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,39000,751000,"2016",FALSE
+"1023","Cabeza tractora Volvo FH13 500","Volvo","ESPAÑA","Calahorra",500,NA,590000,"2017",FALSE
+"1024","Cabeza tractora MAN TGX 18.460","MAN","ESPAÑA","Alicante",460,840,510000,"2016",FALSE
+"1025","Cabeza tractora Mercedes CABEZA TACTORA 8x4 MERCEDES ACTROS 3246 PLAFINGER PK 60002 + JIB","Mercedes","ESPAÑA","Valladolid",NA,137500,450000,"2008",FALSE
+"1026","Cabeza tractora Iveco Stralis AS440S51T/P EVO","Iveco","ESPAÑA","Alcala De Guadaira",NA,43500,684073,"2017",FALSE
+"1027","Cabeza tractora Iveco Stralis AS440S48T/P EVO","Iveco","ESPAÑA","Alcala De Guadaira",NA,45900,590724,"2017",FALSE
+"1028","Cabeza tractora Iveco Stralis AS440S48T/P","Iveco","ESPAÑA","Alcala De Guadaira",NA,35900,654223,"2016",FALSE
+"1029","Cabeza tractora Renault T480 SLEEPER CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,45000,583000,"2017",FALSE
+"1030","Cabeza tractora MAN FE 410","MAN","ESPAÑA","Beniparrell",410,14000,210000,"2002",FALSE
+"1031","Cabeza tractora Mercedes Atego 1828","Mercedes","ESPAÑA","Fuente El Saz De Jarama",NA,11500,869000,"2003",FALSE
+"1032","Cabeza tractora Renault","Renault","ESPAÑA","Quart De Poblet",522,30000,752982,"2016",FALSE
+"1033","Cabeza tractora Volvo FH12 460","Volvo","ESPAÑA","Vitoria Gasteis",460,8000,2e+06,"2001",FALSE
+"1034","Cabeza tractora productos peligrosos / ADR Renault Premium 460 DXI","Renault","ESPAÑA","Constantí",460,19900,750000,"2013",FALSE
+"1035","Cabeza tractora Mercedes-Benz Actros 1841 4x2Tractor unit","Est","ESPAÑA","Amposta",NA,62000,372222,"2018",FALSE
+"1036","Cabeza tractora DAF XF 460","DAF","ESPAÑA","Alcala De Guadaira",NA,31000,832000,"2015",FALSE
+"1037","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Torrellano",NA,44000,1039000,"2011",FALSE
+"1038","Cabeza tractora DAF XF 530","DAF","ESPAÑA","Massanassa",530,NA,394000,"2018",FALSE
+"1039","Cabeza tractora MAN TGA 18.480 FLS-XXL","MAN","ESPAÑA","Amorebieta",480,6800,1e+06,"2005",FALSE
+"1040","Cabeza tractora Renault T480 NIGHTDAY CAB","Renault","ESPAÑA","Alcala De Guadaira",NA,36000,674908,"2015",FALSE
+"1041","Cabeza tractora Mercedes Actros 1834","Mercedes","ESPAÑA","Amorebieta",340,10500,138000,"1993",FALSE
+"1042","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Vilamalla",500,NA,450000,"2018",FALSE
+"1043","Cabeza tractora Volvo FH13 460","Volvo","ESPAÑA","Vilagrassa",460,62000,735000,"2011",FALSE
+"1044","Cabeza tractora productos peligrosos / ADR DAF XF 460","DAF","ESPAÑA","Massanassa",460,NA,648000,"2016",FALSE
+"1045","Cabeza tractora productos peligrosos / ADR DAF XF 460","DAF","ESPAÑA","Massanassa",460,NA,588000,"2017",FALSE
+"1046","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Soria",460,NA,6e+05,"2016",FALSE
+"1047","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Soria",NA,NA,7e+05,"2014",FALSE
+"1048","Cabeza tractora Renault D19.380","Renault","ESPAÑA","Alcala De Guadaira",NA,33000,636723,"2017",FALSE
+"1049","Cabeza tractora Volvo","Volvo","ESPAÑA","Paiporta",350,10900,370000,"1992",FALSE
+"1050","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Quart De Poblet",454,23000,698046,"2015",FALSE
+"1051","Cabeza tractora Renault C-Series 480","Renault","ESPAÑA","Massanassa",NA,33900,516000,"2016",FALSE
+"1052","Cabeza tractora DAF XF 106 510 SSC","DAF","ESPAÑA","Massanassa",510,NA,447500,"2017",FALSE
+"1053","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Soria",460,NA,6e+05,"2016",FALSE
+"1054","Cabeza tractora Iveco Stralis AS 440 S 46 TP","Iveco","ESPAÑA","Soria",NA,NA,665000,"2016",FALSE
+"1055","Cabeza tractora Renault T-Series 520","Renault","ESPAÑA","Massanassa",520,NA,610000,"2014",FALSE
+"1056","Cabeza tractora DAF XF 510","DAF","ESPAÑA","Lorca",510,36000,607500,"2016",FALSE
+"1057","Cabeza tractora MAN TGX 18.480","MAN","ESPAÑA","Soria",480,NA,850000,"2015",FALSE
+"1058","Cabeza tractora Mercedes AK","Mercedes","ESPAÑA","Constantí",380,NA,NA,"1995",FALSE
+"1059","Cabeza tractora Volvo FH 420","Volvo","ESPAÑA","Vitoria Gasteis",420,7000,7e+05,"1999",FALSE
+"1060","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Soria",NA,NA,6e+05,"4913",FALSE
+"1061","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Soria",NA,NA,340000,"4537",FALSE
+"1062","Cabeza tractora Iveco Stralis 440 S 46","Iveco","ESPAÑA","Valladolid",460,28000,530000,"2015",FALSE
+"1063","Cabeza tractora Renault T-Series 460","Renault","ESPAÑA","Lorca",460,28500,827000,"2015",FALSE
+"1064","Cabeza tractora Renault T-Series 480","Renault","ESPAÑA","Massanassa",480,28600,665000,"2015",FALSE
+"1065","Cabeza tractora DAF XF105 460","DAF","ESPAÑA","Massanassa",460,34600,437000,"2015",FALSE
+"1066","Cabeza tractora Volvo FH12 460","Volvo","ESPAÑA","O Corgo",460,NA,999999,"2001",FALSE
+"1067","Cabeza tractora Volvo FH12 460","Volvo","ESPAÑA","O Corgo",460,NA,850000,"2003",FALSE
+"1068","Cabeza tractora Renault Gamme T 480","Renault","ESPAÑA","Seseña Nuevo",NA,NA,683976,"2015",FALSE
+"1069","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Soria",NA,NA,625000,"6153",FALSE
+"1070","Cabeza tractora Renault T-Series 440","Renault","ESPAÑA","Massanassa",440,30800,547000,"2015",FALSE
+"1071","Cabeza tractora Iveco Stralis 480","Iveco","ESPAÑA","Soria",480,NA,6e+05,"2014",FALSE
+"1072","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Vilamalla",500,NA,420000,"2017",FALSE
+"1073","Cabeza tractora MAN TGA 33.480","MAN","ESPAÑA","Soria",480,NA,7e+05,"2007",FALSE
+"1074","Cabeza tractora Renault Kerax 450.18","Renault","ESPAÑA","Massanassa",450,NA,631151,"2006",FALSE
+"1075","Cabeza tractora Renault Magnum 480","Renault","ESPAÑA","Seseña Nuevo",480,NA,1,"2004",FALSE
+"1076","Cabeza tractora Volvo FM 410","Volvo","ESPAÑA","Soria",NA,NA,6e+05,"2016",FALSE
+"1077","Cabeza tractora Volvo FM 410","Volvo","ESPAÑA","Soria",410,NA,6e+05,"2016",FALSE
+"1078","Cabeza tractora Scania R 620","Scania","ESPAÑA","Getafe",620,50000,380000,"2008",FALSE
+"1079","Cabeza tractora Volvo FH","Volvo","ESPAÑA","Vilamalla",NA,NA,475180,"2017",FALSE
+"1080","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Soria",NA,NA,650000,"2017",FALSE
+"1081","Cabeza tractora MAN TGA 18.480","MAN","ESPAÑA","Seseña Nuevo",460,NA,839286,"2006",FALSE
+"1082","Cabeza tractora Renault Magnum 480 DXI","Renault","ESPAÑA","Seseña Nuevo",NA,NA,987818,"2005",FALSE
+"1083","Cabeza tractora MAN TGA","MAN","ESPAÑA","Seseña Nuevo",NA,NA,NA,"2006",FALSE
+"1084","Cabeza tractora Scania L 144L460","Scania","ESPAÑA","Seseña Nuevo",NA,NA,1,"2002",FALSE
+"1085","Cabeza tractora Mercedes SK 2038","Mercedes","ESPAÑA","Seseña Nuevo",NA,NA,1,"1996",FALSE
+"1086","Cabeza tractora MAN 19.360","MAN","ESPAÑA","Seseña Nuevo",NA,NA,1,"2000",FALSE
+"1087","Cabeza tractora Scania Eje Delantero Completo Scania Serie 4 (P/R 144 L)(1996->) FSA 4","Scania","ESPAÑA","Olerdola",NA,NA,NA,NA,FALSE
+"1088","Cabeza tractora Renault Premium 420","Renault","ESPAÑA","Soria",420,NA,1e+06,"2005",FALSE
+"1089","Cabeza tractora MAN TG 460 A","MAN","ESPAÑA","Soria",460,NA,9e+05,"2008",FALSE
+"1090","Cabeza tractora Volvo FH 500","Volvo","ESPAÑA","Vilamalla",500,NA,NA,"2020",FALSE
+"1091","Cabeza tractora Scania R 144R460","Scania","ESPAÑA","Soria",460,NA,1030000,"2000",FALSE
+"1092","Cabeza tractora MAN TG 310 A","MAN","ESPAÑA","Soria",310,NA,150000,"2005",FALSE
+"1093","Cabeza tractora MAN TGA18.360","MAN","ESPAÑA","Seseña",NA,NA,247000,"2004",FALSE
+"1094","Cabeza tractora Renault Premium 450","Renault","ESPAÑA","Soria",450,NA,860000,"2007",FALSE
+"1095","Tractora semi cisterna Renault Premium 450","Renault","ESPAÑA","Soria",450,NA,860000,"2007",FALSE
+"1096","Cabeza tractora Volvo FH 4","Volvo","ESPAÑA","Guarromán",500,NA,722310,"2017",FALSE
+"1097","Cabeza tractora productos peligrosos / ADR MAN TGS 18.440","MAN","ESPAÑA","Soria",440,NA,1346000,"2008",FALSE
+"1098","Cabeza tractora Iveco Stralis AS 440","Iveco","ESPAÑA","Soria",460,NA,5e+05,"2013",FALSE
+"1099","Cabeza tractora Volvo FH 460","Volvo","ESPAÑA","Soria",460,NA,NA,"2002",FALSE
+"1100","Cabeza tractora MAN TGA 18.390","MAN","ESPAÑA","Soria",350,NA,620000,"2005",FALSE
+"1101","Tractora semi cisterna hidrocarburos Renault","Renault","ESPAÑA","Soria",NA,NA,NA,"2010",FALSE
+"1102","Cabeza tractora productos peligrosos / ADR Renault Premium 460 DXI","Renault","ESPAÑA","Soria",460,NA,850000,"2010",FALSE
+"1103","Cabeza tractora productos peligrosos / ADR Renault Premium 460 DXI","Renault","ESPAÑA","Soria",460,NA,1200000,"0972",FALSE
+"1104","Cabeza tractora Scania R 480","Scania","ESPAÑA","Soria",480,NA,1376522,"2007",FALSE
+"1105","Cabeza tractora Iveco Stralis 460","Iveco","ESPAÑA","Soria",440,NA,730000,"2012",FALSE
+"1106","Tractora semi volquete MAN TGA","MAN","ESPAÑA","Soria",390,NA,624000,"2005",FALSE
+"1107","Cabeza tractora Iveco Stralis 460 Hi-Way","Iveco","ESPAÑA","Soria",440,NA,352766,"5882",FALSE
+"1108","Cabeza tractora Kenworth w900l","Kenworth","ESPAÑA","Olerdola",NA,NA,NA,"1996",FALSE
+"1109","Cabeza tractora Scania R 124 LA 470","Scania","ESPAÑA","Soria",470,NA,1e+06,"2004",FALSE
+"1110","Cabeza tractora MAN","MAN","ESPAÑA","Soria",410,NA,1e+06,"2004",FALSE
+"1111","Cabeza tractora productos peligrosos / ADR Iveco Stralis AD 440 S 45","Iveco","ESPAÑA","Soria",450,NA,697000,"2008",FALSE
+"1112","Cabeza tractora MAN TGA 26.460","MAN","ESPAÑA","Soria",460,NA,825000,"2008",FALSE
+"1113","Cabeza tractora Renault T-Series 460 T4X2 E6","Renault","PORTUGAL","Seia",460,30000,697200,"2014",FALSE
+"1114","Cabeza tractora Iveco Stralis 440 AS","Iveco","ITALIA","Thiene",NA,NA,NA,"2017",FALSE
+"1115","Tractora semi plataforma Mercedes Actros 1848","Mercedes","FRANCIA","Mayenne",NA,35000,703000,"2015",FALSE
+"1116","Tractora semi portacoches Volvo FM13 460","Volvo","FRANCIA","Lot",460,75000,138000,"2020",FALSE
+"1117","Cabeza tractora Renault Magnum 480 DXI","Renault","FRANCIA","Seine",480,15000,891555,"2012",FALSE
+"1118","Cabeza tractora Volvo FH13 540","Volvo","PORTUGAL","Proença A Nova",540,NA,260000,"2020",FALSE
+"1119","Cabeza tractora Scania R 580","Scania","FRANCIA","Nord",580,71500,552000,"2017",FALSE
+"1120","Cabeza tractora DAF XF105 530","DAF","FRANCIA","Bouches",530,59000,320000,"2018",FALSE
+"1121","Cabeza tractora MAN TGX 18.460","MAN","FRANCIA","Nord",338,NA,355000,"2018",FALSE
+"1122","Cabeza tractora Scania S 500","Scania","FRANCIA","Nord",368,NA,379300,"2018",FALSE
+"1123","Cabeza tractora Scania S 500","Scania","FRANCIA","Nord",368,NA,382700,"2019",FALSE
+"1124","Cabeza tractora DAF XG 530 Standklima/ Leasing","DAF","FRANCIA","Nord",390,NA,700,"2022",FALSE
+"1125","Cabeza tractora DAF XG XG SSC Retarder/ Leasing","DAF","FRANCIA","Nord",390,NA,500,"2022",FALSE
+"1126","Cabeza tractora DAF XF 480","DAF","FRANCIA","Nord",354,NA,288550,"2019",FALSE
+"1127","Cabeza tractora DAF XF 480","DAF","FRANCIA","Nord",353,NA,357185,"2019",FALSE
+"1128","Cabeza tractora DAF XF 530","DAF","FRANCIA","Nord",390,NA,380259,"2019",FALSE
+"1129","Cabeza tractora DAF XF 106 .480 SSC retarder/ Leasing","DAF","FRANCIA","Nord",354,NA,395622,"2018",FALSE
+"1130","Cabeza tractora DAF XF 480","DAF","FRANCIA","Nord",354,NA,416000,"2018",FALSE
+"1131","Cabeza tractora DAF XF 480","DAF","FRANCIA","Nord",354,NA,482645,"2018",FALSE
+"1132","Cabeza tractora DAF XF 480","DAF","FRANCIA","Nord",353,NA,480000,"2017",FALSE
+"1133","Cabeza tractora DAF XF 530 FT","Est","FRANCIA","Haute",530,NA,388714,"2017",FALSE
+"1134","Cabeza tractora DAF XF105 460","DAF","FRANCIA","Yvelines",460,NA,935000,"2014",FALSE
+"1135","Cabeza tractora DAF XF105 410","DAF","FRANCIA","Yvelines",410,NA,744000,"2009",FALSE
+"1136","Cabeza tractora Mercedes Actros 1843 LS","Mercedes","FRANCIA","Finistère",430,55000,355000,"2017",FALSE
+"1137","Cabeza tractora Mercedes Arocs 1843 LS","Mercedes","FRANCIA","Finistère",430,38000,442000,"2015",FALSE
+"1138","Cabeza tractora MAN TGS 18.460","MAN","PORTUGAL","Anadia",NA,NA,345866,"2017",FALSE
+"1139","Cabeza tractora MAN TGS 18.440","MAN","PORTUGAL","Anadia",440,NA,435212,"2015",FALSE
+"1140","Cabeza tractora Renault Mod. RENAULT TRUCKS","Renault","ITALIA","Thiene",NA,NA,NA,"2002",FALSE
+"1141","Cabeza tractora Renault D-Series 430.19 DTI 11","Est","FRANCIA","Rhône",430,48900,225660,"2018",FALSE
+"1142","Cabeza tractora Renault D-Series 430.19 DTI 11","Est","FRANCIA","Rhône",430,49900,216180,"2018",FALSE
+"1143","Cabeza tractora Renault D-Series 430.19 DTI 11","Est","FRANCIA","Rhône",430,48900,227234,"2018",FALSE
+"1144","Cabeza tractora Renault D-Series 430.19 DTI 11","Est","FRANCIA","Rhône",430,47900,247473,"2018",FALSE
+"1145","Cabeza tractora Iveco Stralis 500","Iveco","FRANCIA","Meurthe",500,NA,706300,"2011",FALSE
+"1146","Cabeza tractora Iveco Stralis 500","Iveco","ITALIA","Trani",500,NA,922291,"2014",FALSE
+"1147","Cabeza tractora Scania R 164R580","Scania","ITALIA","Trani",580,NA,444085,"2001",FALSE
+"1148","Cabeza tractora DAF XF 510 FT","DAF","ITALIA","Trani",510,NA,756244,"2014",FALSE
+"1149","Cabeza tractora rebajado DAF XF 106","DAF","POLONIA","Gniezno",480,46396,524000,"2017",FALSE
+"1150","Cabeza tractora DAF XF105 460","DAF","FRANCIA","Rhône",460,24000,8e+05,"2014",FALSE
+"1151","Cabeza tractora Renault AE 520","Renault","PORTUGAL","Coimbra",NA,NA,NA,"2022",FALSE
+"1152","Cabeza tractora Scania S 500","Scania","PORTUGAL","Coimbra",NA,NA,8e+05,"2018",FALSE
+"1153","Cabeza tractora Volvo FH 540","Volvo","PORTUGAL","Coimbra",540,NA,8e+05,"2018",FALSE
+"1154","Cabeza tractora productos peligrosos / ADR DAF XF 480","DAF","FRANCIA","Nord",352,NA,304000,"2018",FALSE
+"1155","Cabeza tractora DAF XF 480","DAF","FRANCIA","Nord",360,NA,406525,"2017",FALSE
+"1156","Cabeza tractora rebajado DAF XF 460 SSC","DAF","ITALIA","Padova",480,48500,366000,"2017",FALSE
+"1157","Cabeza tractora Scania S 500","Est","FRANCIA","Seine",500,79900,838288,"2018",FALSE
+"1158","Cabeza tractora DAF XF FT XF450","DAF","ITALIA","Assago Mi 20090",NA,65800,342253,"2018",FALSE
+"1159","Cabeza tractora Volvo FH12 380","Volvo","PORTUGAL","Penafiel",380,NA,780877,"2002",FALSE
+"1160","Cabeza tractora Scania R 450","Scania","PORTUGAL","Proença A Nova",NA,53000,7e+05,"2017",FALSE
+"1161","Cabeza tractora Volvo FH13 500","Volvo","BÉLGICA","Bruxelles",500,57500,271492,"2017",FALSE
+"1162","Cabeza tractora Iveco Stralis AS440S46TP- LNG","Iveco","FRANCIA","Loire",460,52500,283215,"2018",FALSE
+"1163","Cabeza tractora Iveco Stralis AS440S46TP- LNG","Iveco","FRANCIA","Loire",460,NA,609608,"2018",FALSE
+"1164","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1165","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1166","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1167","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1168","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1169","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1170","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1171","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1172","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1173","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1174","Cabeza tractora Mercedes Actros 2645 - ""NON-EU""","Mercedes","BÉLGICA","Wingene",450,56850,483330,"2015",FALSE
+"1175","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1176","Cabeza tractora MAN TGX 18.460 XLX","MAN","FRANCIA","Nord",338,NA,386000,"2017",FALSE
+"1177","Cabeza tractora DAF XF 480","DAF","FRANCIA","Nord",352,NA,406525,"2017",FALSE
+"1178","Cabeza tractora Volvo FH 460","Volvo","HOLANDA","Weert",459,67800,419844,"2018",FALSE
+"1179","Cabeza tractora DAF XF 440","DAF","HOLANDA","Weert",440,24400,933906,"2016",FALSE
+"1180","Cabeza tractora convoy excepcional Scania R 420 High Line","Scania","REINO UNIDO","Romford",420,14200,810769,"2007",FALSE
+"1181","Cabeza tractora Iveco Stralis AS440S40TP LNG","Iveco","FRANCIA","Loire",400,NA,537662,"2018",FALSE
+"1182","Cabeza tractora MAN TGA 18.530","MAN","ITALIA","Tolentino",530,NA,1e+06,"2004",FALSE
+"1183","Cabeza tractora Iveco Stralis 480","Iveco","ITALIA","Tolentino",480,NA,695000,"2018",FALSE
+"1184","Cabeza tractora Scania R 144R530","Scania","ITALIA","Tolentino",530,NA,1e+06,"1999",FALSE
+"1185","Cabeza tractora Renault T-Series","Est","FRANCIA","Sarthe",480,NA,375000,"2018",FALSE
+"1186","Cabeza tractora DAF XF 106 460 SC","DAF","POLONIA","Nowe Proboszczewice",460,22000,100900,"2014",FALSE
+"1187","Cabeza tractora Mercedes Actros 1843 LS","Est","FRANCIA","Pas",430,39000,331200,"2015",FALSE
+"1188","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1189","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1190","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1191","Cabeza tractora DAF CF 85.410","DAF","BÉLGICA","Wingene",410,32850,783718,"2011",FALSE
+"1192","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1193","Cabeza tractora Renault T 460","Renault","BÉLGICA","Wingene",459,24850,700108,"2015",FALSE
+"1194","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1195","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1196","Cabeza tractora Scania R 440","Scania","BÉLGICA","Wingene",440,15350,1216544,"2011",FALSE
+"1197","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1198","Cabeza tractora DAF CF 85.410","DAF","BÉLGICA","Wingene",410,32850,739405,"2011",FALSE
+"1199","Cabeza tractora productos peligrosos / ADR Iveco Trakker 420","Iveco","BÉLGICA","Wingene",420,86850,10,"2022",FALSE
+"1200","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1201","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1202","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1203","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1204","Cabeza tractora Iveco Trakker 480","Iveco","BÉLGICA","Wingene",479,83350,10,"2022",FALSE
+"1205","Cabeza tractora Volvo FMX 450","Volvo","BÉLGICA","Wingene",450,19850,670669,"2012",FALSE
+"1206","Cabeza tractora Scania R 450","Scania","FRANCIA","Bas",450,33900,550416,"2016",FALSE
+"1207","Cabeza tractora Renault Gamme T 460","Renault","FRANCIA","Bas",460,14500,448859,"2016",FALSE
+"1208","Tractora semi volquete escollera Renault Gamme C 520","Renault","FRANCIA","Bas",NA,89900,76374,"2017",FALSE
+"1209","Cabeza tractora Renault Premium Lander 420","Renault","FRANCIA","Yvelines",NA,7500,594437,"2002",FALSE
+"1210","Cabeza tractora Iveco Stralis AS 440 S 48 TP","Iveco","FRANCIA","Sarthe",480,59500,346800,"2017",FALSE
+"1211","Cabeza tractora Scania G 480","Scania","PORTUGAL","Anadia",480,NA,601776,"2013",FALSE
+"1212","Cabeza tractora Scania R 164R480","Scania","ITALIA","Trani",480,NA,1663001,"2003",FALSE
+"1213","Cabeza tractora DAF XF 106 510 SSC","DAF","ITALIA","Piacenza",NA,38500,795000,"2016",FALSE
+"1214","Cabeza tractora Iveco Stralis 440 AS","Iveco","ITALIA","Thiene",NA,NA,195983,"2017",FALSE
+"1215","Cabeza tractora DAF Mod. DAF","DAF","ITALIA","Thiene",460,NA,896500,"2013",FALSE
+"1216","Cabeza tractora Renault T-Series","Renault","FRANCIA","Drôme",460,NA,496000,"2017",FALSE
+"1217","Cabeza tractora Renault Premium Lander 460.19","Renault","FRANCIA","Drôme",460,21000,474767,"2013",FALSE
+"1218","Cabeza tractora Mercedes Actros 2553","Mercedes","HOLANDA","Raalte",530,NA,660,"2022",FALSE
+"1219","Cabeza tractora Mercedes Actros 4365 Actros 4365 8×6/4","Mercedes","HOLANDA","Raalte",649,NA,372426,"2010",FALSE
+"1220","Cabeza tractora MAN 5x TGS 33.400 BBS-WW TRACTOR HEAD / RHD / NEW 2021 / EUR","MAN","HOLANDA","Schiedam",NA,78500,22,"2020",FALSE
+"1221","Cabeza tractora productos peligrosos / ADR MAN TGX 18.460 4X2 BLS","MAN","ITALIA","Piacenza",460,50000,594020,"2018",FALSE
+"1222","Cabeza tractora MAN TGS 18.440 4X2 BLS-TS","MAN","ITALIA","Piacenza",441,46000,601000,"2017",FALSE
+"1223","Cabeza tractora productos peligrosos / ADR MAN TGX 18.460 4X2 BLS","MAN","ITALIA","Piacenza",460,51000,539770,"2018",FALSE
+"1224","Cabeza tractora productos peligrosos / ADR MAN TGX 18.500 4X2 BLS","MAN","FRANCIA","Finistère",500,52400,307148,"2018",FALSE
+"1225","Cabeza tractora Volvo FH FH 460 Globetrotter/ACC/Xenon/Laneass","Volvo","ALEMANIA","Lohfelden",460,66500,539683,"2018",FALSE
+"1226","Cabeza tractora MAN TGX TGX 18.420 4X2 BLS, Retarder, Standkl.","MAN","ALEMANIA","Greven",NA,34700,881000,"2018",FALSE
+"1227","Cabeza tractora productos peligrosos / ADR Mercedes Actros Actros 1843 LS/ADR /Tankhydr./Retarder/wenig km","Mercedes","ALEMANIA","Würselen",NA,49500,398000,"2017",FALSE
+"1228","Cabeza tractora Mercedes Axor 1840","Mercedes","FRANCIA","Rhône",400,18000,541000,"2008",FALSE
+"1229","Cabeza tractora Mercedes Actros 1845","Mercedes","FRANCIA","Rhône",450,35000,642000,"2017",FALSE
+"1230","Cabeza tractora Mercedes Actros 1845","Mercedes","FRANCIA","Rhône",450,36000,528000,"2017",FALSE
+"1231","Cabeza tractora Mercedes Actros 1845","Mercedes","FRANCIA","Rhône",450,27500,688000,"2016",FALSE
+"1232","Cabeza tractora Renault T-Series 460 T4X2 E6","Renault","FRANCIA","Rhône",480,28500,555000,"2016",FALSE
+"1233","Cabeza tractora Renault T-Series 480.19 DTI 13","Renault","FRANCIA","Rhône",480,26000,688000,"2016",FALSE
+"1234","Cabeza tractora productos peligrosos / ADR Renault T-Series 460 T4X2 CITERNIER E6","Renault","FRANCIA","Rhône",460,35000,424000,"2016",FALSE
+"1235","Cabeza tractora DAF XF 480","DAF","FRANCIA","Bouches",480,67000,110000,"2018",FALSE
+"1236","Cabeza tractora Renault Premium 460 EEV","Est","PORTUGAL","Arouca",460,NA,787000,"2014",FALSE
+"1237","Cabeza tractora Mercedes Actros IV 18 2012","Mercedes","ITALIA","Nervesa Della Battaglia",625,86500,335000,"2016",FALSE
+"1238","Cabeza tractora Mercedes Actros IV 18 2012","Mercedes","ITALIA","Nervesa Della Battaglia",530,79500,403000,"2018",FALSE
+"1239","Cabeza tractora Iveco S-WAY AS440ST/P 460 S-Way LNG, Retrader, 2 Kreis Hydr.","Iveco","ALEMANIA","Hagenow",460,75000,185000,"2020",FALSE
+"1240","Cabeza tractora MAN TGA TGA 18.430 D20 Common Rail SZM Klima Retarder","MAN","ALEMANIA","Mücke/ Atzenhain",430,6900,1131444,"2005",FALSE
+"1241","Cabeza tractora MAN TGA TGA 18.430 D20 Common Rail SZM Klima","MAN","ALEMANIA","Mücke/ Atzenhain",430,6900,1390771,"2006",FALSE
+"1242","Cabeza tractora Renault Premium 460 EEV","Est","PORTUGAL","Arouca",460,NA,787000,"2014",FALSE
+"1243","Cabeza tractora productos peligrosos / ADR Iveco Stralis 480","Iveco","ITALIA","Padova",480,29800,642000,"2015",FALSE
+"1244","Cabeza tractora Mercedes Actros 1851 LSN 37","Mercedes","FRANCIA","Haute",510,70000,280000,"2014",FALSE
+"1245","Cabeza tractora Iveco Stralis STRALIS 500 TRATTORE STRADALE","Iveco","ITALIA","Voltana",NA,NA,NA,"2015",FALSE
+"1246","Cabeza tractora productos peligrosos / ADR Iveco Trakker 420","Iveco","BÉLGICA","Wingene",420,86850,10,"2022",FALSE
+"1247","Cabeza tractora MAN TGX 18.500","MAN","FRANCIA","Doubs",500,NA,415000,"2017",FALSE
+"1248","Cabeza tractora MAN TGX 18.480","MAN","FRANCIA","Doubs",480,NA,635000,"2015",FALSE
+"1249","Cabeza tractora Volvo FH 540","Volvo","FRANCIA","Bas",540,28200,806290,"2015",FALSE
+"1250","Cabeza tractora Renault Premium 450","Renault","FRANCIA","Bas",450,5000,730702,"2007",FALSE
+"1251","Cabeza tractora Renault T480 2x Tanks/ Leasing","Renault","FRANCIA","Nord",NA,NA,499000,"2017",FALSE
+"1252","Cabeza tractora Renault T480 2x Tanks/ Leasing","Renault","FRANCIA","Nord",NA,NA,478237,"2017",FALSE
+"1253","Cabeza tractora Renault T460 2x Tanks/ Leasing","Renault","FRANCIA","Nord",NA,NA,267000,"2018",FALSE
+"1254","Cabeza tractora Renault T480 2x Tanks","Renault","FRANCIA","Nord",NA,NA,422000,"2018",FALSE
+"1255","Cabeza tractora Mercedes Actros 1843LS 4X2","Mercedes","FRANCIA","Maine",428,58900,201868,"2018",FALSE
+"1256","Cabeza tractora MAN TGX 18.460 XLX","MAN","FRANCIA","Gironde",460,49500,453104,"2018",FALSE
+"1257","Cabeza tractora Iveco Stralis AS400 / LNG / / High Way / Automatic / 427 DKM / Belgium Truck","Iveco","HOLANDA","Tilburg",399,38800,427317,"2017",FALSE
+"1258","Cabeza tractora Iveco Stralis AS400 / LNG / / High Way / Automatic / 417 DKM / Belgium Truck","Iveco","HOLANDA","Tilburg",399,38800,417552,"2017",FALSE
+"1259","Cabeza tractora productos peligrosos / ADR MAN TGS 18.500 4X2 BLS-TS","MAN","ITALIA","Piacenza",500,56000,461407,"2018",FALSE
+"1260","Cabeza tractora convoy excepcional MAN TGX 18.500 4X2 LLS-U","MAN","ITALIA","Piacenza",500,41000,661000,"2018",FALSE
+"1261","Cabeza tractora Iveco Stralis 460 eev","Iveco","FRANCIA","Mayenne",460,36000,300078,"2016",FALSE
+"1262","Cabeza tractora Iveco Stralis XP 510","Iveco","FRANCIA","Mayenne",510,NA,367000,"2019",FALSE
+"1263","Cabeza tractora productos peligrosos / ADR Renault T-Series","Renault","FRANCIA","Vaucluse",480,68900,304576,"2019",FALSE
+"1264","Cabeza tractora MAN TGX 18.480","MAN","FRANCIA","Seine",480,NA,269253,"2016",FALSE
+"1265","Cabeza tractora Renault T-Series","Renault","FRANCIA","Bouches",480,57500,383771,"2018",FALSE
+"1266","Cabeza tractora Renault T-Series","Renault","FRANCIA","Bouches",460,58800,252478,"2018",FALSE
+"1267","Cabeza tractora convoy excepcional Volvo FH16 650","Volvo","FRANCIA","Pyrénées",650,NA,235775,"2019",FALSE
+"1268","Cabeza tractora MAN TGX 18.510","MAN","FRANCIA","Seine",510,93000,160000,"2020",FALSE
+"1269","Cabeza tractora Iveco Stralis AS440S40TP LNG","Iveco","FRANCIA","Vendée",400,NA,541032,"2017",FALSE
+"1270","Cabeza tractora MAN TGX 18.500","MAN","FRANCIA","Finistère",500,NA,354622,"2017",FALSE
+"1271","Cabeza tractora Volvo FH 500","Volvo","FRANCIA","Pyrénées",500,NA,190952,"2020",FALSE
+"1272","Cabeza tractora Renault Premium 430","Renault","FRANCIA","Yvelines",NA,13500,821512,"2013",FALSE
+"1273","Cabeza tractora Scania R 450 TOPLINE/ VOLLSPOILER !!","Scania","LUXEMBURGO","Remich",612,35900,799500,"2016",FALSE
+"1274","Cabeza tractora Volvo FH 460/Globetrotter/ Kompressor","Volvo","LUXEMBURGO","Remich",470,42900,804000,"2017",FALSE
+"1275","Cabeza tractora convoy excepcional Volvo FH16 610","Volvo","FRANCIA","Val",610,16500,2453784,"2004",FALSE
+"1276","Cabeza tractora convoy excepcional MAN 26.410","MAN","FRANCIA","Val",372,15000,863000,"1986",FALSE
+"1277","Cabeza tractora Renault Gamme C 460","Renault","FRANCIA","Côte",460,NA,338506,"2018",FALSE
+"1278","Cabeza tractora Volvo FH 460","Volvo","FRANCIA","Rhône",460,NA,622664,"2017",FALSE
+"1279","Cabeza tractora Renault AE 440 DXI","Renault","FRANCIA","Rhône",NA,NA,1052890,"2006",FALSE
+"1280","Cabeza tractora Renault Premium 450","Renault","FRANCIA","Rhône",450,NA,941592,"2007",FALSE
+"1281","Cabeza tractora Volvo FH12 420","Volvo","FRANCIA","Rhône",420,NA,1427696,"2002",FALSE
